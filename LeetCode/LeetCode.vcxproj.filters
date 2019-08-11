@@ -53,5 +53,11 @@
     <ClCompile Include="140.单词拆分2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="135.分发糖果.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="129.求根到叶子节点数字之和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

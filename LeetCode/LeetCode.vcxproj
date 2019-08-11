@@ -81,6 +81,8 @@
     <ClInclude Include="header.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="129.求根到叶子节点数字之和.cpp" />
+    <ClCompile Include="135.分发糖果.cpp" />
     <ClCompile Include="139.单词拆分.cpp" />
     <ClCompile Include="140.单词拆分2.cpp" />
     <ClCompile Include="143.重排链表.cpp" />
