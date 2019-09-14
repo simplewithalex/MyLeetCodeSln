@@ -122,9 +122,6 @@
     <ClCompile Include="82.删除排序链表中的重复元素2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="62.不同路径.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="88.合并两个有序数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -159,6 +156,114 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="64.最小路径和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="119.杨辉三角2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="115.不同的子序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="108.将有序数组转换为二叉搜索树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="98. 验证二叉搜索树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="26.删除排序数组中的重复项.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="58.最后一个单词的长度.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="106.从中序与后序遍历序列构造二叉树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="105.从前序与中序遍历序列构造二叉树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="97.交错字符串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="61.旋转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="66.加一.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11.盛最多水的容器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="133.克隆图.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="127.单词接龙.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="53.最大子序和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="19.删除链表的倒数第N个节点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="74.搜索二维矩阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="62.不同路径1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="63.不同路径2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="9.回文数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="80.删除排序数组中的重复项2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="89.格雷编码.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="77.组合.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="75.颜色分类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="69.x的平方根.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="55.跳跃游戏1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="45.跳跃游戏2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="24.两两交换链表中的节点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="91.解码方法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="4.寻找两个有序数组的中位数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="48.旋转图像.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="15.三数之和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="18.四数之和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="78.子集.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="27.移除元素.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="99.恢复二叉搜索树.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

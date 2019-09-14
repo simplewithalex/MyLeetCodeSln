@@ -30,7 +30,8 @@
 */
 
 //动态规划
-class Solution1{
+class Solution1
+{
 public:
 	int maxProfit(vector<int> &prices)
 	{
@@ -51,7 +52,8 @@ public:
 };
 
 //有限状态机
-class Solution2 {
+class Solution2 
+{
 public:
 	int maxProfit(vector<int> &prices)
 	{
