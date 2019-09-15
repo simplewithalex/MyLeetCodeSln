@@ -266,5 +266,8 @@
     <ClCompile Include="99.恢复二叉搜索树.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="72.编辑距离.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

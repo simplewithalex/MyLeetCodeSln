@@ -137,6 +137,7 @@
     <ClCompile Include="66.加一.cpp" />
     <ClCompile Include="69.x的平方根.cpp" />
     <ClCompile Include="7.整数反转.cpp" />
+    <ClCompile Include="72.编辑距离.cpp" />
     <ClCompile Include="74.搜索二维矩阵.cpp" />
     <ClCompile Include="75.颜色分类.cpp" />
     <ClCompile Include="77.组合.cpp" />
