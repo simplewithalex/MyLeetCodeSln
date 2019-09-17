@@ -82,4 +82,4 @@ public:
 		len = res.size();
 		res[len - level - 1].push_back(node->val);
 	}
-
+};

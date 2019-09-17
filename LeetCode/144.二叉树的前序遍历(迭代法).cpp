@@ -6,7 +6,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	vector<int> preorderTraversal(TreeNode *root)
 	{
@@ -27,6 +27,44 @@ public:
 			{
 				node = s.top();
 				s.pop();
+			}
+		}
+		return res;
+	}
+};
+
+//使用莫里斯遍历法
+class Solution2 {
+public:
+	vector<int> preorderTraversal(TreeNode *root) 
+	{
+		vector<int> res;
+		TreeNode *cur = root, *pre = nullptr;
+		while (cur)
+		{
+			if (!cur->left)
+			{
+				res.push_back(cur->val);
+				cur = cur->right;
+			}
+			else
+			{
+				pre = cur->left;
+				while (pre->right&&pre->right != cur)
+				{
+					pre = pre->right;
+				}
+				if (!pre->right)
+				{
+					pre->right = cur;
+					res.push_back(cur->val);
+					cur = cur->left;
+				}
+				else
+				{
+					pre->right = nullptr;
+					cur = cur->right;
+				}
 			}
 		}
 		return res;

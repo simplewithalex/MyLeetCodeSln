@@ -18,7 +18,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	vector<int> inorderTraversal(TreeNode *root)
 	{
@@ -39,6 +39,44 @@ public:
 				s.pop();
 				res.push_back(node->val);
 				node = node->right;
+			}
+		}
+		return res;
+	}
+};
+
+//使用莫里斯遍历法
+class Solution2 {
+public:
+	vector<int> inorderTraversal(TreeNode* root)
+	{
+		vector<int> res;
+		TreeNode *cur = root, *pre = nullptr;
+		while (cur)
+		{
+			if (!cur->left)
+			{
+				res.push_back(cur->val);
+				cur = cur->right;
+			}
+			else
+			{
+				pre = cur->left;
+				while (pre->right&&pre->right != cur)
+				{
+					pre = pre->right;
+				}
+				if (!pre->right)
+				{
+					pre->right = cur;
+					cur = cur->left;
+				}
+				else
+				{
+					pre->right = nullptr;
+					res.push_back(cur->val);
+					cur = cur->right;
+				}
 			}
 		}
 		return res;
