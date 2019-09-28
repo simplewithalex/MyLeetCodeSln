@@ -278,5 +278,56 @@
     <ClCompile Include="005.最长回文子串.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="073.矩阵置零.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="033.搜索旋转排序数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="743.网络延迟时间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="093.复原IP地址.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="050.Pow%28x, n%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="016.最接近的三数之和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="023.合并K个排序链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="079.单词搜索.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="059.螺旋矩阵2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="012.整数转罗马数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="013.罗马数字转整数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="025.K 个一组翻转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="081.搜索旋转排序数组2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="042.接雨水.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="008.字符串转换整数 (atoi).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="047.全排列2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="034.在排序数组中查找元素的第一个和最后一个位置.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

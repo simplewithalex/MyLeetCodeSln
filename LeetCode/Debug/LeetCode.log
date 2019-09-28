@@ -1,8 +1,22 @@
-﻿生成启动时间为 2019/9/17 15:15:59。
+﻿生成启动时间为 2019/9/25 19:30:37。
      1>项目“E:\projects\LeetCode\LeetCode\LeetCode.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         E:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "107.二叉树的层次遍历2.cpp"
-         107.二叉树的层次遍历2.cpp
+         E:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "016.最接近的三数之和.cpp" "023.合并K个排序链表.cpp" "033.搜索旋转排序数组.cpp" "073.矩阵置零.cpp" "079.单词搜索.cpp" "095.不同的二叉搜索树2.cpp" "097.交错字符串.cpp" "050.Pow(x, n).cpp" "743.网络延迟时间.cpp" "093.复原IP地址.cpp"
+         093.复原IP地址.cpp
+     1>e:\projects\leetcode\leetcode\093.复原ip地址.cpp(29): warning C4018: “<=”: 有符号/无符号不匹配
+         743.网络延迟时间.cpp
+         050.Pow(x, n).cpp
+         097.交错字符串.cpp
+         095.不同的二叉搜索树2.cpp
+         079.单词搜索.cpp
+     1>e:\projects\leetcode\leetcode\079.单词搜索.cpp(27): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\projects\leetcode\leetcode\079.单词搜索.cpp(29): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\projects\leetcode\leetcode\079.单词搜索.cpp(40): warning C4018: “>”: 有符号/无符号不匹配
+         073.矩阵置零.cpp
+         033.搜索旋转排序数组.cpp
+         023.合并K个排序链表.cpp
+         016.最接近的三数之和.cpp
+         正在生成代码...
        Link:
          E:\VS\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\projects\LeetCode\Debug\LeetCode.exe" /INCREMENTAL /NOLOGO opencv_ml249d.lib opencv_calib3d249d.lib opencv_contrib249d.lib opencv_core249d.lib opencv_features2d249d.lib opencv_flann249d.lib opencv_gpu249d.lib opencv_highgui249d.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_objdetect249d.lib opencv_ts249d.lib opencv_video249d.lib opencv_nonfree249d.lib opencv_ocl249d.lib opencv_photo249d.lib opencv_stitching249d.lib opencv_superres249d.lib opencv_videostab249d.lib opencv_objdetect249.lib opencv_ts249.lib opencv_video249.lib opencv_nonfree249.lib opencv_ocl249.lib opencv_photo249.lib opencv_stitching249.lib opencv_superres249.lib opencv_videostab249.lib opencv_calib3d249.lib opencv_contrib249.lib opencv_core249.lib opencv_features2d249.lib opencv_flann249.lib opencv_gpu249.lib opencv_highgui249.lib opencv_imgproc249.lib opencv_legacy249.lib opencv_ml249.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\projects\LeetCode\Debug\LeetCode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\projects\LeetCode\Debug\LeetCode.lib" /MACHINE:X86 "Debug\001.两数之和.obj"
          "Debug\002.两数相加.obj"
@@ -12,11 +26,14 @@
          "Debug\009.回文数.obj"
          "Debug\011.盛最多水的容器.obj"
          "Debug\015.三数之和.obj"
+         "Debug\016.最接近的三数之和.obj"
          "Debug\018.四数之和.obj"
          "Debug\019.删除链表的倒数第N个节点.obj"
+         "Debug\023.合并K个排序链表.obj"
          "Debug\024.两两交换链表中的节点.obj"
          "Debug\026.删除排序数组中的重复项.obj"
          "Debug\027.移除元素.obj"
+         "Debug\033.搜索旋转排序数组.obj"
          "Debug\045.跳跃游戏2.obj"
          "Debug\048.旋转图像.obj"
          "Debug\053.最大子序和.obj"
@@ -30,10 +47,12 @@
          "Debug\067.二进制求和.obj"
          "Debug\069.x的平方根.obj"
          "Debug\072.编辑距离.obj"
+         "Debug\073.矩阵置零.obj"
          "Debug\074.搜索二维矩阵.obj"
          "Debug\075.颜色分类.obj"
          "Debug\077.组合.obj"
          "Debug\078.子集.obj"
+         "Debug\079.单词搜索.obj"
          "Debug\080.删除排序数组中的重复项2.obj"
          "Debug\082.删除排序链表中的重复元素2.obj"
          "Debug\083.删除排序链表中的重复元素1.obj"
@@ -83,6 +102,9 @@
          "Debug\143.重排链表.obj"
          "Debug\144.二叉树的前序遍历(迭代法).obj"
          "Debug\147.对链表进行插入排序.obj"
+         "Debug\050.Pow(x, n).obj"
+         "Debug\743.网络延迟时间.obj"
+         "Debug\093.复原IP地址.obj"
          Debug\main.obj
          "Debug\145.二叉树的后序遍历(迭代法).obj"
          "Debug\111.二叉树的最小深度.obj"
@@ -95,4 +117,4 @@
 
 生成成功。
 
-已用时间 00:00:07.52
+已用时间 00:01:03.85

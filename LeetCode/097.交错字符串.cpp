@@ -14,7 +14,8 @@
 
 */
 
-class Solution {
+//动态规划
+class Solution1 {
 public:
 	bool isInterleave(string s1, string s2, string s3)
 	{
@@ -39,5 +40,59 @@ public:
 			}
 		}
 		return dp[len1][len2];
+	}
+};
+
+//记忆回溯法
+class Solution2 {
+public:
+	bool isInterleave(string s1, string s2, string s3)
+	{
+		unordered_set<string> s;
+		return backTrack(s1, 0, s2, 0, s3, 0, s);
+	}
+	bool backTrack(string &s1, int i, string &s2, int j, string &s3, int k, unordered_set<string> &s)
+	{
+		int len1 = s1.size(), len2 = s2.size(), len3 = s3.size();
+		string key = to_string(i) + '#' + to_string(j);
+		if (len1 + len2 != len3) return false;
+		if (s.count(key)) return false;
+		if (i == len1&&j == len2&&k == len3) return true;
+		if (i == len1)
+		{
+			while (j < len2)
+			{
+				if (s2[j] != s3[k])
+				{
+					s.insert(key);
+					return false;
+				}
+				++j, ++k;
+			}
+			return true;
+		}
+		if (j == len2)
+		{
+			while (i < len1)
+			{
+				if (s1[i] != s3[k])
+				{
+					s.insert(key);
+					return false;
+				}
+				++i, ++k;
+			}
+			return true;
+		}
+		if (s1[i] == s3[k])
+		{
+			if (backTrack(s1, i + 1, s2, j, s3, k + 1, s)) return true;
+		}
+		if (s2[j] == s3[k])
+		{
+			if (backTrack(s1, i, s2, j + 1, s3, k + 1, s)) return true;
+		}
+		s.insert(key);
+		return false;
 	}
 };

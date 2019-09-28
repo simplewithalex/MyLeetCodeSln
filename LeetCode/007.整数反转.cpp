@@ -27,22 +27,23 @@
 
 */
 
+
 class Solution {
 public:
 	int reverse(int x)
 	{
+		bool sign = x < 0 ? true : false;
 		int res = 0;
-		bool sign = x < 0 ? false : true;
 		while (x)
 		{
 			if (sign)
 			{
-				if ((INT_MAX / 10) < res || (INT_MAX - x % 10) < res * 10)
+				if ((INT_MIN / 10 > res) || (INT_MIN / 10 == res && INT_MIN % 10 > x % 10))
 					return 0;
 			}
 			else
 			{
-				if ((INT_MIN / 10) > res || (INT_MIN - x % 10) > res * 10)
+				if ((INT_MAX / 10 < res) || (INT_MAX / 10 == res && INT_MAX % 10 < x % 10))
 					return 0;
 			}
 			res = res * 10 + x % 10;
