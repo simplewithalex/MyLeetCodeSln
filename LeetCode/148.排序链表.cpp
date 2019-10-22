@@ -10,8 +10,8 @@
 
 */
 
-//这个题目要求O(1)空间复杂度，所以这里使用的传统归并不能满足要求，需要自底向上归并排序，具体见leetcode
 
+//这个题目要求O(1)空间复杂度，所以这里使用的传统归并不能满足要求，需要自底向上归并排序，具体见leetcode
 class Solution {
 public:
 	ListNode * sortList(ListNode *head)

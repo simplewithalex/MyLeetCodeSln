@@ -311,9 +311,6 @@
     <ClCompile Include="013.罗马数字转整数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="025.K 个一组翻转链表.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="081.搜索旋转排序数组2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -327,6 +324,108 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="034.在排序数组中查找元素的第一个和最后一个位置.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="041.缺失的第一个正数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="022.括号生成.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="014.最长公共前缀.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="056.合并区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="054.螺旋矩阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="032.最长有效括号.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="087.扰乱字符串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="038.报数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="085.最大矩形.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="076.最小覆盖子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="031.下一个排列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="049.字母异位词分组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="039.组合总和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="040.组合总和2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="025.K个一组翻转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="071.简化路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="057.插入区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="060.第k个排列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="006.Z字形变换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="028.实现strStr().cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="126.单词接龙2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="065.有效数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="043.字符串相乘.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="051.N皇后.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="017.电话号码的字母组合.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="300.最长上升子序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="029.两数相除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="044.通配符匹配.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="010.正则表达式匹配.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="030.串联所有单词的子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="146.LRU缓存机制.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="068.文本左右对齐.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="036.有效的数独.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="037.解数独.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
