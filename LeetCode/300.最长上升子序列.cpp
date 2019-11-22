@@ -90,9 +90,7 @@ public:
 	{
 		int len = nums.size();
 		if (curIdx == len) return 0;
-		pair<int, int> temp = { preIdx, curIdx };
 		if (m[preIdx + 1][curIdx] >= 0) return m[preIdx + 1][curIdx];
-
 		int increNum = 0;
 		if (preIdx < 0 || nums[curIdx] > nums[preIdx])
 		{
@@ -100,7 +98,7 @@ public:
 		}
 		int noIncreNum = backTrack(nums, preIdx, curIdx + 1, m);
 		//使用词典记录前一个元素与当前元素作组合时升序序列的长度(它们不一定在升序的序列中)
-		//preIdx+1看作是preIdx
+		//因为preIdx是从-1开始的，所以将preIdx+1看作是preIdx
 		m[preIdx + 1][curIdx] = max(increNum, noIncreNum);
 		return m[preIdx + 1][curIdx];
 	}

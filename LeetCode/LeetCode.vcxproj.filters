@@ -281,9 +281,6 @@
     <ClCompile Include="073.矩阵置零.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="033.搜索旋转排序数组.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="743.网络延迟时间.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -383,9 +380,6 @@
     <ClCompile Include="006.Z字形变换.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="028.实现strStr().cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="126.单词接龙2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -426,6 +420,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="037.解数独.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="028.%28KMP算法%29实现strStr%28%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="207.课程表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="152.乘积最大子序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="169.求众数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="198.打家劫舍.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="033.搜索旋转排序数组1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,37 +20,35 @@
 
 */
 
+//通用解法，同样可用于033题
 class Solution {
 public:
-	bool search(int A[], int n, int target)
+	bool search(vector<int> &nums, int target)
 	{
-		int lo = 0, hi = n - 1;
-		while (lo <= hi)
+		int len = nums.size();
+		if (len == 0) return false;
+		int lo = 0, hi = len - 1;
+		while (lo < hi)
 		{
 			int mi = lo + ((hi - lo) >> 1);
-			if (A[mi] == target)
+			if (nums[mi] == target) return true;
+			else if (nums[lo] < nums[mi])//左半部分有序
 			{
-				return true;
-			}
-			else if (A[mi] == A[lo] && A[hi] == A[mi])
-			{
-				++lo, --hi;
-			}
-			else if (A[lo] <= A[mi])
-			{
-				if (A[lo] <= target && target < A[mi])
+				if (target<nums[mi] && nums[lo] <= target)
 					hi = mi - 1;
 				else
 					lo = mi + 1;
+			}
+			else if (nums[lo]>nums[mi])//右半部分有序
+			{
+				if (target>nums[mi] && nums[hi] >= target)
+					lo = mi + 1;
+				else
+					hi = mi - 1;
 			}
 			else
-			{
-				if (target <= A[hi] && target > A[mi])
-					lo = mi + 1;
-				else
-					hi = mi - 1;
-			}
+				++lo;
 		}
-		return false;
+		return nums[lo] == target;
 	}
 };

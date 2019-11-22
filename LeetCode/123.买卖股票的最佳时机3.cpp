@@ -69,5 +69,32 @@ public:
 		return max(0, s4);
 	}
 };
-
 //https://leetcode.wang/leetcode-123-Best-Time-to-Buy-and-Sell-StockIII.html
+
+//状态机解法
+class Solution3 {
+public:
+	int maxProfit(vector<int> &prices)
+	{
+		int len = prices.size();
+		if (len == 0) return 0;
+		int maxK = 2;
+		vector<vector<vector<int>>> dp(len, vector<vector<int>>(maxK + 1, vector<int>(2, 0)));
+		for (int i = 0; i < len; ++i)
+		{
+			for (int k = maxK; k >= 1; --k)
+			{
+				if (i - 1 == -1)
+				{
+					dp[i][k][0] = 0;
+					dp[i][k][1] = -prices[i];
+					continue;
+				}
+				dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i]);
+				dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i]);
+			}
+		}
+		return dp[len - 1][maxK][0];
+	}
+};
+//https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/

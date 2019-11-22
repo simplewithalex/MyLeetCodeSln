@@ -20,7 +20,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	int maxProfit(vector<int> &prices)
 	{
@@ -43,4 +43,33 @@ public:
 		return maxsofar;
 	}
 };
+
+
+//状态机解法
+class Solution2 {
+public:
+	int maxProfit(vector<int> &prices)
+	{
+		int len = prices.size();
+		if (len == 0) return 0;
+		vector<vector<int>> dp(len, vector<int>(2, 0));
+		for (int i = 0; i < len; ++i)
+		{
+			//好的习惯，其他股票问题可能会有对k状态的循环，需要这样写
+			if (i - 1 == -1)
+			{
+				dp[i][0] = 0;
+				dp[i][1] = -prices[i];
+				continue;
+			}
+			dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+			dp[i][1] = max(dp[i - 1][1], -prices[i]);
+		}
+		return dp[len - 1][0];
+	}
+};
+//https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/
+//关于buy-1还是sell-1的问题，参考下面的链接
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/Most-consistent-ways-of-dealing-with-the-series-of-stock-problems/111002
+//@tzzz117和@fun4LeetCode的评论中回答了这个问题，错误出现在初始化状态时，如果buy不用减一而sell减一的话，dp[i][0][1]此时是可能的，所以它的值不是INT_MIN
 

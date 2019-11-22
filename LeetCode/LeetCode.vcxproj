@@ -105,12 +105,12 @@
     <ClCompile Include="025.K个一组翻转链表.cpp" />
     <ClCompile Include="026.删除排序数组中的重复项.cpp" />
     <ClCompile Include="027.移除元素.cpp" />
-    <ClCompile Include="028.实现strStr().cpp" />
+    <ClCompile Include="028.%28KMP算法%29实现strStr%28%29.cpp" />
     <ClCompile Include="029.两数相除.cpp" />
     <ClCompile Include="030.串联所有单词的子串.cpp" />
     <ClCompile Include="031.下一个排列.cpp" />
     <ClCompile Include="032.最长有效括号.cpp" />
-    <ClCompile Include="033.搜索旋转排序数组.cpp" />
+    <ClCompile Include="033.搜索旋转排序数组1.cpp" />
     <ClCompile Include="034.在排序数组中查找元素的第一个和最后一个位置.cpp" />
     <ClCompile Include="036.有效的数独.cpp" />
     <ClCompile Include="037.解数独.cpp" />
@@ -207,6 +207,10 @@
     <ClCompile Include="146.LRU缓存机制.cpp" />
     <ClCompile Include="147.对链表进行插入排序.cpp" />
     <ClCompile Include="050.Pow%28x, n%29.cpp" />
+    <ClCompile Include="152.乘积最大子序列.cpp" />
+    <ClCompile Include="169.求众数.cpp" />
+    <ClCompile Include="198.打家劫舍.cpp" />
+    <ClCompile Include="207.课程表.cpp" />
     <ClCompile Include="300.最长上升子序列.cpp" />
     <ClCompile Include="743.网络延迟时间.cpp" />
     <ClCompile Include="093.复原IP地址.cpp" />

@@ -32,7 +32,7 @@
 */
 
 
-class Solution {
+class Solution1 {
 public:
 	int maxProfit(vector<int> &prices)
 	{
@@ -42,3 +42,28 @@ public:
 		return res;
 	}
 };
+
+
+//状态机解法
+class Solution2 {
+public:
+	int maxProfit(vector<int> &prices)
+	{
+		int len = prices.size();
+		if (len == 0) return 0;
+		vector<vector<int>> dp(len, vector<int>(2, 0));
+		for (int i = 0; i < len; ++i)
+		{
+			if (i - 1 == -1)
+			{
+				dp[i][0] = 0;
+				dp[i][1] = -prices[i];
+				continue;
+			}
+			dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
+			dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
+		}
+		return dp[len - 1][0];
+	}
+};
+//https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/

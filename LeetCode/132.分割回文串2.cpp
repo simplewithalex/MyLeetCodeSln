@@ -13,6 +13,7 @@
 
 */
 
+//中心扩展法
 class Solution1 {
 public:
 	int minCut(string s)
@@ -44,52 +45,110 @@ public:
 };
 
 
-//参考131题，使用普通的回溯方法。
+//参考131题，备忘录到自底而上的动态规划
+
+//备忘录
 class Solution2 {
 public:
 	int minCut(string s) 
 	{
 		int len = s.size();
 		//首先用一个数组记录字符串i:j是否为回文串，避免了频繁调用isPal()
-		vector<vector<bool>> dp(len, vector<bool>(len, false));
+		vector<vector<char>> isPal(len, vector<char>(len, false));
 		for (int palLen = 1; palLen <= len; ++palLen)
 		{
 			for (int i = 0; i <= len - palLen; ++i)
 			{
 				int j = i + palLen - 1;
-				dp[i][j] = (s[i] == s[j] && (palLen < 3 || dp[i + 1][j - 1]));
+				isPal[i][j] = (s[i] == s[j] && (palLen < 3 || isPal[i + 1][j - 1]));
 			}
 		}
-		//利用记忆化技术，记忆当前字符后的字符串还需要的最少切割次数。
-		map<int, int> m;
-		int res = INT_MAX;
-		backTrack(s, 0, 0, dp, m, res);
-		return res;
+		//利用记忆化技术存储前面已经得到的结果
+		vector<int> memo(len, -1);
+		return helper(s, 0, isPal, memo);
 	}
-	void backTrack(string &s, int start, int cutNum, vector<vector<bool>> &dp, map<int, int> &m, int &res)
+	int helper(string &s, int start, vector<vector<char>> &isPal, vector<int> &memo)
 	{
-		if (m.count(start))
+		if (memo[start] != -1) return memo[start];
+		int len = s.size();
+		if (isPal[start][len - 1]) return 0;
+		int minNum = INT_MAX;
+		for (int i = start; i < len; ++i)
 		{
-			res = min(res, cutNum + m[start]);
-			return;
+			if (isPal[start][i]) minNum = min(minNum, 1 + helper(s, i + 1, isPal, memo));
 		}
-		if (dp[start][s.size() - 1])
+		memo[start] = minNum;
+		return minNum;
+	}
+};
+
+//自底而上的动态规划
+
+class Solution3 {
+public:
+	int minCut(string s) 
+	{
+		int len = s.size();
+		//首先用一个数组记录字符串i:j是否为回文串，避免了频繁调用isPal()
+		vector<vector<char>> isPal(len, vector<char>(len, false));
+		for (int palLen = 1; palLen <= len; ++palLen)
 		{
-			res = min(res, cutNum);
-			return;
-		}
-		for (int i = start; i < s.size(); ++i)
-		{
-			if (dp[start][i])
+			for (int i = 0; i <= len - palLen; ++i)
 			{
-				backTrack(s, i + 1, cutNum + 1, dp, m, res);
+				int j = i + palLen - 1;
+				isPal[i][j] = (s[i] == s[j] && (palLen < 3 || isPal[i + 1][j - 1]));
 			}
 		}
-		//当前已经切割了cutNum次，回溯后保存之后的字符串还要切割的次数。
-		//注意保证res > cutNum,回溯过程中，res可能在之前已经被赋了一个较小值。(比如"aaabaa"，一开始就遇到回文，res被置1)
-		if (res>cutNum)
+		vector<int> dp(len);
+		dp[0] = 0;
+		for (int i = 1; i < len; ++i)
 		{
-			m[start] = res - cutNum;
+			int minNum = INT_MAX;
+			for (int j = 0; j <= i; ++j)
+			{
+				//这里不一定后面字符串是回文串就是最优情况，比如abbab，还是需要向后继续判断
+				if (isPal[j][i])
+				{
+					if (j == 0)
+					{
+						minNum = 0;
+						break;
+					}
+					else
+					{
+						minNum = min(minNum, dp[j - 1] + 1);
+					}
+				}
+			}
+			dp[i] = minNum;
 		}
+		return dp[len - 1];
+	}
+};
+
+//优化上一解法中isPal数组和dp数组的求值
+class Solution4 {
+public:
+	int minCut(string s) 
+	{
+		int len = s.size();
+		vector<vector<char>> isPal(len, vector<char>(len, false));
+		vector<int> dp(len);
+		dp[0] = 0;
+		for (int i = 1; i < len; ++i)
+		{
+			int minNum = INT_MAX;
+			for (int j = 0; j <= i; ++j)
+			{
+				if (s[i] == s[j] && (j + 1 > i - 1 || isPal[j + 1][i - 1]))
+				{
+					isPal[j][i] = true;
+					if (j == 0) minNum = 0;
+					else minNum = min(minNum, dp[j - 1] + 1);
+				}
+			}
+			dp[i] = minNum;
+		}
+		return dp[len - 1];
 	}
 };
