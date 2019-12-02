@@ -440,5 +440,29 @@
     <ClCompile Include="033.搜索旋转排序数组1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="200.岛屿数量.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="206.反转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="208.实现Trie(前缀树).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="215.数组中的第K个最大元素.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="221.最大正方形.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="234.回文链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="236.二叉树的最近公共祖先.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="235.二叉搜索树的最近公共祖先.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
