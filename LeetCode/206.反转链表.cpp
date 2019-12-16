@@ -15,7 +15,7 @@
 */
 
 //µü´ú·¨
-class Solution {
+class Solution1 {
 public:
 	ListNode * reverseList(ListNode *head)
 	{
@@ -43,7 +43,7 @@ public:
 };
 
 //µÝ¹é·¨
-class Solution {
+class Solution2 {
 public:
 	ListNode * reverseList(ListNode *head) 
 	{

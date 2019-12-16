@@ -17,8 +17,37 @@
 */
 
 
-//动态规划
+//记忆化回溯
 class Solution1 {
+public:
+	int lengthOfLIS(vector<int> &nums)
+	{
+		if (nums.empty()) return 0;
+		int len = nums.size();
+		//这里如果用哈希表，使用string作为词典关键码会导致内存超限
+		vector<vector<int>> m(len + 1, vector<int>(len, -1));
+		return backTrack(nums, -1, 0, m);
+	}
+	int backTrack(vector<int> &nums, int preIdx, int curIdx, vector<vector<int>> &m)
+	{
+		int len = nums.size();
+		if (curIdx == len) return 0;
+		if (m[preIdx + 1][curIdx] >= 0) return m[preIdx + 1][curIdx];
+		int increNum = 0;
+		if (preIdx < 0 || nums[curIdx] > nums[preIdx])
+		{
+			increNum = 1 + backTrack(nums, curIdx, curIdx + 1, m);
+		}
+		int noIncreNum = backTrack(nums, preIdx, curIdx + 1, m);
+		//使用词典记录前一个元素与当前元素作组合时升序序列的长度(它们不一定在升序的序列中)
+		//因为preIdx是从-1开始的，所以将preIdx+1看作是preIdx
+		m[preIdx + 1][curIdx] = max(increNum, noIncreNum);
+		return m[preIdx + 1][curIdx];
+	}
+};
+
+//动态规划
+class Solution2 {
 public:
 	int lengthOfLIS(vector<int> &nums) 
 	{
@@ -44,7 +73,7 @@ public:
 //1、用dp数组保存最长上升子序列，该数组元素是递增的，将原序列的元素二分插入dp中
 //2、如果dp中元素都比它小，将它插到最后，否则，用它覆盖掉比它大的元素中最小的那个
 //3、总之，思想就是让dp中存储比较小的元素(值小的元素遇到比它大的元素的概率更大)。这样，dp中未必是真实的最长上升子序列，但长度是对的
-class Solution2 {
+class Solution3 {
 public:
 	int lengthOfLIS(vector<int> &nums)
 	{
@@ -71,35 +100,5 @@ public:
 			(target < nums[mi]) ? hi = mi : lo = mi + 1;
 		}
 		return lo;
-	}
-};
-
-
-//记忆化回溯
-class Solution3 {
-public:
-	int lengthOfLIS(vector<int> &nums)
-	{
-		if (nums.empty()) return 0;
-		int len = nums.size();
-		//这里如果用哈希表，使用string作为词典关键码会导致内存超限
-		vector<vector<int>> m(len + 1, vector<int>(len, -1));
-		return backTrack(nums, -1, 0, m);
-	}
-	int backTrack(vector<int> &nums, int preIdx, int curIdx, vector<vector<int>> &m)
-	{
-		int len = nums.size();
-		if (curIdx == len) return 0;
-		if (m[preIdx + 1][curIdx] >= 0) return m[preIdx + 1][curIdx];
-		int increNum = 0;
-		if (preIdx < 0 || nums[curIdx] > nums[preIdx])
-		{
-			increNum = 1 + backTrack(nums, curIdx, curIdx + 1, m);
-		}
-		int noIncreNum = backTrack(nums, preIdx, curIdx + 1, m);
-		//使用词典记录前一个元素与当前元素作组合时升序序列的长度(它们不一定在升序的序列中)
-		//因为preIdx是从-1开始的，所以将preIdx+1看作是preIdx
-		m[preIdx + 1][curIdx] = max(increNum, noIncreNum);
-		return m[preIdx + 1][curIdx];
 	}
 };
