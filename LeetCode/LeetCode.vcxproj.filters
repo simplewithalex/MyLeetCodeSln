@@ -506,9 +506,6 @@
     <ClCompile Include="338.比特位计数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="347.前 K 个高频元素.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="394.字符串解码.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -531,6 +528,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="028.实现strStr%28%29%28KMP算法%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="494.目标和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="543.二叉树的直径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="560.和为K的子数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="581.最短无序连续子数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="347.前K个高频元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

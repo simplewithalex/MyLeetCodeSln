@@ -35,7 +35,7 @@ public:
 		dfs(n, k, 0, used, res);
 		return res;
 	}
-	void dfs(int n, int k, int count, vector<bool> &used,string &res)
+	void dfs(int n, int k, int count, vector<bool> &used, string &res)
 	{
 		if (count == n)
 		{
