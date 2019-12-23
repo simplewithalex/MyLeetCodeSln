@@ -247,6 +247,10 @@
     <ClCompile Include="543.二叉树的直径.cpp" />
     <ClCompile Include="560.和为K的子数组.cpp" />
     <ClCompile Include="581.最短无序连续子数组.cpp" />
+    <ClCompile Include="617.合并二叉树.cpp" />
+    <ClCompile Include="621.任务调度器.cpp" />
+    <ClCompile Include="647.回文子串.cpp" />
+    <ClCompile Include="739.每日温度.cpp" />
     <ClCompile Include="743.网络延迟时间%28迪杰斯特拉最小路径%29.cpp" />
     <ClCompile Include="093.复原IP地址.cpp" />
     <ClCompile Include="main.cpp" />

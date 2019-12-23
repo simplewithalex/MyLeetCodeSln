@@ -545,5 +545,17 @@
     <ClCompile Include="347.前K个高频元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="617.合并二叉树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="621.任务调度器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="647.回文子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="739.每日温度.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
