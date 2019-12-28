@@ -18,7 +18,33 @@ nums2 = [3, 4]
 
 */
 
-class Solution {
+class Solution1 {
+public:
+	double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
+	{
+		int len = nums1.size() + nums2.size();
+		if (len & 1) return findKth(nums1, nums2, (len >> 1) + 1);
+		else return (findKth(nums1, nums2, len >> 1) + findKth(nums1, nums2, (len >> 1) + 1)) / 2.0;
+	}
+	int findKth(vector<int> &nums1, vector<int> &nums2, int k)
+	{
+		int len1 = nums1.size(), len2 = nums2.size();
+		int lo = max(0, k - len2), hi = min(k, len1);
+		while (lo < hi)
+		{
+			int i = lo + ((hi - lo) >> 1);
+			int j = k - i;
+			if (nums2[j - 1] > nums1[i]) lo = i + 1;
+			else hi = i;
+		}
+		int nums1LeftMax = lo == 0 ? INT_MIN : nums1[lo - 1];
+		int nums2leftMax = lo == k ? INT_MIN : nums2[k - lo - 1];
+		return max(nums1LeftMax, nums2leftMax);
+	}
+};
+//https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/jiang-qi-zhuan-wei-zhao-liang-ge-you-xu-shu-zu-de-/
+
+class Solution2 {
 public:
 	double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
 	{

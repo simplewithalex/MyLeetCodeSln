@@ -557,5 +557,8 @@
     <ClCompile Include="739.每日温度.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="035.搜索插入位置.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
