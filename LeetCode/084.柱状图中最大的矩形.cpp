@@ -40,3 +40,4 @@ public:
 		return maxRes;
 	}
 };
+//https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhao-liang-bian-di-yi-ge-xiao-yu-ta-de-zhi-by-powc/

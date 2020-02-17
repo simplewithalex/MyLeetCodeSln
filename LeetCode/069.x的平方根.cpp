@@ -21,25 +21,18 @@
 //使用二分查找的方法。
 class Solution {
 public:
-	int sqrt(int x)
+	int mySqrt(int x)
 	{
+		if (x == 0) return 0;
 		int lo = 1, hi = x;
-		while (lo <= hi)
+		while (lo < hi)
 		{
-			int mid = lo + ((hi - lo) >> 1);
-			if (mid > x / mid)
-			{
-				hi = mid - 1;
-			}
-			else if (mid < x / mid)
-			{
-				lo = mid + 1;
-			}
+			int mi = lo + ((hi - lo + 1) >> 1);
+			if (mi > x / mi)
+				hi = mi - 1;
 			else
-			{
-				return mid;
-			}
+				lo = mi;
 		}
-		return hi;
+		return lo;
 	}
 };

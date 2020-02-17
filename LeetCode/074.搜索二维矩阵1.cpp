@@ -32,16 +32,15 @@ class Solution {
 public:
 	bool searchMatrix(vector<vector<int>> &matrix, int target)
 	{
-		if (matrix.empty()) return false;
+		if (matrix.empty() || matrix[0].empty()) return false;
 		int rows = matrix.size();
 		int cols = matrix[0].size();
-		int lo = 0, hi = rows*cols;
+		int lo = 0, hi = rows*cols - 1;
 		while (lo < hi)
 		{
-			int mi = (lo + hi) >> 1;
-			(target < matrix[mi/cols][mi%cols]) ? hi = mi : lo = mi + 1;
+			int mi = lo + ((hi - lo) >> 1);
+			target > matrix[mi / cols][mi % cols] ? lo = mi + 1 : hi = mi;
 		}
-		lo -= 1;
-		return lo < 0 ? false : matrix[lo/cols][lo%cols] == target;
+		return matrix[lo / cols][lo % cols] == target;
 	}
 };

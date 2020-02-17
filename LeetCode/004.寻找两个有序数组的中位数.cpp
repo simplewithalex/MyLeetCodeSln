@@ -14,7 +14,7 @@ nums2 = [2]
 示例 2:
 nums1 = [1, 2]
 nums2 = [3, 4]
-则中位数是 (2 + 3)/2 = 2.5
+则中位数是 (2 + 3) / 2 = 2.5
 
 */
 
@@ -34,12 +34,16 @@ public:
 		{
 			int i = lo + ((hi - lo) >> 1);
 			int j = k - i;
+			//二分查找法的本质是通过排除错误区间，然后两边收缩逼近到目标数
+			//这个题目中目标数的范围是nums1[i-1] <= nums2[j]与nums2[j-1] <= nums1[i],所以需要排除的区间是nums1[i-1] > nums2[j]与nums2[j-1] > nums1[i]
+			//所以当lo=i+1是收缩左区间因此可以排除nums2[j-1] > nums1[i],当hi=i时收缩右区间可以排除nums1[i-1] > nums2[j],这里直接用else表示这种情况，else里同时包含了正确的情况
+			//所以不断通过对两侧错误区间的排除可以逼近正确的目标数
 			if (nums2[j - 1] > nums1[i]) lo = i + 1;
 			else hi = i;
 		}
 		int nums1LeftMax = lo == 0 ? INT_MIN : nums1[lo - 1];
-		int nums2leftMax = lo == k ? INT_MIN : nums2[k - lo - 1];
-		return max(nums1LeftMax, nums2leftMax);
+		int nums2LeftMax = lo == k ? INT_MIN : nums2[k - lo - 1];
+		return max(nums1LeftMax, nums2LeftMax);
 	}
 };
 //https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/jiang-qi-zhuan-wei-zhao-liang-ge-you-xu-shu-zu-de-/

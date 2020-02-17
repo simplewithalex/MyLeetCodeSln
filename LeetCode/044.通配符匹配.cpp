@@ -47,9 +47,40 @@ p = "a*c?b"
 
 */
 
+//递归
+class Solution1 {
+public:
+	bool isMatch(string s, string p) 
+	{
+		return helper(s, p, 0, 0) > 1;
+	}
+	int helper(string &s, string &p, int i, int j)
+	{
+		int sLen = s.size(), pLen = p.size();
+		if (i == sLen&&j == pLen) return 2;
+		if (i == sLen&&p[j] != '*') return 0;
+		if (j == pLen) return 1;
+		if (s[i] == p[j] || p[j] == '?')
+		{
+			return helper(s, p, i + 1, j + 1);
+		}
+		if (p[j] == '*')
+		{
+			while (j + 1 < pLen && p[j + 1] == '*') ++j;
+			for (int k = 0; k <= sLen - i; ++k)
+			{
+				int res = helper(s, p, i + k, j + 1);
+				if (res == 0 || res == 2) return res;
+			}
+		}
+		return 1;
+	}
+};
+//https://www.cnblogs.com/grandyang/p/4401196.html#4176378
+
 
 //动态规划
-class Solution1 {
+class Solution2 {
 public:
 	bool isMatch(string s, string p) 
 	{
@@ -80,7 +111,7 @@ public:
 
 
 //迭代方法
-class Solution2 {
+class Solution3 {
 public:
 	bool isMatch(string s, string p)
 	{

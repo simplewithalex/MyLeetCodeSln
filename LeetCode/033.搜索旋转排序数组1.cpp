@@ -19,7 +19,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	int search(vector<int> &nums, int target) 
 	{
@@ -39,10 +39,39 @@ public:
 			}
 			else//右半部分有序
 			{
-				if (target>nums[mi] && nums[hi] >= target)
+				if (target > nums[mi] && nums[hi] >= target)
 					lo = mi + 1;
 				else
 					hi = mi - 1;
+			}
+		}
+		return nums[lo] == target ? lo : -1;
+	}
+};
+
+class Solution2 {
+public:
+	int search(vector<int> &nums, int target)
+	{
+		if (nums.empty()) return -1;
+		int len = nums.size();
+		int lo = 0, hi = len - 1;
+		while (lo < hi)
+		{
+			int mi = lo + ((hi - lo) >> 1);
+			if (nums[lo] <= nums[mi]) //左半部分有序
+			{
+				if (target <= nums[mi] && nums[lo] <= target)
+					hi = mi;
+				else
+					lo = mi + 1;
+			}
+			else//右半部分有序
+			{
+				if (target > nums[mi] && nums[hi] >= target)
+					lo = mi + 1;
+				else
+					hi = mi;
 			}
 		}
 		return nums[lo] == target ? lo : -1;

@@ -20,20 +20,20 @@
 
 class Solution {
 public:
-	int minPathSum(vector<vector<int> > &grid)
+	int minPathSum(vector<vector<int>> &grid)
 	{
 		if (grid.empty()) return 0;
 		int rows = grid.size();
 		int cols = grid[0].size();
 		vector<int> dp(rows, grid[0][0]);
-		for (int i = 1; i<rows; ++i)
+		for (int i = 1; i < rows; ++i)
 		{
 			dp[i] = dp[i - 1] + grid[i][0];
 		}
-		for (int i = 1; i<cols; ++i)
+		for (int i = 1; i < cols; ++i)
 		{
 			dp[0] += grid[0][i];
-			for (int j = 1; j<rows; ++j)
+			for (int j = 1; j < rows; ++j)
 				dp[j] = min(dp[j], dp[j - 1]) + grid[j][i];
 		}
 		return dp[rows - 1];

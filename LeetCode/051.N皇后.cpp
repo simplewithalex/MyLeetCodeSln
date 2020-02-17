@@ -28,10 +28,11 @@ class Solution {
 public:
 	std::vector<std::vector<std::string> > solveNQueens(int n)
 	{
-		std::vector<std::vector<std::string> > res;
+		std::vector<std::vector<std::string>> res;
 		std::vector<std::string> nQueens(n, std::string(n, '.'));
 		//避免使用vector<bool>
 		//棋盘共有n列，正斜行有2n-1列，反斜行有2n-1列，共需要5n-2个标志空间
+		//不需要考虑行，因为每次选取都在不同行
 		std::vector<int> flag(5 * n - 2, 0);
 		solveNQueens(res, nQueens, flag, 0, n);
 		return res;
@@ -56,4 +57,4 @@ private:
 		}
 	}
 };
-//https://leetcode.com/problems/n-queens/discuss/19808/Accepted-4ms-c%2B%2B-solution-use-backtracking-and-bitmask-easy-understand.
+//https://leetcode.com/problems/n-queens/discuss/19808/Accepted-4ms-c%2B%2B-solution-use-backtracking-and-bitmask-easy-understand

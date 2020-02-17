@@ -102,8 +102,7 @@ class Solution4 {
 public:
 	int findTargetSumWays(vector<int> &nums, int S) {
 		int sum = accumulate(nums.begin(), nums.end(), 0);
-		if (sum < S) return 0;
-		//这里可以排除-sum>S的情况，负数与1相与不会为0
+		if (S < -sum || S > sum) return 0;
 		if ((sum + S) & 1) return 0;
 		int len = nums.size();
 		sum = (sum + S) >> 1;

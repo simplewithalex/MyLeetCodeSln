@@ -170,9 +170,6 @@
     <ClCompile Include="024.两两交换链表中的节点.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="026.删除排序数组中的重复项.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="027.移除元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -558,6 +555,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="035.搜索插入位置.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="003.无重复字符的最长子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="026.删除排序数组中的重复项1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -25,7 +25,7 @@ class Solution1 {
 public:
 	vector<vector<int>> combine(int n, int k)
 	{
-		if (n <= 0) return{};
+		if (n <= 0) return {};
 		vector<vector<int>> res;
 		vector<int> vec;
 		backTrack(res, vec, 1, n, k);
@@ -52,7 +52,7 @@ class Solution2 {
 public:
 	vector<vector<int>> combine(int n, int k)
 	{
-		if (n <= 0) return{};
+		if (n <= 0) return {};
 		vector<vector<int>> res;
 		vector<int> com(k, 0);
 		int i = 0;

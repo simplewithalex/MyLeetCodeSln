@@ -63,7 +63,7 @@ public:
 			case 'X':
 				res += (res >= 50) ? -10 : 10;
 				break;
-			case'L':
+			case 'L':
 				res += 50;
 				break;
 			case 'C':

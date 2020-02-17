@@ -47,13 +47,66 @@ p = "mis*is*p*."
 
 */
 
-//动态规划
+//从备忘录到动态规划
+//https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode/
+
+//备忘录
 class Solution1 {
 public:
 	bool isMatch(string s, string p)
 	{
 		int sLen = s.size(), pLen = p.size();
-		vector<vector<int>> dp(sLen + 1, vector<int>(pLen + 1, 0));
+		vector<vector<char>> memo(sLen + 1, vector<char>(pLen + 1, -1));
+		return helper(0, s, 0, p, memo);
+	}
+	bool helper(int i, string &s, int j, string &p, vector<vector<char>> &memo)
+	{
+		if (memo[i][j] != -1) return memo[i][j];
+		int sLen = s.size(), pLen = p.size();
+		if (j == pLen) return memo[i][j] = (i == sLen);
+		if (j + 1 < pLen && p[j + 1] == '*')
+		{
+			if (helper(i, s, j + 2, p, memo) || (i < sLen && (p[j] == '.' || s[i] == p[j]) && helper(i + 1, s, j, p, memo))) return memo[i][j] = true;
+		}
+		else
+		{
+			if (i < sLen && ((p[j] == '.' || s[i] == p[j]) && helper(i + 1, s, j + 1, p, memo))) return memo[i][j] = true;
+		}
+		return memo[i][j] = false;
+	}
+};
+
+//动态规划
+class Solution2 {
+public:
+	bool isMatch(string s, string p)
+	{
+		int sLen = s.size(), pLen = p.size();
+		vector<vector<char>> dp(sLen + 1, vector<char>(pLen + 1, false));
+		dp[sLen][pLen] = true;
+		for (int i = sLen; i >= 0; --i)
+		{
+			for (int j = pLen - 1; j >= 0; --j)
+			{
+				if (j + 1 < pLen&&p[j + 1] == '*')
+					dp[i][j] = dp[i][j + 2] || (i < sLen && (p[j] == '.' || s[i] == p[j]) && dp[i + 1][j]);
+				else
+					dp[i][j] = i < sLen && (p[j] == '.' || s[i] == p[j]) && dp[i + 1][j + 1];
+			}
+		}
+		return dp[0][0];
+	}
+};
+
+
+//其他方法
+//动态规划
+class Solution3 {
+public:
+	bool isMatch(string s, string p)
+	{
+		int sLen = s.size(), pLen = p.size();
+		vector<vector<char>> dp(sLen + 1, vector<char>(pLen + 1, 0));
 		dp[0][0] = 1;
 		for (int j = 1; j < dp[0].size(); ++j)
 		{
@@ -79,7 +132,7 @@ public:
 };
 
 //递归
-class Solution2 {
+class Solution4 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -114,56 +167,3 @@ public:
 		}
 	}
 };
-
-//从备忘录到动态规划
-//https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode/
-
-//备忘录
-class Solution3 {
-public:
-	bool isMatch(string s, string p)
-	{
-		int sLen = s.size(), pLen = p.size();
-		vector<vector<char>> memo(sLen + 1, vector<char>(pLen + 1, -1));
-		return helper(0, s, 0, p, memo);
-	}
-	bool helper(int i, string &s, int j, string &p, vector<vector<char>> &memo)
-	{
-		if (memo[i][j] != -1) return memo[i][j];
-		int sLen = s.size(), pLen = p.size();
-		if (j == pLen) return memo[i][j] = (i == sLen);
-		if (p[j + 1] == '*')
-		{
-			if (helper(i, s, j + 2, p, memo) || (i < sLen && (p[j] == '.' || s[i] == p[j]) && helper(i + 1, s, j, p, memo))) return memo[i][j] = true;
-		}
-		else
-		{
-			if (i < sLen && ((p[j] == '.' || s[i] == p[j]) && helper(i + 1, s, j + 1, p, memo))) return memo[i][j] = true;
-		}
-		return memo[i][j] = false;
-	}
-};
-
-//动态规划
-class Solution {
-public:
-	bool isMatch(string s, string p)
-	{
-		int sLen = s.size(), pLen = p.size();
-		vector<vector<char>> dp(sLen + 1, vector<char>(pLen + 1, false));
-		dp[sLen][pLen] = true;
-		for (int i = sLen; i >= 0; --i)
-		{
-			for (int j = pLen - 1; j >= 0; --j)
-			{
-				if (j + 1 < pLen&&p[j + 1] == '*')
-					dp[i][j] = dp[i][j + 2] || (i < sLen && (p[j] == '.' || s[i] == p[j]) && dp[i + 1][j]);
-				else
-					dp[i][j] = i < sLen && (p[j] == '.' || s[i] == p[j]) && dp[i + 1][j + 1];
-			}
-		}
-		return dp[0][0];
-	}
-};
-
-

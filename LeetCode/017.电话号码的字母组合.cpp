@@ -13,7 +13,8 @@
 
 */
 
-class Solution {
+//一种基于链表的迭代方式
+class Solution1 {
 public:
 	vector<string> letterCombinations(string digits)
 	{
@@ -32,4 +33,31 @@ public:
 		return vector<string>(res.begin(), res.end());
 	}
 };
-//此题可以用递归法做，这里用了一种基于链表的迭代方式。
+
+//普通递归法
+class Solution2 {
+public:
+	vector<string> letterCombinations(string digits)
+	{
+		if (digits.empty()) return{};
+		vector<string> v{ "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+		vector<string> res;
+		string str;
+		backtrack(digits, v, res, str, 0);
+		return res;
+	}
+	void backtrack(string &digits, vector<string> &v, vector<string> &res, string &str, int index)
+	{
+		if (index == digits.size())
+		{
+			res.push_back(str);
+			return;
+		}
+		for (int i = 0; i < v[digits[index] - '0'].size(); ++i)
+		{
+			str.push_back(v[digits[index] - '0'][i]);
+			backtrack(digits, v, res, str, index + 1);
+			str.pop_back();
+		}
+	}
+};

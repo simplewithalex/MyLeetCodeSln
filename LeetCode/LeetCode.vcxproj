@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="001.两数之和.cpp" />
     <ClCompile Include="002.两数相加.cpp" />
+    <ClCompile Include="003.无重复字符的最长子串.cpp" />
     <ClCompile Include="004.寻找两个有序数组的中位数.cpp" />
     <ClCompile Include="005.最长回文子串.cpp" />
     <ClCompile Include="006.Z字形变换.cpp" />
@@ -103,7 +104,7 @@
     <ClCompile Include="023.合并K个排序链表.cpp" />
     <ClCompile Include="024.两两交换链表中的节点.cpp" />
     <ClCompile Include="025.K个一组翻转链表.cpp" />
-    <ClCompile Include="026.删除排序数组中的重复项.cpp" />
+    <ClCompile Include="026.删除排序数组中的重复项1.cpp" />
     <ClCompile Include="027.移除元素.cpp" />
     <ClCompile Include="028.实现strStr%28%29%28KMP算法%29.cpp" />
     <ClCompile Include="029.两数相除.cpp" />

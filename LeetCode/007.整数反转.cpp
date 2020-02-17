@@ -38,12 +38,12 @@ public:
 		{
 			if (sign)
 			{
-				if ((INT_MIN / 10 > res) || (INT_MIN / 10 == res && INT_MIN % 10 > x % 10))
+				if ((INT_MIN / 10 > res) || (INT_MIN / 10 == res && INT_MIN % 10 > x))
 					return 0;
 			}
 			else
 			{
-				if ((INT_MAX / 10 < res) || (INT_MAX / 10 == res && INT_MAX % 10 < x % 10))
+				if ((INT_MAX / 10 < res) || (INT_MAX / 10 == res && INT_MAX % 10 < x))
 					return 0;
 			}
 			res = res * 10 + x % 10;

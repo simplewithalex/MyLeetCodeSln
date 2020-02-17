@@ -21,7 +21,7 @@
 */
 
 //通用解法，同样可用于033题
-class Solution {
+class Solution1 {
 public:
 	bool search(vector<int> &nums, int target)
 	{
@@ -39,7 +39,7 @@ public:
 				else
 					lo = mi + 1;
 			}
-			else if (nums[lo]>nums[mi])//右半部分有序
+			else if (nums[lo] > nums[mi])//右半部分有序
 			{
 				if (target>nums[mi] && nums[hi] >= target)
 					lo = mi + 1;
@@ -48,6 +48,40 @@ public:
 			}
 			else
 				++lo;
+		}
+		return nums[lo] == target;
+	}
+};
+
+class Solution2 {
+public:
+	bool search(vector<int> &nums, int target)
+	{
+		if (nums.empty()) return false;
+		int len = nums.size();
+		int lo = 0, hi = len - 1;
+		while (lo < hi)
+		{
+			int mi = lo + ((hi - lo) >> 1);
+			if (nums[lo] < nums[mi]) //左半部分有序
+			{
+				if (target <= nums[mi] && nums[lo] <= target)
+					hi = mi;
+				else
+					lo = mi + 1;
+			}
+			else if (nums[lo] > nums[mi])//右半部分有序
+			{
+				if (target > nums[mi] && nums[hi] >= target)
+					lo = mi + 1;
+				else
+					hi = mi;
+			}
+			else
+			{
+				if (target == nums[mi]) return true;
+				++lo;
+			}
 		}
 		return nums[lo] == target;
 	}

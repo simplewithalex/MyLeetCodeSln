@@ -12,7 +12,7 @@
 每个单词的长度大于 0，小于等于 maxWidth。
 输入单词数组 words 至少包含一个单词。
 
-示例:
+示例 1:
 输入:
 words = ["This", "is", "an", "example", "of", "text", "justification."]
 maxWidth = 16
@@ -55,15 +55,15 @@ maxWidth = 20
 
 class Solution {
 public:
-	vector<string> fullJustify(vector<string> &words, int maxWidth) 
+	vector<string> fullJustify(vector<string> &words, int maxWidth)
 	{
 		vector<string> res;
 		for (int i = 0, k = 0, count = 0; i < words.size(); i += k, k = 0, count = 0)
 		{
-			//单词长度除了本身外，还应再加一个空格(除了最后一个单词),所以这里减去k
+			//单词长度除了本身外，还应该再加一个空格。
 			while (i + k < words.size() && count + words[i + k].size() <= maxWidth - k)
 			{
-				count += words.size();
+				count += words[i + k].size();
 				++k;
 			}
 			string temp = words[i];
@@ -75,7 +75,6 @@ public:
 					temp += string((maxWidth - count) / (k - 1) + (j < (maxWidth - count) % (k - 1)), ' ');
 				temp += words[i + j + 1];
 			}
-			//一行只有一个单词的情况
 			temp += string(maxWidth - temp.size(), ' ');
 			res.push_back(temp);
 		}

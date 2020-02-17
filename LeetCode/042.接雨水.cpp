@@ -12,7 +12,8 @@
 
 */
 
-class Solution {
+//栈方法
+class Solution1 {
 public:
 	int trap(int A[], int n)
 	{
@@ -38,4 +39,30 @@ public:
 		return res;
 	}
 };
-//栈解法：https://leetcode.com/problems/trapping-rain-water/discuss/17414/A-stack-based-solution-for-reference-inspired-by-Histogram
+//https://leetcode.com/problems/trapping-rain-water/discuss/17414/A-stack-based-solution-for-reference-inspired-by-Histogram
+
+//双指针
+class Solution2 {
+public:
+	int trap(vector<int>& height)
+	{
+		int len = height.size();
+		int res = 0;
+		int left = 0, right = len - 1;
+		int leftMax = 0, rightMax = 0;
+		while (left < right)
+		{
+			if (height[left] < height[right])
+			{
+				height[left] >= leftMax ? leftMax = height[left] : res += leftMax - height[left];
+				++left;
+			}
+			else
+			{
+				height[right] >= rightMax ? rightMax = height[right] : res += rightMax - height[right];
+				--right;
+			}
+		}
+		return res;
+	}
+};

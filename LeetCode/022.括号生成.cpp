@@ -19,7 +19,7 @@ class Solution {
 public:
 	vector<string> generateParenthesis(int n)
 	{
-		if (n == 0) return{};
+		if (n == 0) return {};
 		vector<string> res;
 		recursion(res, "", 0, 0, n);
 		return res;

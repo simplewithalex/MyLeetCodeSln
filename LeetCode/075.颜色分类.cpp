@@ -20,56 +20,34 @@
 
 */
 
-class Solution1 {
-public:
-	void sortColors(int A[], int n)
-	{
-		int front = 0, behind = n - 1;
-		for (int i = 0; i <= behind; ++i)
-		{
-			while (A[i] == 2 && i < behind)
-			{
-				swap(A[i], A[behind--]);
-			}
-			while (A[i] == 0 && i>front)
-			{
-				swap(A[i], A[front++]);
-			}
-		}
-	}
-};
+//荷兰国旗问题
+//https://leetcode-cn.com/problems/sort-colors/solution/kuai-su-pai-xu-partition-guo-cheng-she-ji-xun-huan/
 
-//如果不是3个数而是多个数，可以考虑扩展下面的方法。
-class Solution2 {
+class Solution {
 public:
-	void sortColors(vector<int> &nums)
+	void sortColors(vector<int> &nums) 
 	{
-		int n0 = -1, n1 = -1, n2 = -1;
 		int len = nums.size();
-		for (int i = 0; i < len; ++i)
+		if (len < 2) return;
+		//[0,zero) = 0, [zero,i) = 1, [two,len) = 2
+		int zero = 0, two = len, i = 0;
+		while (i < two)
 		{
 			if (nums[i] == 0)
 			{
-				++n2;
-				nums[n2] = 2;
-				++n1;
-				nums[n1] = 1;
-				++n0;
-				nums[n0] = 0;
+				swap(nums[i], nums[zero]);
+				++i;
+				++zero;
 			}
 			else if (nums[i] == 1)
 			{
-				++n2;
-				nums[n2] = 2;
-				++n1;
-				nums[n1] = 1;
+				++i;
 			}
-			else if (nums[i] == 2)
+			else
 			{
-				++n2;
-				nums[n2] = 2;
+				--two;
+				swap(nums[i], nums[two]);
 			}
 		}
 	}
 };
-//方法参考：https://leetcode.wang/leetCode-75-Sort-Colors.html

@@ -14,6 +14,7 @@
 
 */
 
+//003,076,438属于同一类型的题目
 class Solution {
 public:
 	string minWindow(string S, string T)
@@ -34,8 +35,8 @@ public:
 					minLen = end - start;
 					minStart = start;
 				}
+				if (m[S[start]] == 0) ++count;
 				++m[S[start]];
-				if (m[S[start]] > 0) ++count;
 				++start;
 			}
 		}

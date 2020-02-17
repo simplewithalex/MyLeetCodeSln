@@ -16,7 +16,8 @@
 
 */
 
-class Solution {
+//使用栈
+class Solution1 {
 public:
 	int longestValidParentheses(string s)
 	{
@@ -56,3 +57,28 @@ public:
 	}
 };
 //https://leetcode.com/problems/longest-valid-parentheses/discuss/14126/My-O(n)-solution-using-a-stack
+
+//常数空间复杂度
+class Solution2 {
+public:
+	int longestValidParentheses(string s)
+	{
+		return helper(s, '(', ')');
+	}
+	int helper(string &s, char openParen, char closeParen)
+	{
+		int left = 0, right = 0, maxLength = 0;
+		int len = s.size();
+		for (int i = 0; i < len; ++i)
+		{
+			if (s[i] == openParen) ++left;
+			else ++right;
+			if (left == right) maxLength = max(maxLength, right * 2);
+			else if (right > left) left = right = 0;
+		}
+		//从右到左的情况
+		reverse(s.begin(), s.end());
+		if (openParen == '(') maxLength = max(maxLength, helper(s, ')', '('));
+		return maxLength;
+	}
+};

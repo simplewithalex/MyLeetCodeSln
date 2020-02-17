@@ -40,7 +40,7 @@ public:
 		while (dvd >= dvs)
 		{
 			int temp = dvs, m = 1;
-			//避免temp << 1 成为 0
+			//避免temp << 1 成为0或负数
 			while ((temp << 1 <= dvd) && (temp << 1) > 0)
 			{
 				temp <<= 1;

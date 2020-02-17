@@ -16,7 +16,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	vector<int> searchRange(vector<int> &nums, int target) 
 	{
@@ -33,8 +33,45 @@ public:
 		while (lo < hi)
 		{
 			int mi = lo + ((hi - lo) >> 1);
-			(nums[mi]>target) ? hi = mi : lo = mi + 1;
+			(nums[mi] > target) ? hi = mi : lo = mi + 1;
 		}
 		return lo;
+	}
+};
+
+//根据035题标准二分查找模板
+class Solution2 {
+public:
+	vector<int> searchRange(vector<int> &nums, int target)
+	{
+		if (nums.empty()) return{ -1, -1 };
+		int first = lowerBound(nums, target);
+		if (first == -1) return{ -1, -1 };
+		int second = upBound(nums, target);
+		return { first, second };
+	}
+	//得到相同目标元素的最左边一个
+	int lowerBound(vector<int> &nums, int target)
+	{
+		int len = nums.size();
+		int lo = 0, hi = len - 1;
+		while (lo < hi)
+		{
+			int mi = lo + ((hi - lo) >> 1);
+			(nums[mi] < target) ? lo = mi + 1 : hi = mi;
+		}
+		return nums[lo] == target ? lo : -1;
+	}
+	//得到相同目标元素的最右边一个
+	int upBound(vector<int> &nums, int target)
+	{
+		int len = nums.size();
+		int lo = 0, hi = len - 1;
+		while (lo < hi)
+		{
+			int mi = lo + ((hi - lo + 1) >> 1);
+			(nums[mi] > target) ? hi = mi - 1 : lo = mi;
+		}
+		return nums[lo] == target ? lo : -1;
 	}
 };

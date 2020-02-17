@@ -29,57 +29,49 @@ exection -> execution (插入 'u')
 
 */
 
-
 //解题思路：
-//https://leetcode-cn.com/problems/edit-distance/solution/zi-di-xiang-shang-he-zi-ding-xiang-xia-by-powcai-3/
+//https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-mian-shi-ti-xiang-jie-by-labuladong/
 
-//普通的递归，会超时
+//备忘录解法
 class Solution1 {
 public:
 	int minDistance(string word1, string word2)
 	{
 		int len1 = word1.size(), len2 = word2.size();
-		if (len1 == 0)
-			return len2;
-		if (len2 == 0)
-			return len1;
-		int x = minDistance(word1, word2.substr(0, len2 - 1)) + 1;
-		int y = minDistance(word1.substr(0, len1 - 1), word2) + 1;
-		int z = minDistance(word1.substr(0, len1 - 1), word2.substr(0, len2 - 1));
-		if (word1[len1 - 1] != word2[len2 - 1]) ++z;
-		return min(min(x, y), z);
+		vector<vector<int>> memo(len1, vector<int>(len2, -1));
+		return helper(word1, word2, len1 - 1, len2 - 1, memo);
+	}
+	int helper(string &s1,string &s2,int i, int j, vector<vector<int>> &memo)
+	{
+		if (i == -1) return j + 1;
+		if (j == -1) return i + 1;
+		if (memo[i][j] != -1) return memo[i][j];
+		if (s1[i] == s2[j]) memo[i][j] = helper(s1, s2, i - 1, j - 1, memo);
+		else memo[i][j] = min(min(helper(s1, s2, i, j - 1, memo) + 1, helper(s1, s2, i - 1, j, memo) + 1), helper(s1, s2, i - 1, j - 1, memo) + 1);
+		return memo[i][j];
 	}
 };
 
 //动态规划解法
-class Solution {
+class Solution2 {
 public:
 	int minDistance(string word1, string word2)
 	{
 		int len1 = word1.size(), len2 = word2.size();
-		vector<int> dp(len1 + 1, 0);
+		vector<vector<int>> dp(len1 + 1, vector<int>(len2 + 1, 0));
+		for (int i = 1; i <= len1; ++i) dp[i][0] = i;
+		for (int j = 1; j <= len2; ++j) dp[0][j] = j;
 		for (int i = 1; i <= len1; ++i)
 		{
-			dp[i] = i;
-		}
-		for (int j = 1; j <= len2; ++j)
-		{
-			int pre = dp[0];
-			dp[0] = j;
-			for (int i = 1; i <= len1; ++i)
+			for (int j = 1; j <= len2; ++j)
 			{
-				int temp = dp[i];
-				if (word2[j - 1] == word1[i - 1])
-				{
-					dp[i] = pre;
-				}
+				if (word1[i - 1] == word2[j - 1]) dp[i][j] = dp[i - 1][j - 1];
 				else
 				{
-					dp[i] = min(dp[i], min(dp[i - 1], pre)) + 1;
+					dp[i][j] = min(min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), dp[i - 1][j - 1] + 1);
 				}
-				pre = temp;
 			}
 		}
-		return dp[len1];
+		return dp[len1][len2];
 	}
 };

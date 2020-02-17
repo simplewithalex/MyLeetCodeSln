@@ -37,11 +37,11 @@ public:
 			int j = 0;
 			while (j < count)
 			{
-				string temp = s.substr(i + j*num, num);
+				string temp = s.substr(i + j * num, num);
 				if (m.count(temp))
 				{
 					++seen[temp];
-					if (seen[temp]>m[temp]) break;
+					if (seen[temp] > m[temp]) break;//连续多个相同超出实际数目
 				}
 				else break;
 				++j;

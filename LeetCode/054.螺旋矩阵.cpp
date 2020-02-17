@@ -46,7 +46,7 @@ public:
 			}
 			--endCol;
 
-			if (startRow > endRow || startCol>endCol) break;
+			if (startRow > endRow || startCol > endCol) break;
 
 			for (int i = endCol; i >= startCol; --i)
 			{

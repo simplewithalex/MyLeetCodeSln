@@ -31,6 +31,7 @@ s: "abab" p: "ab"
 */
 
 //双指针解法
+//003,076,438属于同一类型的题目
 class Solution {
 public:
 	vector<int> findAnagrams(string s, string p)
