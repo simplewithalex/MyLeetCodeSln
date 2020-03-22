@@ -26,48 +26,108 @@ X O X X
 
 */
 
-class Solution {
+//DFS
+class Solution1 {
 public:
 	void solve(vector<vector<char>> &board)
 	{
-		int row = board.size();
-		if (!row) return;
-		int col = board[0].size();
-		int i = 0, j = 0;
-		for (i = 0; i<row; ++i)
+		if (board.empty() || board[0].empty()) return;
+		int rows = board.size(), cols = board[0].size();
+		for (int i = 0; i < rows; ++i)
 		{
-			find(board, i, 0, row, col);
-			if (col>1)
-				find(board, i, col - 1, row, col);
+			for (int j = 0; j < cols; ++j)
+			{
+				if ((i == 0 || i == rows - 1 || j == 0 || j == cols - 1) && board[i][j] == 'O')
+					helper(board, i, j, rows, cols);
+			}
 		}
-		for (j = 1; j<col - 1; ++j)
+		for (int i = 0; i < rows; ++i)
 		{
-			find(board, 0, j, row, col);
-			if (row>1)
-				find(board, row - 1, j, row, col);
+			for (int j = 0; j < cols; ++j)
+			{
+				if (board[i][j] == 'O') board[i][j] = 'X';
+				if (board[i][j] == '#') board[i][j] = 'O';
+			}
 		}
-		for (i = 0; i<row; ++i)
-			for (j = 0; j<col; j++)
-				if (board[i][j] == 'O')
-					board[i][j] = 'X';
-		for (i = 0; i<row; ++i)
-			for (j = 0; j<col; ++j)
-				if (board[i][j] == '1')
-					board[i][j] = 'O';
 	}
-	void find(vector<vector<char>> &vec, int i, int j, int row, int col)
+	void helper(vector<vector<char>> &board, int i, int j, int rows, int cols)
 	{
-		if (vec[i][j] == 'O')
+		if (i < 0 || j < 0 || i >= rows || j >= cols || board[i][j] == 'X' || board[i][j] == '#') return;
+		board[i][j] = '#';
+		helper(board, i - 1, j, rows, cols);
+		helper(board, i + 1, j, rows, cols);
+		helper(board, i, j - 1, rows, cols);
+		helper(board, i, j + 1, rows, cols);
+	}
+};
+
+//并查集
+class UF {
+private:
+	vector<int> id;
+public:
+	UF(int total)
+	{
+		for (int i = 0; i < total; ++i) id.push_back(i);
+	}
+	int find(int x)
+	{
+		if (id[x] != x) id[x] = find(id[x]);
+		return id[x];
+	}
+	void unionpq(int p, int q)
+	{
+		int pRoot = find(p);
+		int qRoot = find(q);
+		if (pRoot == qRoot) return;
+		id[pRoot] = qRoot;
+	}
+	bool isConnected(int p, int q)
+	{
+		return find(p) == find(q);
+	}
+};
+
+class Solution2 {
+public:
+	void solve(vector<vector<char>> &board)
+	{
+		if (board.empty() || board[0].empty()) return;
+		int rows = board.size(), cols = board[0].size();
+		UF uf(rows*cols + 1);
+		int dummyNode = rows*cols;
+		for (int i = 0; i < rows; ++i)
 		{
-			vec[i][j] = '1';
-			if (i - 1 > 0)
-				find(vec, i - 1, j, row, col);
-			if (j - 1 > 0)
-				find(vec, i, j - 1, row, col);
-			if (i + 1 < row - 1)
-				find(vec, i + 1, j, row, col);
-			if (j + 1 < col - 1)
-				find(vec, i, j + 1, row, col);
+			for (int j = 0; j < cols; ++j)
+			{
+				if (board[i][j] == 'O')
+				{
+					if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1)
+					{
+						uf.unionpq(i*cols + j, dummyNode);
+					}
+					else
+					{
+						if (board[i - 1][j] == 'O')
+							uf.unionpq(i*cols + j, (i - 1)*cols + j);
+						if (board[i + 1][j] == 'O')
+							uf.unionpq(i*cols + j, (i + 1)*cols + j);
+						if (board[i][j - 1] == 'O')
+							uf.unionpq(i*cols + j, i*cols + j - 1);
+						if (board[i][j + 1] == 'O')
+							uf.unionpq(i*cols + j, i*cols + j + 1);
+					}
+				}
+			}
+		}
+		for (int i = 0; i < rows; ++i)
+		{
+			for (int j = 0; j < cols; ++j)
+			{
+				if (!uf.isConnected(i*cols + j, dummyNode)) board[i][j] = 'X';
+			}
 		}
 	}
 };
+
+//https://leetcode-cn.com/problems/surrounded-regions/solution/bfsdi-gui-dfsfei-di-gui-dfsbing-cha-ji-by-ac_pipe/

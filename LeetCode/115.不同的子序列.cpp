@@ -36,14 +36,41 @@ babgbag
 babgbag
 ^    ^^
 babgbag
-^  ^^
+  ^  ^^
 babgbag
-^^^
+    ^^^
 
 */
 
-
+//备忘录算法
 class Solution1 {
+public:
+	int numDistinct(string S, string T)
+	{
+		int sLen = S.size(), tLen = T.size();
+		vector<vector<int>> memo(sLen + 1, vector<int>(tLen + 1, -1));
+		return helper(S, 0, T, 0, memo);
+	}
+	int helper(string &S,int si,string &T,int ti,vector<vector<int>> &memo)
+	{
+		if (ti == T.size()) return 1;
+		if (si == S.size()) return 0;
+		if (memo[si][ti] > -1) return memo[si][ti];
+		int count = 0;
+		if (S[si] == T[ti])
+		{
+			count = helper(S, si + 1, T, ti + 1, memo) + helper(S, si + 1, T, ti, memo);
+		}
+		else
+		{
+			count = helper(S, si + 1, T, ti, memo);
+		}
+		return memo[si][ti] = count;
+	}
+};
+
+//动态规划
+class Solution2 {
 public:
 	int numDistinct(string S, string T)
 	{
@@ -73,44 +100,3 @@ public:
 };
 //DP Solution. Thanks for this link.
 //https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
-
-
-//普通的记忆化回溯方法供参考
-class Solution2 {
-public:
-	int numDistinct(string s, string t) 
-	{
-		int res = 0;
-		unordered_map<string, int> m;
-		backTrack(s, 0, t, 0, res, m);
-		return res;
-	}
-	void backTrack(string &s, int sIdx, string &t, int tIdx, int &res, unordered_map<string, int> &m)
-	{
-		if (tIdx == t.size())
-		{
-			++res;
-			return;
-		}
-		if (sIdx == s.size())
-		{
-			return;
-		}
-		//使用哈希表记录在当前s下标与t下标时，后面的字符串会增加的匹配数量。
-		string key = to_string(sIdx) + "@" + to_string(tIdx);
-		if (m.count(key))
-		{
-			res += m[key];
-			return;
-		}
-		int preCount = res;
-		for (int i = sIdx; i < s.size(); ++i)
-		{
-			if (s[i] == t[tIdx])
-			{
-				backTrack(s, i + 1, t, tIdx + 1, res, m);
-			}
-		}
-		m[key] = res - preCount;
-	}
-};

@@ -32,7 +32,9 @@ struct TreeLinkNode
 
 
 //该方法是一种通用的方法，同样可以解决116题。
-class Solution {
+
+//迭代
+class Solution1 {
 public:
 	void connect(TreeLinkNode *root)
 	{
@@ -75,5 +77,33 @@ public:
 			head = nullptr;
 			pre = nullptr;
 		}
+	}
+};
+
+//递归
+class Solution2 {
+public:
+	void connect(TreeLinkNode *root)
+	{
+		if (!root) return;
+		if (root->left)
+		{
+			if (root->right) root->left->next = root->right;
+			else root->left->next = findNext(root);
+		}
+		if (root->right) root->right->next = findNext(root);
+		connect(root->right);
+		connect(root->left);
+	}
+	TreeLinkNode *findNext(TreeLinkNode *node)
+	{
+		if (!node) return nullptr;
+		while (node->next)
+		{
+			if (node->next->left) return node->next->left;
+			if (node->next->right) return node->next->right;
+			node = node->next;
+		}
+		return nullptr;
 	}
 };

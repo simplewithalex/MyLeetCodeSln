@@ -22,7 +22,7 @@ class Solution1 {
 public:
 	vector<int> inorderTraversal(TreeNode *root)
 	{
-		if (!root) return{};
+		if (!root) return {};
 		stack<TreeNode *> s;
 		vector<int> res;
 		TreeNode *node = root;
@@ -82,3 +82,5 @@ public:
 		return res;
 	}
 };
+//非递归，不用栈，O(1)空间，需要用到Morris中序遍历。
+//参考https://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html

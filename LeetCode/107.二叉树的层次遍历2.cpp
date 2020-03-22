@@ -29,7 +29,7 @@ class Solution1 {
 public:
 	vector<vector<int>> levelOrderBottom(TreeNode *root)
 	{
-		if (!root) return{};
+		if (!root) return {};
 		stack<vector<int>> s;
 		vector<vector<int>> res;
 		queue<TreeNode *> q;
@@ -64,7 +64,7 @@ class Solution2 {
 public:
 	vector<vector<int>> levelOrderBottom(TreeNode *root)
 	{
-		if (!root) return{};
+		if (!root) return {};
 		vector<vector<int>> res;
 		trav(root, 0, res);
 		return res;

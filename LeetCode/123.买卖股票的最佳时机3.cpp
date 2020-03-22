@@ -29,50 +29,8 @@
 
 */
 
-//动态规划
-class Solution1
-{
-public:
-	int maxProfit(vector<int> &prices)
-	{
-		if (prices.empty()) return 0;
-		int k = 2;
-		vector<vector<int>> dp(prices.size(), vector<int>(k + 1, 0));
-		for (int i = 1; i <= k; ++i)
-		{
-			int minNum = prices[0];
-			for (int j = 1; j < prices.size(); ++j)
-			{
-				minNum = min(prices[j] - dp[j][i - 1], minNum);
-				dp[j][i] = max(dp[j - 1][i], prices[j] - minNum);
-			}
-		}
-		return dp[prices.size() - 1][k];
-	}
-};
-
-//有限状态机
-class Solution2 
-{
-public:
-	int maxProfit(vector<int> &prices)
-	{
-		if (prices.empty()) return 0;
-		int s1 = -prices[0], s2 = INT_MIN, s3 = INT_MIN, s4 = INT_MIN;
-		for (int i = 1; i<prices.size(); ++i)
-		{
-			s1 = max(s1, -prices[i]);
-			s2 = max(s2, s1 + prices[i]);
-			s3 = max(s3, s2 - prices[i]);
-			s4 = max(s4, s3 + prices[i]);
-		}
-		return max(0, s4);
-	}
-};
-//https://leetcode.wang/leetcode-123-Best-Time-to-Buy-and-Sell-StockIII.html
-
 //状态机解法
-class Solution3 {
+class Solution1 {
 public:
 	int maxProfit(vector<int> &prices)
 	{
@@ -98,3 +56,46 @@ public:
 	}
 };
 //https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/
+
+
+//动态规划
+class Solution2
+{
+public:
+	int maxProfit(vector<int> &prices)
+	{
+		if (prices.empty()) return 0;
+		int k = 2;
+		vector<vector<int>> dp(prices.size(), vector<int>(k + 1, 0));
+		for (int i = 1; i <= k; ++i)
+		{
+			int minNum = prices[0];
+			for (int j = 1; j < prices.size(); ++j)
+			{
+				minNum = min(prices[j] - dp[j][i - 1], minNum);
+				dp[j][i] = max(dp[j - 1][i], prices[j] - minNum);
+			}
+		}
+		return dp[prices.size() - 1][k];
+	}
+};
+
+//有限状态机
+class Solution3
+{
+public:
+	int maxProfit(vector<int> &prices)
+	{
+		if (prices.empty()) return 0;
+		int s1 = -prices[0], s2 = INT_MIN, s3 = INT_MIN, s4 = INT_MIN;
+		for (int i = 1; i<prices.size(); ++i)
+		{
+			s1 = max(s1, -prices[i]);
+			s2 = max(s2, s1 + prices[i]);
+			s3 = max(s3, s2 - prices[i]);
+			s4 = max(s4, s3 + prices[i]);
+		}
+		return max(0, s4);
+	}
+};
+//https://leetcode.wang/leetcode-123-Best-Time-to-Buy-and-Sell-StockIII.html

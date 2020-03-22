@@ -19,24 +19,45 @@
 
 */
 
-
-//典型的动态规划题目
-//假设当n为5时，我们需要考虑1-5分别为根节点的情况，左子树和右子树分别能容纳的个数，
-//然后运用动态规划求出。
-class Solution {
+//备忘录
+class Solution1 {
 public:
 	int numTrees(int n)
 	{
 		if (n == 0) return 0;
-		if (n == 1) return 1;
+		vector<int> memo(n + 1, 0);
+		return helper(n, memo);
+	}
+	int helper(int n, vector<int> &memo)
+	{
+		if (memo[n] > 0) return memo[n];
+		if (n <= 1) return 1;
+		int res = 0;
+		for (int i = 1; i <= n; ++i)
+		{
+			int left = helper(i - 1, memo);
+			int right = helper(n - i, memo);
+			res += left*right;
+		}
+		return memo[n] = res;
+	}
+};
+
+//动态规划
+//假设当n为5时，我们需要考虑1-5分别为根节点的情况，左子树和右子树分别能容纳的个数，
+//然后运用动态规划求出。
+class Solution2 {
+public:
+	int numTrees(int n)
+	{
+		if (n == 0) return 0;
 		vector<int> dp(n + 1);
 		dp[0] = 1;
-		dp[1] = 1;
-		for (int i = 2; i <= n; ++i)
+		for (int i = 1; i <= n; ++i)
 		{
-			for (int j = 0; j<i; ++j)
+			for (int j = 1; j <= i; ++j)
 			{
-				dp[i] += dp[j] * dp[i - j - 1];
+				dp[i] += dp[j - 1] * dp[i - j];
 			}
 		}
 		return dp[n];

@@ -17,7 +17,7 @@
 
 */
 
-class Solution {
+class Solution1 {
 public:
 	vector<TreeNode *> generateTrees(int n)
 	{
@@ -45,5 +45,42 @@ public:
 				}
 		}
 		return vec;
+	}
+};
+
+
+//动态规划(技巧性)
+//https://leetcode.wang/leetCode-95-Unique-Binary-Search-TreesII.html
+class Solution2 {
+public:
+	vector<TreeNode *> generateTrees(int n)
+	{
+		if (n == 0) return {};
+		vector<vector<TreeNode *>> dp(n + 1);
+		dp[0].push_back(nullptr);
+		for (int i = 1; i <= n; ++i)
+		{
+			for (int j = 1; j <= i; ++j)
+			{
+				int leftNum = j - 1, rightNum = i - j;
+				for (TreeNode *lt : dp[leftNum])
+					for (TreeNode *rt : dp[rightNum])
+					{
+						TreeNode *root = new TreeNode(j);
+						root->left = lt;//小技巧，复用左子树指针
+						root->right = clone(rt, j);
+						dp[i].push_back(root);
+					}
+			}
+		}
+		return dp[n];
+	}
+	TreeNode * clone(TreeNode *node, int offset)
+	{
+		if (!node) return nullptr;
+		TreeNode *root = new TreeNode(node->val + offset);
+		root->left = clone(node->left, offset);
+		root->right = clone(node->right, offset);
+		return root;
 	}
 };

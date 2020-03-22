@@ -18,7 +18,7 @@ class Solution {
 public:
 	vector<int> getRow(int rowIndex)
 	{
-		if (rowIndex<0) return{};
+		if (rowIndex<0) return {};
 		vector<int> res(rowIndex + 1);
 		res[0] = 1;
 		for (int i = 1; i <= rowIndex; ++i)

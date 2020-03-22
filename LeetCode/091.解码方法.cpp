@@ -22,24 +22,64 @@
 
 */
 
-class Solution {
+//备忘录算法
+class Solution1 {
 public:
 	int numDecodings(string s)
 	{
 		int len = s.size();
-		if (s[0] == '0' || len == 0) return 0;
+		vector<int> memo(len, -1);
+		return s.empty() ? 0 : helper(s, 0, memo);
+	}
+	int helper(string &s, int i, vector<int> &memo)
+	{
+		int len = s.size();
+		if (i == len) return 1;
+		if (s[i] == '0') return 0;
+		if (memo[i] > 0) return memo[i];
+		int res = helper(s, i + 1, memo);
+		if (i < len - 1 && (s[i] == '1' || (s[i] == '2'&&s[i + 1] < '7'))) res += helper(s, i + 2, memo);
+		return memo[i] = res;
+	}
+};
+
+//自底而上的动态规划
+class Solution2 {
+public:
+	int numDecodings(string s)
+	{
+		if (s.empty()) return 0;
+		int len = s.size();
 		vector<int> dp(len + 1, 0);
-		dp[0] = 1;
-		dp[1] = 1;
-		for (int i = 2; i <= len; ++i)
+		dp[len] = 1;
+		for (int i = len - 1; i >= 0; --i)
 		{
-			int first = stoi(s.substr(i - 1, 1));
-			int second = stoi(s.substr(i - 2, 2));
-			if (first >= 1 && first <= 9)
-				dp[i] += dp[i - 1];
-			if (second >= 10 && second <= 26)
-				dp[i] += dp[i - 2];
+			if (s[i] == '0') dp[i] = 0;
+			else
+			{
+				dp[i] = dp[i + 1];
+				if (i < len - 1 && (s[i] == '1' || (s[i] == '2'&&s[i + 1] < '7'))) dp[i] += dp[i + 2];
+			}
 		}
-		return dp[len];
+		return dp[0];
+	}
+};
+
+//空间优化
+class Solution3 {
+public:
+	int numDecodings(string s)
+	{
+		if (s.empty()) return 0;
+		int len = s.size();
+		int res = 1, k = 0;
+		for (int i = len - 1; i >= 0; --i)
+		{
+			int cur = (s[i] == '0') ? 0 : res;
+			if (i < len - 1 && (s[i] == '1' || (s[i] == '2'&&s[i + 1] < '7'))) cur += k;
+			k = res;
+			res = cur;
+		}
+		return res;
 	}
 };

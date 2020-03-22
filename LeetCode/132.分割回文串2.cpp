@@ -83,7 +83,6 @@ public:
 };
 
 //自底而上的动态规划
-
 class Solution3 {
 public:
 	int minCut(string s) 
@@ -99,30 +98,19 @@ public:
 				isPal[i][j] = (s[i] == s[j] && (palLen < 3 || isPal[i + 1][j - 1]));
 			}
 		}
-		vector<int> dp(len);
-		dp[0] = 0;
-		for (int i = 1; i < len; ++i)
+		vector<int> dp(len + 1);
+		dp[0] = -1;
+		for (int i = 0; i < len; ++i)
 		{
 			int minNum = INT_MAX;
+			//这里不一定后面字符串是回文串就是最优情况，比如abbab，还是需要向后继续判断
 			for (int j = 0; j <= i; ++j)
 			{
-				//这里不一定后面字符串是回文串就是最优情况，比如abbab，还是需要向后继续判断
-				if (isPal[j][i])
-				{
-					if (j == 0)
-					{
-						minNum = 0;
-						break;
-					}
-					else
-					{
-						minNum = min(minNum, dp[j - 1] + 1);
-					}
-				}
+				if (isPal[j][i]) minNum = min(minNum, dp[j] + 1);
 			}
-			dp[i] = minNum;
+			dp[i + 1] = minNum;
 		}
-		return dp[len - 1];
+		return dp[len];
 	}
 };
 
@@ -133,9 +121,9 @@ public:
 	{
 		int len = s.size();
 		vector<vector<char>> isPal(len, vector<char>(len, false));
-		vector<int> dp(len);
-		dp[0] = 0;
-		for (int i = 1; i < len; ++i)
+		vector<int> dp(len + 1);
+		dp[0] = -1;
+		for (int i = 0; i < len; ++i)
 		{
 			int minNum = INT_MAX;
 			for (int j = 0; j <= i; ++j)
@@ -143,12 +131,11 @@ public:
 				if (s[i] == s[j] && (j + 1 > i - 1 || isPal[j + 1][i - 1]))
 				{
 					isPal[j][i] = true;
-					if (j == 0) minNum = 0;
-					else minNum = min(minNum, dp[j - 1] + 1);
+					minNum = min(minNum, dp[j] + 1);
 				}
 			}
-			dp[i] = minNum;
+			dp[i + 1] = minNum;
 		}
-		return dp[len - 1];
+		return dp[len];
 	}
 };

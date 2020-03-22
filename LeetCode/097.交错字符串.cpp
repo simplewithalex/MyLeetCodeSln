@@ -14,8 +14,29 @@
 
 */
 
-//动态规划
+//备忘录算法
 class Solution1 {
+public:
+	bool isInterleave(string s1, string s2, string s3)
+	{
+		int len1 = s1.size(), len2 = s2.size();
+		vector<vector<char>> memo(len1, vector<char>(len2, -1));
+		return helper(s1, 0, s2, 0, s3, 0, memo);
+	}
+	bool helper(string &s1, int i, string &s2, int j, string &s3, int k, vector<vector<char>> &memo)
+	{
+		int len1 = s1.size(), len2 = s2.size();
+		if (i == len1) return s2.substr(j) == s3.substr(k);
+		if (j == len2) return s1.substr(i) == s3.substr(k);
+		if (memo[i][j] != -1) return memo[i][j];
+		memo[i][j] = (s1[i] == s3[k] && helper(s1, i + 1, s2, j, s3, k + 1, memo)) ||
+			         (s2[j] == s3[k] && helper(s1, i, s2, j + 1, s3, k + 1, memo));
+		return memo[i][j];
+	}
+};
+
+//动态规划
+class Solution2 {
 public:
 	bool isInterleave(string s1, string s2, string s3)
 	{
@@ -24,7 +45,7 @@ public:
 		int len3 = s3.size();
 		if (len3 != len1 + len2)
 			return false;
-		vector<vector<bool>> dp(len1 + 1, vector<bool>(len2 + 1, false));
+		vector<vector<char>> dp(len1 + 1, vector<char>(len2 + 1, false));
 		for (int i = 0; i < len1 + 1; ++i)
 		{
 			for (int j = 0; j < len2 + 1; ++j)
@@ -43,56 +64,29 @@ public:
 	}
 };
 
-//记忆回溯法
-class Solution2 {
+//优化为一维数组
+class Solution3 {
 public:
 	bool isInterleave(string s1, string s2, string s3)
 	{
-		unordered_set<string> s;
-		return backTrack(s1, 0, s2, 0, s3, 0, s);
-	}
-	bool backTrack(string &s1, int i, string &s2, int j, string &s3, int k, unordered_set<string> &s)
-	{
 		int len1 = s1.size(), len2 = s2.size(), len3 = s3.size();
-		string key = to_string(i) + '#' + to_string(j);
-		if (len1 + len2 != len3) return false;
-		if (s.count(key)) return false;
-		if (i == len1&&j == len2&&k == len3) return true;
-		if (i == len1)
+		if (len3 != len1 + len2) return false;
+		vector<char> dp(len2 + 1, false);
+		for (int i = 0; i <= len1; ++i)
 		{
-			while (j < len2)
+			for (int j = 0; j <= len2; ++j)
 			{
-				if (s2[j] != s3[k])
-				{
-					s.insert(key);
-					return false;
-				}
-				++j, ++k;
+				if (i == 0 && j == 0)
+					dp[j] = true;
+				else if (i == 0)
+					dp[j] = dp[j - 1] && s2[j - 1] == s3[i + j - 1];
+				else if (j == 0)
+					dp[j] = dp[j] && s1[i - 1] == s3[i + j - 1];
+				else
+					dp[j] = (dp[j] && s1[i - 1] == s3[i + j - 1]) || (dp[j - 1] && s2[j - 1] == s3[i + j - 1]);
 			}
-			return true;
 		}
-		if (j == len2)
-		{
-			while (i < len1)
-			{
-				if (s1[i] != s3[k])
-				{
-					s.insert(key);
-					return false;
-				}
-				++i, ++k;
-			}
-			return true;
-		}
-		if (s1[i] == s3[k])
-		{
-			if (backTrack(s1, i + 1, s2, j, s3, k + 1, s)) return true;
-		}
-		if (s2[j] == s3[k])
-		{
-			if (backTrack(s1, i, s2, j + 1, s3, k + 1, s)) return true;
-		}
-		s.insert(key);
-		return false;
+		return dp[len2];
 	}
 };
+

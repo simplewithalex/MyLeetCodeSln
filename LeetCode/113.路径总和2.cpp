@@ -29,30 +29,20 @@ class Solution {
 public:
 	vector<vector<int>> pathSum(TreeNode *root, int sum)
 	{
-		if (!root) return{};
+		if (!root) return {};
 		vector<vector<int>> res;
 		vector<int> vec;
-		pretrav(root, vec, res, sum, 0);
+		pretrav(root, vec, res, sum);
 		return res;
 	}
-	void pretrav(TreeNode *node, vector<int> &vec, vector<vector<int>> &res, int sum, int count)
+	void pretrav(TreeNode *node, vector<int> &vec, vector<vector<int>> &res, int sum)
 	{
+		if (!node) return;
 		vec.push_back(node->val);
-		count += node->val;
-		if (!node->left&&!node->right&&count == sum)
-		{
+		if (!node->left&&!node->right&&node->val == sum)
 			res.push_back(vec);
-			return;
-		}
-		if (node->left)
-		{
-			pretrav(node->left, vec, res, sum, count);
-			vec.pop_back();
-		}
-		if (node->right)
-		{
-			pretrav(node->right, vec, res, sum, count);
-			vec.pop_back();
-		}
+		pretrav(node->left, vec, res, sum - node->val);
+		pretrav(node->right, vec, res, sum - node->val);
+		vec.pop_back();
 	}
 };

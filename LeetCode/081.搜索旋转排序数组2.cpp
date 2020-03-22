@@ -21,6 +21,7 @@
 */
 
 //通用解法，同样可用于033题
+
 class Solution1 {
 public:
 	bool search(vector<int> &nums, int target)

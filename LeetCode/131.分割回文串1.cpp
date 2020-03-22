@@ -20,7 +20,7 @@ class Solution {
 public:
 	vector<vector<string>> partition(string s)
 	{
-		if (s.empty()) return{};
+		if (s.empty()) return {};
 		vector<vector<string>> res;
 		vector<string> vec;
 		dfs(s, 0, vec, res);
