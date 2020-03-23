@@ -563,5 +563,14 @@
     <ClCompile Include="026.删除排序数组中的重复项1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="137.只出现一次的数字2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="136.只出现一次的数字1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="260.只出现一次的数字3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

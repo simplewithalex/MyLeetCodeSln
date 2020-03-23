@@ -202,6 +202,8 @@
     <ClCompile Include="133.克隆图.cpp" />
     <ClCompile Include="134.加油站.cpp" />
     <ClCompile Include="135.分发糖果.cpp" />
+    <ClCompile Include="136.只出现一次的数字1.cpp" />
+    <ClCompile Include="137.只出现一次的数字2.cpp" />
     <ClCompile Include="139.单词拆分1.cpp" />
     <ClCompile Include="140.单词拆分2.cpp" />
     <ClCompile Include="143.重排链表.cpp" />
@@ -226,6 +228,7 @@
     <ClCompile Include="239.滑动窗口最大值.cpp" />
     <ClCompile Include="240.搜索二维矩阵2.cpp" />
     <ClCompile Include="253.会议室2.cpp" />
+    <ClCompile Include="260.只出现一次的数字3.cpp" />
     <ClCompile Include="279.完全平方数.cpp" />
     <ClCompile Include="283.移动零.cpp" />
     <ClCompile Include="287.寻找重复数.cpp" />
