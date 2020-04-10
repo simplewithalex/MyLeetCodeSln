@@ -16,7 +16,30 @@
 
 */
 
-class Solution {
+//备忘录
+class Solution1 {
+public:
+	bool wordBreak(string s, unordered_set<string> &dict)
+	{
+		int len = s.size();
+		vector<char> memo(len, -1);
+		return helper(s, dict, 0, memo);
+	}
+	bool helper(string &s, unordered_set<string> &dict, int start, vector<char> &memo)
+	{
+		int len = s.size();
+		if (start == len) return true;
+		if (memo[start] != -1) return memo[start];
+		for (int i = start; i < len; ++i)
+		{
+			if (dict.count(s.substr(start, i - start + 1)) && helper(s, dict, i + 1, memo)) return memo[start] = true;
+		}
+		return memo[start] = false;
+	}
+};
+
+//自底向上动态规划
+class Solution2 {
 public:
 	bool wordBreak(string s, unordered_set<string> &dict)
 	{

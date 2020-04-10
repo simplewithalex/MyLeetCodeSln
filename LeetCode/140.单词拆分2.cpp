@@ -29,7 +29,7 @@ public:
 	{
 		unordered_set<string> dict(wordDict.begin(), wordDict.end());
 		unordered_map<int, vector<string>> m;
-		if (!canBreak(s, dict)) return{};
+		if (!canBreak(s, dict)) return {};
 		return backtrack(s, 0, m, dict);
 	}
 	vector<string> backtrack(string &s, int index, unordered_map<int, vector<string>> &m, unordered_set<string> &dict)
@@ -48,7 +48,9 @@ public:
 				{
 					vector<string> tmp = backtrack(s, i + 1, m, dict);
 					for (auto &str : tmp)
+					{
 						res.push_back(s.substr(index, i - index + 1) + (str.empty() ? "" : " ") + str);
+					}
 				}
 			}
 		}

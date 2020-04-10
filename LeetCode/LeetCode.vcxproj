@@ -211,6 +211,7 @@
     <ClCompile Include="146.LRU缓存机制.cpp" />
     <ClCompile Include="147.对链表进行插入排序.cpp" />
     <ClCompile Include="050.Pow%28x, n%29.cpp" />
+    <ClCompile Include="151.翻转字符串里的单词.cpp" />
     <ClCompile Include="152.乘积最大子序列.cpp" />
     <ClCompile Include="169.求众数.cpp" />
     <ClCompile Include="198.打家劫舍1.cpp" />
@@ -252,6 +253,7 @@
     <ClCompile Include="543.二叉树的直径.cpp" />
     <ClCompile Include="560.和为K的子数组.cpp" />
     <ClCompile Include="581.最短无序连续子数组.cpp" />
+    <ClCompile Include="583.两个字符串的删除操作.cpp" />
     <ClCompile Include="617.合并二叉树.cpp" />
     <ClCompile Include="621.任务调度器.cpp" />
     <ClCompile Include="647.回文子串.cpp" />

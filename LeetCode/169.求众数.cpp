@@ -59,7 +59,7 @@ public:
 			}
 			while (lo < hi)
 			{
-				if (pivot>nums[lo]) ++lo;
+				if (pivot > nums[lo]) ++lo;
 				else
 				{
 					nums[hi--] = nums[lo];

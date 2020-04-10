@@ -572,5 +572,11 @@
     <ClCompile Include="260.只出现一次的数字3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="583.两个字符串的删除操作.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="151.翻转字符串里的单词.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
