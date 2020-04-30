@@ -49,15 +49,13 @@ public:
 			++indegrees[node[0]];
 		}
 		queue<int> q;
-		for (int i = 0; i < numCourses; ++i)
-		if (indegrees[i] == 0) q.push(i);
+		for (int i = 0; i < numCourses; ++i) if (indegrees[i] == 0) q.push(i);
 		while (!q.empty())
 		{
 			int temp = q.front();
 			q.pop();
 			--numCourses;
-			for (auto next : adj[temp])
-			if (--indegrees[next] == 0) q.push(next);
+			for (auto next : adj[temp]) if (--indegrees[next] == 0) q.push(next);
 		}
 		return numCourses == 0;
 	}

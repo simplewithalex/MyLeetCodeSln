@@ -37,8 +37,7 @@ public:
 		vector<int> dp(len, 0);
 		dp[0] = 0;
 		dp[1] = nums[lo];
-		for (int i = 1; i < len - 1; ++i)
-			dp[i + 1] = max(dp[i], dp[i - 1] + nums[lo + i]);
+		for (int i = 1; i < len - 1; ++i) dp[i + 1] = max(dp[i], dp[i - 1] + nums[lo + i]);
 		return dp[len - 1];
 	}
 };

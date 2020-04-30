@@ -76,10 +76,10 @@ public:
 	{
 		if (n <= 1) return 1;
 		queue<int> q;
-		vector<char> m(n + 1, 0);
-		q.push(0);
+		vector<char> m(n + 1, false);
 		int res = 0;
-		m[0] = 1;
+		q.push(0);
+		m[0] = true;
 		while (!q.empty())
 		{
 			int len = q.size();
@@ -94,8 +94,8 @@ public:
 					//防止数据重复出现
 					if (!m[temp])
 					{
+						m[temp] = true;
 						q.push(temp);
-						m[temp] = 1;
 					}
 				}
 			}
@@ -105,4 +105,3 @@ public:
 	}
 };
 //https://leetcode-cn.com/problems/perfect-squares/solution/java-jie-fa-jiang-wen-ti-zhuan-hua-wei-tu-lun-by-b/
-
