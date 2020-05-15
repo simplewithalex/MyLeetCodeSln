@@ -21,12 +21,12 @@
 //快速划分方法
 class Solution1 {
 public:
-	vector<int> topKFrequent(vector<int> &nums, int k) 
+	vector<int> topKFrequent(vector<int> &nums, int k)
 	{
 		unordered_map<int, int> m;
-		int len = nums.size();
 		for (auto num : nums) ++m[num];
 		vector<pair<int, int>> data(m.begin(), m.end());
+		int len = data.size();
 		int lo = 0, hi = len - 1;
 		int index = partition(data, lo, hi);
 		while (index != k - 1)
@@ -49,10 +49,10 @@ public:
 		}
 		return res;
 	}
-	int partition(vector<pair<int,int>> &data, int lo, int hi)
+	int partition(vector<pair<int, int>> &data, int lo, int hi)
 	{
 		swap(data[lo], data[lo + rand() % (hi - lo + 1)]);
-		pair<int,int> pivot = data[lo];
+		pair<int, int> pivot = data[lo];
 		while (lo < hi)
 		{
 			while (lo < hi)
@@ -80,7 +80,7 @@ public:
 };
 
 //桶排序法
-class Solution {
+class Solution2 {
 public:
 	vector<int> topKFrequent(vector<int> &nums, int k)
 	{
@@ -99,7 +99,7 @@ public:
 			if (!freqBucket[i].empty()) res.insert(res.end(), freqBucket[i].begin(), freqBucket[i].end());
 		}
 		//数组元素数量可能会多于k
-		res.resize(k);
+		//res.resize(k);
 		return res;
 	}
 };

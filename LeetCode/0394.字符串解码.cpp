@@ -48,7 +48,7 @@ public:
 };
 
 //栈解法
-class Solution {
+class Solution2 {
 public:
 	string decodeString(string s)
 	{

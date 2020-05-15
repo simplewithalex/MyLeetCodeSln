@@ -573,5 +573,8 @@
     <ClCompile Include="0050.Pow(x, n).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0008.字符串转换整数 (atoi).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
