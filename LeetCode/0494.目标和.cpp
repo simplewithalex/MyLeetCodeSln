@@ -81,7 +81,7 @@ public:
 		for (int n : nums) sum += n;
 		if (S < -sum || S > sum)  return 0;
 		int len = nums.size();
-		vector<int> dp(sum * 2 + 1, 0);
+		vector<	int> dp(sum * 2 + 1, 0);
 		dp[sum] = 1;
 		for (int i = 1; i <= len; ++i)
 		{
@@ -100,7 +100,8 @@ public:
 //转换为0-1背包问题
 class Solution4 {
 public:
-	int findTargetSumWays(vector<int> &nums, int S) {
+	int findTargetSumWays(vector<int> &nums, int S) 
+	{
 		int sum = accumulate(nums.begin(), nums.end(), 0);
 		if (S < -sum || S > sum) return 0;
 		if ((sum + S) & 1) return 0;

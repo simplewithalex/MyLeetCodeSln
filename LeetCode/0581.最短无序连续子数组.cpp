@@ -38,19 +38,15 @@ public:
 	int findUnsortedSubarray(vector<int> &nums)
 	{
 		int len = nums.size();
-		int l = 0, r = len - 1;
-		while (l < r&&nums[l] <= nums[l + 1]) ++l;
-		if (l == r) return 0;
-		while (nums[r] >= nums[r - 1]) --r;
-		int maxNum = INT_MIN, minNum = INT_MAX;
-		for (int i = l; i <= r; ++i)
+		int maxNum = nums[0], minNum = nums[len - 1];
+		int l = 0, r = -1;
+		for (int i = 0; i < len; ++i)
 		{
-			maxNum = max(maxNum, nums[i]);
-			minNum = min(minNum, nums[i]);
+			if (maxNum>nums[i]) r = i;
+			else maxNum = nums[i];
+			if (minNum < nums[len - i - 1]) l = len - i - 1;
+			else minNum = nums[len - i - 1];
 		}
-		while (l >= 0 && minNum < nums[l]) --l;
-		while (r < len && maxNum > nums[r]) ++r;
-		return r - l - 1;
+		return r - l + 1;
 	}
 };
-//https://leetcode.com/problems/shortest-unsorted-continuous-subarray/discuss/103066/Ideas-behind-the-O(n)-two-pass-and-one-pass-solutions
