@@ -67,12 +67,12 @@ public:
 		int len = tasks.size();
 		for (char c : tasks) ++m[c - 'A'];
 		sort(m.begin(), m.end());
-		int maxVal = m[25] - 1, idel = maxVal*n;
+		int maxVal = m[25] - 1, idle = maxVal * n;
 		for (int i = 24; i >= 0 && m[i] > 0; --i)
 		{
-			idel -= min(m[i], maxVal);
+			idle -= min(m[i], maxVal);
 		}
-		return idel > 0 ? idel + len : len;
+		return idle > 0 ? idle + len : len;
 	}
 };
 //https://leetcode-cn.com/problems/task-scheduler/solution/ren-wu-diao-du-qi-by-leetcode/
