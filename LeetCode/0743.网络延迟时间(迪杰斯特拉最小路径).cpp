@@ -24,7 +24,7 @@ class Solution {
 public:
 	int networkDelayTime(vector<vector<int>> &times, int N, int K)
 	{
-		unordered_map<int, vector<pair<int, int>>> graph;
+		vector<vector<pair<int, int>>> graph(N + 1);
 		for (auto edge : times) graph[edge[0]].push_back({ edge[1], edge[2] });
 		priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)*> pq(compare);
 		pq.push({ 0, K });
@@ -37,15 +37,12 @@ public:
 			int node = info.second;
 			if (dist.count(node)) continue;
 			dist[node] = d;
-			if (graph.count(node))
+			for (auto edge : graph[node])
 			{
-				for (auto edge : graph[node])
+				int neigh = edge.first, d2 = edge.second;
+				if (!dist.count(neigh))
 				{
-					int neigh = edge.first, d2 = edge.second;
-					if (!dist.count(neigh))
-					{
-						pq.push({ d + d2, neigh });
-					}
+					pq.push({ d + d2, neigh });
 				}
 			}
 		}
@@ -60,4 +57,3 @@ public:
 		return p1.first > p2.first;
 	}
 };
-
