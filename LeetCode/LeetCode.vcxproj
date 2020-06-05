@@ -153,6 +153,7 @@
     <ClCompile Include="0150.逆波兰表达式求值.cpp" />
     <ClCompile Include="0151.翻转字符串里的单词.cpp" />
     <ClCompile Include="0152.乘积最大子序列.cpp" />
+    <ClCompile Include="0154.寻找旋转排序数组中的最小值2.cpp" />
     <ClCompile Include="0169.求众数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
     <ClCompile Include="0200.岛屿数量.cpp" />
