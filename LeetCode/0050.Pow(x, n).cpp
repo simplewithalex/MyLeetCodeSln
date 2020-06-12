@@ -18,33 +18,67 @@
 
 */
 
-class Solution {
+//二分法快速幂
+
+//迭代
+class Solution1 {
 public:
-	double pow(double x, int n)
+	double myPow(double x, int n)
 	{
-		int exponent = n;
+		if (x == 0) return 0;
+		if (n == 0) return 1;
+		int exp = n;
 		if (n < 0)
 		{
 			if (n == INT_MIN)
 			{
-				++exponent;
-				exponent = -exponent;
-				return 1.0 / (x * posiPow(x, exponent));
+				++exp;
+				exp = -exp;
+				return 1.0 / (x * helper(x, exp));
 			}
-			exponent = -exponent;
+			exp = -exp;
 		}
-		double res = posiPow(x, exponent);
-		if (n < 0)
-			return 1.0 / res;
+		double res = helper(x, exp);
+		return n < 0 ? (1.0 / res) : res;
+	}
+	double helper(double x, int n)
+	{
+		double res = 1.0;
+		while (n)
+		{
+			if (n & 1) res *= x;
+			x *= x;
+			n /= 2;
+		}
 		return res;
 	}
-	double posiPow(double x, int n)
+};
+
+//递归
+class Solution2 {
+public:
+	double myPow(double x, int n)
 	{
-		if (n == 1)
-			return x;
-		if (n == 0)
-			return 1;
-		double res = posiPow(x, n >> 1);
+		if (x == 0) return 0;
+		if (n == 0) return 1;
+		int exp = n;
+		if (n < 0)
+		{
+			if (n == INT_MIN)
+			{
+				++exp;
+				exp = -exp;
+				return 1.0 / (x * helper(x, exp));
+			}
+			exp = -exp;
+		}
+		double res = helper(x, exp);
+		return n < 0 ? (1.0 / res) : res;
+	}
+	double helper(double x, int n)
+	{
+		if (n == 1) return x;
+		double res = helper(x, n / 2);
 		res *= res;
 		if (n & 1) res *= x;
 		return res;
