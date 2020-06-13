@@ -106,24 +106,23 @@ public:
 	bool isMatch(string s, string p)
 	{
 		int sLen = s.size(), pLen = p.size();
-		vector<vector<char>> dp(sLen + 1, vector<char>(pLen + 1, 0));
-		dp[0][0] = 1;
-		for (int j = 1; j < dp[0].size(); ++j)
+		vector<vector<char>> dp(sLen + 1, vector<char>(pLen + 1, false));
+		dp[0][0] = true;
+		for (int j = 2; j <= pLen; ++j)
 		{
-			if (p[j - 1] == '*')
-			{
-				if (dp[0][j - 2]) dp[0][j] = 1;
-			}
+			dp[0][j] = dp[0][j - 2] && p[j - 1] == '*';
 		}
-		for (int i = 1; i < dp.size(); ++i)
+		for (int i = 1; i <= sLen; ++i)
 		{
-			for (int j = 1; j < dp[0].size(); ++j)
+			for (int j = 1; j <= pLen; ++j)
 			{
-				if (s[i - 1] == p[j - 1] || p[j - 1] == '.') dp[i][j] = dp[i - 1][j - 1];
 				if (p[j - 1] == '*')
 				{
-					if (s[i - 1] != p[j - 2] && p[j - 2] != '.') dp[i][j] = dp[i][j - 2];
-					else dp[i][j] = dp[i - 1][j] || dp[i][j - 1] || dp[i][j - 2];
+					dp[i][j] = dp[i][j - 2] || ((s[i - 1] == p[j - 2] || p[j - 2] == '.') && dp[i - 1][j]);
+				}
+				else
+				{
+					if (s[i - 1] == p[j - 1] || p[j - 1] == '.') dp[i][j] = dp[i - 1][j - 1];
 				}
 			}
 		}
