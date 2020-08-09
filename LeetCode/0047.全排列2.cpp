@@ -19,7 +19,7 @@ class Solution {
 public:
 	vector<vector<int>> permuteUnique(vector<int> &num)
 	{
-		if (num.empty()) return{};
+		if (num.empty()) return {};
 		vector<vector<int>> res;
 		vector<bool> used(num.size(), false);
 		vector<int> vec;

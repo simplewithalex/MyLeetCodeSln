@@ -28,13 +28,49 @@ findMedian() -> 2
 
 */
 
-class MedianFinder {
+class MedianFinder1 {
+public:
+	priority_queue<int, vector<int>, less<int>> maxq;
+	priority_queue<int, vector<int>, greater<int>> minq;
+	/** initialize your data structure here. */
+	MedianFinder1() {}
+
+	void addNum(int num)
+	{
+		if (maxq.size() != minq.size())
+		{
+			minq.push(num);
+			maxq.push(minq.top());
+			minq.pop();
+		}
+		else
+		{
+			maxq.push(num);
+			minq.push(maxq.top());
+			maxq.pop();
+		}
+	}
+
+	double findMedian()
+	{
+		return maxq.size() != minq.size() ? minq.top() : (minq.top() + maxq.top()) / 2.0;
+	}
+};
+/**
+* Your MedianFinder object will be instantiated and called as such:
+* MedianFinder* obj = new MedianFinder();
+* obj->addNum(num);
+* double param_2 = obj->findMedian();
+*/
+
+//另一种详细的实现
+class MedianFinder2 {
 private:
 	priority_queue<int, vector<int>, less<int>> maxHeap;
 	priority_queue<int, vector<int>, greater<int>> minHeap;
 public:
 	/** initialize your data structure here. */
-	MedianFinder() {}
+	MedianFinder2() {}
 
 	void addNum(int num)
 	{
@@ -74,7 +110,6 @@ public:
 		else return (minHeap.top() + maxHeap.top()) / 2.0;
 	}
 };
-
 /**
 * Your MedianFinder object will be instantiated and called as such:
 * MedianFinder* obj = new MedianFinder();

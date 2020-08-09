@@ -29,8 +29,7 @@ public:
 		{
 			temp += nums[i];
 			maxNum = max(temp, maxNum);
-			if (temp < 0)
-				temp = 0;
+			if (temp < 0) temp = 0;
 		}
 		return maxNum;
 	}
