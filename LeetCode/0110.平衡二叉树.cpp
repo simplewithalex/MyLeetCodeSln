@@ -14,15 +14,15 @@ public:
 	{
 		return travpost(root) != -1;
 	}
-	int travpost(TreeNode *Node)
+	int travpost(TreeNode *node)
 	{
-		if (!Node) return 0;
+		if (!node) return 0;
 		int lheight = 0, rheight = 0;
-		lheight = travpost(Node->left);
+		lheight = travpost(node->left);
 		if (lheight == -1) return -1;
-		rheight = travpost(Node->right);
+		rheight = travpost(node->right);
 		if (rheight == -1) return -1;
-		if (abs(lheight - rheight)>1)
+		if (abs(lheight - rheight) > 1)
 			return -1;
 		return 1 + max(lheight, rheight);
 	}

@@ -35,7 +35,7 @@ public:
 	vector<int> maxSlidingWindow(vector<int> &nums, int k)
 	{
 		int len = nums.size();
-		if (nums.empty()) return{};
+		if (nums.empty()) return {};
 		vector<int> res;
 		deque<int> de;
 		for (int i = 0; i < k; ++i)
