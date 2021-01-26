@@ -8,27 +8,20 @@
 
 class Solution {
 public:
-	ListNode * insertionSortList(ListNode *head)
-	{
-		if (!head)
-			return nullptr;
-		ListNode *ahead = new ListNode(-1);//实际上相当于创建一个新的链表头，将后续节点依次插入。
+	ListNode * insertionSortList(ListNode *head) {
+		if (!head) return nullptr;
+		ListNode *dummy = new ListNode(-1);//实际上相当于创建一个新的链表头，将后续节点依次插入。
+		ListNode *pre = dummy;
 		ListNode *cur = head;
-		ListNode *pre = ahead;
 		ListNode *next = nullptr;
-		while (cur)
-		{
+		while (cur) {
 			next = cur->next;
-			if (!pre || !pre->next || pre->next->val > cur->val)
-				pre = ahead;
-			while (pre->next&&pre->next->val <= cur->val)
-			{
-				pre = pre->next;
-			}
+			if (pre->next&&pre->next->val > cur->val) pre = dummy;
+			while (pre->next&&pre->next->val <= cur->val) pre = pre->next;
 			cur->next = pre->next;
 			pre->next = cur;
 			cur = next;
 		}
-		return ahead->next;
+		return dummy->next;
 	}
 };
