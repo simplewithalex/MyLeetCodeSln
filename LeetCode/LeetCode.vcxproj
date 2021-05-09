@@ -198,6 +198,7 @@
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
     <ClCompile Include="0647.回文子串.cpp" />
+    <ClCompile Include="0718.最长重复子数组.cpp" />
     <ClCompile Include="0739.每日温度.cpp" />
     <ClCompile Include="0743.网络延迟时间(迪杰斯特拉最小路径).cpp" />
     <ClCompile Include="main.cpp" />
