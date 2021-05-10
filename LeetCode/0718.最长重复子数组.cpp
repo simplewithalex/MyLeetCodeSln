@@ -86,18 +86,18 @@ public:
 	{
 		int len1 = nums1.size(), len2 = nums2.size();
 		vector<vector<int>> memo(len1 + 1, vector<int>(len2 + 1, -1));
-		vector<vector<int>> cp(len1, vector<int>(len2, -1));
-		return helper(nums1, nums2, len1, len2, memo, cp, false);
+		vector<vector<int>> common(len1, vector<int>(len2, -1));
+		return helper(nums1, nums2, len1, len2, memo, common, false);
 	}
 	// memo与cp共同标记已被访问的下标
 	// memo记录[0:i)与[0:j)的最长公共子串
 	// cp记录当前下标两字符串的相同连续元素（这里是后缀）
-	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j, vector<vector<int>> &memo, vector<vector<int>> &cp, bool isComm)
+	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j, vector<vector<int>> &memo, vector<vector<int>> &common, bool isComm)
 	{
 		if (i == 0 || j == 0) return 0;
 		if (isComm)
 		{
-			if (cp[i - 1][j - 1] != -1) return cp[i - 1][j - 1];
+			if (common[i - 1][j - 1] != -1) return common[i - 1][j - 1];
 		}
 		else if (memo[i][j] != -1)
 		{
@@ -106,16 +106,13 @@ public:
 		int len1 = 0, len2 = 0, len3 = 0;
 		if (nums1[i - 1] == nums2[j - 1])
 		{
-			len1 = cp[i - 1][j - 1] = helper(nums1, nums2, i - 1, j - 1, memo, cp, true) + 1;
+			len1 = helper(nums1, nums2, i - 1, j - 1, memo, common, true) + 1;
 		}
-		else
-		{
-			len1 = cp[i - 1][j - 1] = 0;
-		}
-		len2 = helper(nums1, nums2, i - 1, j, memo, cp, false);
-		len3 = helper(nums1, nums2, i, j - 1, memo, cp, false);
+		len2 = helper(nums1, nums2, i - 1, j, memo, common, false);
+		len3 = helper(nums1, nums2, i, j - 1, memo, common, false);
+		common[i - 1][j - 1] = len1;
 		memo[i][j] = max(len1, max(len2, len3));
-		return isComm ? cp[i - 1][j - 1] : memo[i][j];
+		return isComm ? common[i - 1][j - 1] : memo[i][j];
 	}
 };
 /*
