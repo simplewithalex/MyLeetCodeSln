@@ -582,5 +582,8 @@
     <ClCompile Include="0718.最长重复子数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0020 有效的括号.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

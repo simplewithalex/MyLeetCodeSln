@@ -33,6 +33,7 @@
     <ClCompile Include="0017.电话号码的字母组合.cpp" />
     <ClCompile Include="0018.四数之和.cpp" />
     <ClCompile Include="0019.删除链表的倒数第N个节点.cpp" />
+    <ClCompile Include="0020 有效的括号.cpp" />
     <ClCompile Include="0022.括号生成.cpp" />
     <ClCompile Include="0023.合并K个排序链表.cpp" />
     <ClCompile Include="0024.两两交换链表中的节点.cpp" />
