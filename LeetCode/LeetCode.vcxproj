@@ -59,11 +59,12 @@
     <ClCompile Include="0043.字符串相乘.cpp" />
     <ClCompile Include="0044.通配符匹配.cpp" />
     <ClCompile Include="0045.跳跃游戏2.cpp" />
+    <ClCompile Include="0046.全排列1.cpp" />
     <ClCompile Include="0047.全排列2.cpp" />
     <ClCompile Include="0048.旋转图像.cpp" />
     <ClCompile Include="0049.字母异位词分组.cpp" />
     <ClCompile Include="0050.Pow(x, n).cpp" />
-    <ClCompile Include="0051.N皇后.cpp" />
+    <ClCompile Include="0051.N皇后1.cpp" />
     <ClCompile Include="0053.最大子序和.cpp" />
     <ClCompile Include="0054.螺旋矩阵.cpp" />
     <ClCompile Include="0055.跳跃游戏1.cpp" />
@@ -203,6 +204,7 @@
     <ClCompile Include="0718.最长重复子数组.cpp" />
     <ClCompile Include="0739.每日温度.cpp" />
     <ClCompile Include="0743.网络延迟时间(迪杰斯特拉最小路径).cpp" />
+    <ClCompile Include="0052.N皇后2.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -153,9 +153,6 @@
     <ClCompile Include="0049.字母异位词分组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0051.N皇后.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0053.最大子序和.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -586,6 +583,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0021.合并两个有序链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0046.全排列1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0051.N皇后1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0052.N皇后2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
