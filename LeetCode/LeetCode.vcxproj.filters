@@ -225,9 +225,6 @@
     <ClCompile Include="0077.组合.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0078.子集.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0079.单词搜索.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -592,6 +589,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0052.N皇后2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0070.爬楼梯.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0078.子集1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0090.子集2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

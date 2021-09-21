@@ -82,6 +82,7 @@
     <ClCompile Include="0067.二进制求和.cpp" />
     <ClCompile Include="0068.文本左右对齐.cpp" />
     <ClCompile Include="0069.x的平方根.cpp" />
+    <ClCompile Include="0070.爬楼梯.cpp" />
     <ClCompile Include="0071.简化路径.cpp" />
     <ClCompile Include="0072.编辑距离.cpp" />
     <ClCompile Include="0073.矩阵置零.cpp" />
@@ -89,7 +90,7 @@
     <ClCompile Include="0075.颜色分类.cpp" />
     <ClCompile Include="0076.最小覆盖子串.cpp" />
     <ClCompile Include="0077.组合.cpp" />
-    <ClCompile Include="0078.子集.cpp" />
+    <ClCompile Include="0078.子集1.cpp" />
     <ClCompile Include="0079.单词搜索.cpp" />
     <ClCompile Include="0080.删除排序数组中的重复项2.cpp" />
     <ClCompile Include="0081.搜索旋转排序数组2.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="0087.扰乱字符串.cpp" />
     <ClCompile Include="0088.合并两个有序数组.cpp" />
     <ClCompile Include="0089.格雷编码.cpp" />
+    <ClCompile Include="0090.子集2.cpp" />
     <ClCompile Include="0091.解码方法.cpp" />
     <ClCompile Include="0092.反转链表2.cpp" />
     <ClCompile Include="0093.复原IP地址.cpp" />

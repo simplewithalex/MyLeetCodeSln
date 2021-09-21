@@ -42,5 +42,5 @@ public:
 		}
 	}
 };
-//参考这个回答，总结了一套回溯的使用方法。
-//https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
+// 参考这个回答，总结了一套回溯的使用方法。
+// https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning
