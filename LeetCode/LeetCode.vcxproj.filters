@@ -600,5 +600,11 @@
     <ClCompile Include="0090.子集2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0101.对称二叉树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0102.二叉树的层序遍历1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

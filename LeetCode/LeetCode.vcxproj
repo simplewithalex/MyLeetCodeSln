@@ -113,6 +113,8 @@
     <ClCompile Include="0098.验证二叉搜索树.cpp" />
     <ClCompile Include="0099.恢复二叉搜索树.cpp" />
     <ClCompile Include="0100.相同的树.cpp" />
+    <ClCompile Include="0102.二叉树的层序遍历1.cpp" />
+    <ClCompile Include="0101.对称二叉树.cpp" />
     <ClCompile Include="0103.二叉树的锯齿形层次遍历.cpp" />
     <ClCompile Include="0105.从前序与中序遍历序列构造二叉树.cpp" />
     <ClCompile Include="0106.从中序与后序遍历序列构造二叉树.cpp" />
