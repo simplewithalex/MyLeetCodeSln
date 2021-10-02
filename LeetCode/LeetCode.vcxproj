@@ -116,6 +116,7 @@
     <ClCompile Include="0102.二叉树的层序遍历1.cpp" />
     <ClCompile Include="0101.对称二叉树.cpp" />
     <ClCompile Include="0103.二叉树的锯齿形层次遍历.cpp" />
+    <ClCompile Include="0104.二叉树的最大深度.cpp" />
     <ClCompile Include="0105.从前序与中序遍历序列构造二叉树.cpp" />
     <ClCompile Include="0106.从中序与后序遍历序列构造二叉树.cpp" />
     <ClCompile Include="0107.二叉树的层次遍历2.cpp" />
@@ -125,6 +126,7 @@
     <ClCompile Include="0111.二叉树的最小深度.cpp" />
     <ClCompile Include="0112.路径总和1.cpp" />
     <ClCompile Include="0113.路径总和2.cpp" />
+    <ClCompile Include="0114.二叉树展开为链表.cpp" />
     <ClCompile Include="0115.不同的子序列.cpp" />
     <ClCompile Include="0116.填充每个节点的下一个右侧节点指针1.cpp" />
     <ClCompile Include="0117.填充每个节点的下一个右侧节点指针2.cpp" />
@@ -148,8 +150,11 @@
     <ClCompile Include="0135.分发糖果.cpp" />
     <ClCompile Include="0136.只出现一次的数字1.cpp" />
     <ClCompile Include="0137.只出现一次的数字2.cpp" />
+    <ClCompile Include="0138.复制带随机指针的链表.cpp" />
     <ClCompile Include="0139.单词拆分1.cpp" />
     <ClCompile Include="0140.单词拆分2.cpp" />
+    <ClCompile Include="0141.环形链表1.cpp" />
+    <ClCompile Include="0142.环形链表2.cpp" />
     <ClCompile Include="0143.重排链表.cpp" />
     <ClCompile Include="0144.二叉树的前序遍历(迭代法).cpp" />
     <ClCompile Include="0145.二叉树的后序遍历(迭代法).cpp" />
@@ -160,6 +165,7 @@
     <ClCompile Include="0150.逆波兰表达式求值.cpp" />
     <ClCompile Include="0151.翻转字符串里的单词.cpp" />
     <ClCompile Include="0152.乘积最大子序列.cpp" />
+    <ClCompile Include="0153.寻找旋转排序数组中的最小值1.cpp" />
     <ClCompile Include="0154.寻找旋转排序数组中的最小值2.cpp" />
     <ClCompile Include="0169.求众数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
