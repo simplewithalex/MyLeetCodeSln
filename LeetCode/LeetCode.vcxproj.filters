@@ -624,5 +624,11 @@
     <ClCompile Include="0153.寻找旋转排序数组中的最小值1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0155.最小栈.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0160.相交链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
