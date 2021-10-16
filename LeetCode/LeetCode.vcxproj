@@ -169,6 +169,10 @@
     <ClCompile Include="0154.寻找旋转排序数组中的最小值2.cpp" />
     <ClCompile Include="0155.最小栈.cpp" />
     <ClCompile Include="0160.相交链表.cpp" />
+    <ClCompile Include="0162.寻找峰值.cpp" />
+    <ClCompile Include="0164.最大间距.cpp" />
+    <ClCompile Include="0165.比较版本号.cpp" />
+    <ClCompile Include="0166.分数到小数.cpp" />
     <ClCompile Include="0169.求众数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
     <ClCompile Include="0200.岛屿数量.cpp" />

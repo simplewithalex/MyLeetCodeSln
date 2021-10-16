@@ -630,5 +630,17 @@
     <ClCompile Include="0160.相交链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0162.寻找峰值.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0164.最大间距.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0165.比较版本号.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0166.分数到小数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
