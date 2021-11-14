@@ -173,6 +173,7 @@
     <ClCompile Include="0164.最大间距.cpp" />
     <ClCompile Include="0165.比较版本号.cpp" />
     <ClCompile Include="0166.分数到小数.cpp" />
+    <ClCompile Include="0167.两数之和2 输入有序数组.cpp" />
     <ClCompile Include="0169.求众数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
     <ClCompile Include="0200.岛屿数量.cpp" />
