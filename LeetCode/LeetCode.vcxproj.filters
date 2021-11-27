@@ -645,5 +645,14 @@
     <ClCompile Include="0167.两数之和2 输入有序数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0168.Excel表列名称.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0171.Excel 表列序号.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0172.阶乘后的零.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
