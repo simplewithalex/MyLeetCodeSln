@@ -178,6 +178,9 @@
     <ClCompile Include="0169.求众数.cpp" />
     <ClCompile Include="0171.Excel 表列序号.cpp" />
     <ClCompile Include="0172.阶乘后的零.cpp" />
+    <ClCompile Include="0173.二叉搜索树迭代器.cpp" />
+    <ClCompile Include="0174.地下城游戏.cpp" />
+    <ClCompile Include="0179.最大数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
     <ClCompile Include="0200.岛屿数量.cpp" />
     <ClCompile Include="0206.反转链表.cpp" />

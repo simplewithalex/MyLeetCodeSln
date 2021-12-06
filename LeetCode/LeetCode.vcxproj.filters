@@ -654,5 +654,14 @@
     <ClCompile Include="0172.阶乘后的零.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0173.二叉搜索树迭代器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0174.地下城游戏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0179.最大数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
