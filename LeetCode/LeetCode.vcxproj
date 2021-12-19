@@ -183,6 +183,9 @@
     <ClCompile Include="0179.最大数.cpp" />
     <ClCompile Include="0187.重复的DNA序列.cpp" />
     <ClCompile Include="0188.买卖股票的最佳时机4.cpp" />
+    <ClCompile Include="0189.轮转数组.cpp" />
+    <ClCompile Include="0190.颠倒二进制位.cpp" />
+    <ClCompile Include="0191.位1的个数.cpp" />
     <ClCompile Include="0198.打家劫舍1.cpp" />
     <ClCompile Include="0200.岛屿数量.cpp" />
     <ClCompile Include="0206.反转链表.cpp" />

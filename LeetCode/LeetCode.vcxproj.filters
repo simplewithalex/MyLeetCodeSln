@@ -672,5 +672,14 @@
     <ClCompile Include="0188.买卖股票的最佳时机4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0189.轮转数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0190.颠倒二进制位.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0191.位1的个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
