@@ -681,5 +681,14 @@
     <ClCompile Include="0191.位1的个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0199.二叉树的右视图.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0201.数字范围按位与.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0202.快乐数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
