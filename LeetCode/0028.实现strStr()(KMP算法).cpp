@@ -36,7 +36,9 @@ public:
 };
 
 
-//KMP算法
+// KMP算法
+
+// 基于DFA
 class Solution2 {
 public:
 	int strStr(string haystack, string needle)
@@ -68,4 +70,49 @@ public:
 		}
 	}
 };
-//https://leetcode-cn.com/problems/implement-strstr/solution/kmp-suan-fa-xiang-jie-by-labuladong/
+// https://labuladong.gitee.io/algo/3/26/96/
+// https://leetcode-cn.com/problems/implement-strstr/solution/kmp-suan-fa-xiang-jie-by-labuladong/
+
+
+// 基于PMT表构造next数组
+class Solution3 {
+public:
+	int strStr(string haystack, string needle) {
+		int patLen = needle.size();
+		int hayLen = haystack.size();
+		if (patLen == 0) return 0;
+		vector<int> next(patLen, 0);
+		buildNext(needle, next);
+		int i = 0, j = 0;
+		while (i < hayLen) {
+			if (j < 0 || haystack[i] == needle[j]) {
+				++i;
+				++j;
+				if (j == patLen) return i - patLen;
+			}
+			else {
+				j = next[j];
+			}
+		}
+		return -1;
+	}
+
+private:
+	void buildNext(const string &pat, vector<int> &next) {
+		int len = pat.size();
+		next[0] = -1;
+		int i = 0, j = -1;
+		while (i < len - 1) {
+			if (j < 0 || pat[i] == pat[j]) {
+				++i;
+				++j;
+				next[i] = pat[i] != pat[j] ? j : next[j];
+			}
+			else {
+				j = next[j];
+			}
+		}
+	}
+};
+// https://www.zhihu.com/question/21923021/answer/281346746
+// https://www.zhihu.com/question/19935437/answer/18306383
