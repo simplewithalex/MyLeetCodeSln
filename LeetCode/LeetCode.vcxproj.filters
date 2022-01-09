@@ -699,5 +699,11 @@
     <ClCompile Include="0214.最短回文串.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0205.同构字符串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0209.长度最小的子数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
