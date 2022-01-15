@@ -435,9 +435,6 @@
     <ClCompile Include="0206.反转链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0207.课程表.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0208.实现Trie(前缀树).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -703,6 +700,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0209.长度最小的子数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0210.课程表2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0207.课程表1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
