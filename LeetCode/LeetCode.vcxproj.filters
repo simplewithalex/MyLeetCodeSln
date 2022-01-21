@@ -225,9 +225,6 @@
     <ClCompile Include="0077.组合.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="0079.单词搜索.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="0080.删除排序数组中的重复项2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -706,6 +703,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="0207.课程表1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0211.添加与搜索单词 - 数据结构设计.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0212.单词搜索2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0079.单词搜索1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -91,7 +91,7 @@
     <ClCompile Include="0076.最小覆盖子串.cpp" />
     <ClCompile Include="0077.组合.cpp" />
     <ClCompile Include="0078.子集1.cpp" />
-    <ClCompile Include="0079.单词搜索.cpp" />
+    <ClCompile Include="0079.单词搜索1.cpp" />
     <ClCompile Include="0080.删除排序数组中的重复项2.cpp" />
     <ClCompile Include="0081.搜索旋转排序数组2.cpp" />
     <ClCompile Include="0082.删除排序链表中的重复元素2.cpp" />
@@ -199,6 +199,8 @@
     <ClCompile Include="0208.实现Trie(前缀树).cpp" />
     <ClCompile Include="0209.长度最小的子数组.cpp" />
     <ClCompile Include="0210.课程表2.cpp" />
+    <ClCompile Include="0211.添加与搜索单词 - 数据结构设计.cpp" />
+    <ClCompile Include="0212.单词搜索2.cpp" />
     <ClCompile Include="0213.打家劫舍2.cpp" />
     <ClCompile Include="0214.最短回文串.cpp" />
     <ClCompile Include="0215.数组中的第K个最大元素.cpp" />
