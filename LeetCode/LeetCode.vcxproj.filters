@@ -714,5 +714,8 @@
     <ClCompile Include="0079.单词搜索1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0216.组合总和3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
