@@ -53,7 +53,7 @@ public:
 
 该方法将f(i,j)定义为两个字符串的最长公共前缀，所以结果为 max{f(i,j)} (0 < i < len1, 0 < j < len2)
           
-		           (1) f(i+1,j+1) + 1 (A(i) == B(j))
+		           (1) f(i-1,j-1) + 1 (A(i) == B(j))
 状态方程：f(i,j) = 
 		           (2) 0 (A(i) != B(j))
 
@@ -89,9 +89,9 @@ public:
 		vector<vector<int>> common(len1, vector<int>(len2, -1));
 		return helper(nums1, nums2, len1, len2, memo, common, false);
 	}
-	// memo与cp共同标记已被访问的下标
+	// memo与common共同标记已被访问的下标
 	// memo记录[0:i)与[0:j)的最长公共子串
-	// cp记录当前下标两字符串的相同连续元素（这里是后缀）
+	// common记录当前下标两字符串的相同连续元素（这里是后缀）
 	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j, vector<vector<int>> &memo, vector<vector<int>> &common, bool isComm)
 	{
 		if (i == 0 || j == 0) return 0;
@@ -120,7 +120,7 @@ public:
 该问题自顶向下的备忘录算法不太直观，关键在于f(i,j)的定义，这里将f(i,j)定义为[0,i)，[0,j)的最长公共子串
 
 状态方程:
-	         (1) cp(i-1,j-1) + 1 (A(i) == B(j))
+	         (1) common(i-1,j-1) + 1 (A(i) == B(j))
 f(i,j) = max (2) f(i,j-1)
              (3) f(i-1,j)
 

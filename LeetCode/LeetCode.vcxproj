@@ -205,6 +205,7 @@
     <ClCompile Include="0214.最短回文串.cpp" />
     <ClCompile Include="0215.数组中的第K个最大元素.cpp" />
     <ClCompile Include="0216.组合总和3.cpp" />
+    <ClCompile Include="0218.天际线问题.cpp" />
     <ClCompile Include="0221.最大正方形.cpp" />
     <ClCompile Include="0234.回文链表.cpp" />
     <ClCompile Include="0235.二叉搜索树的最近公共祖先.cpp" />
