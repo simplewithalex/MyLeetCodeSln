@@ -720,5 +720,14 @@
     <ClCompile Include="0218.天际线问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0220.存在重复元素3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0219.存在重复元素2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0217.存在重复元素1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
