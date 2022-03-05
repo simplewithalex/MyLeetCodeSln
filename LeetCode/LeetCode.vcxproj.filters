@@ -729,5 +729,8 @@
     <ClCompile Include="0217.存在重复元素1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0222.完全二叉树的节点个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

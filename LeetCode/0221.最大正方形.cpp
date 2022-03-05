@@ -7,7 +7,6 @@
 示例:
 
 输入:
-
 1 0 1 0 0
 1 0 1 1 1
 1 1 1 1 1
@@ -15,39 +14,30 @@
 
 输出: 4
 
+提示：
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 300
+matrix[i][j] 为 '0' 或 '1'
+
 */
 
-//暴力搜索法
-//首先向下移动，找到下一行是否都为一，再向右移动，找到下一列是否都为一，逐步构建最大正方形
+// 暴力搜索
+// C++ TLE, Java AC
 class Solution1 {
 public:
-	int maximalSquare(vector<vector<char>> &matrix) 
-	{
+	int maximalSquare(vector<vector<char>> &matrix) {
 		if (matrix.empty() || matrix[0].empty()) return 0;
 		int rows = matrix.size(), cols = matrix[0].size();
 		int maxEdgeLen = 0;
-		for (int i = 0; i < rows; ++i)
-		{
-			for (int j = 0; j < cols; ++j)
-			{
-				if (matrix[i][j] == '1')
-				{
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < cols; ++j) {
+				if (matrix[i][j] == '1') {
 					int tempLen = 1;
 					bool flag = true;
-					while (i + tempLen < rows&&j + tempLen < cols&&flag)
-					{
-						for (int k = j; k <= j + tempLen; ++k)
-						{
-							if (matrix[i + tempLen][k] == '0')
-							{
-								flag = false;
-								break;
-							}
-						}
-						for (int k = i; k <= i + tempLen; ++k)
-						{
-							if (matrix[k][j + tempLen] == '0')
-							{
+					while (i + tempLen < rows && j + tempLen < cols && flag) {
+						for (int k = 0; k <= tempLen; ++k) {
+							if (matrix[i + tempLen][j + k] == '0' || matrix[i + k][j + tempLen] == '0') {
 								flag = false;
 								break;
 							}
@@ -58,12 +48,19 @@ public:
 				}
 			}
 		}
-		return maxEdgeLen*maxEdgeLen;
+		return maxEdgeLen * maxEdgeLen;
 	}
 };
+/**
+* 遍历矩阵中的每个元素，每次遇到1，则将该元素作为正方形的左上角；
+*
+* 确定正方形的左上角后，根据左上角所在的行和列计算可能的最大正方形的边长（正方形的范围不能超出矩阵的行数和列数），
+* 每次在下方新增一行以及在右方新增一列，判断新增的行和列是否满足所有元素都是 1；
+*
+*/
 
 
-//动态规划
+// 动态规划
 class Solution2 {
 public:
 	int maximalSquare(vector<vector<char>> &matrix)
@@ -87,7 +84,8 @@ public:
 	}
 };
 
-//优化为一维动态规划数组
+// 优化为一维动态规划数组
+// 行方向数组复用
 class Solution3 {
 public:
 	int maximalSquare(vector<vector<char>> &matrix)
@@ -117,6 +115,3 @@ public:
 		return maxEdgeLen*maxEdgeLen;
 	}
 };
-
-//https://leetcode-cn.com/problems/maximal-square/solution/zui-da-zheng-fang-xing-by-leetcode/
-//注意这个题解中dp的图有错误，我们创建的dp矩阵的行列是rows+1与cols+1，而不是rows和cols，这个解答辅助理解就好
