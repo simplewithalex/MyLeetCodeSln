@@ -732,5 +732,8 @@
     <ClCompile Include="0222.完全二叉树的节点个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0223.矩形面积.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
