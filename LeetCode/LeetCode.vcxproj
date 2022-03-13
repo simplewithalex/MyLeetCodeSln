@@ -213,6 +213,7 @@
     <ClCompile Include="0222.完全二叉树的节点个数.cpp" />
     <ClCompile Include="0223.矩形面积.cpp" />
     <ClCompile Include="0224.基本计算器1.cpp" />
+    <ClCompile Include="0225.用队列实现栈.cpp" />
     <ClCompile Include="0234.回文链表.cpp" />
     <ClCompile Include="0235.二叉搜索树的最近公共祖先.cpp" />
     <ClCompile Include="0236.二叉树的最近公共祖先.cpp" />
