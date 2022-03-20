@@ -741,5 +741,8 @@
     <ClCompile Include="0225.用队列实现栈.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0227.基本计算器2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
