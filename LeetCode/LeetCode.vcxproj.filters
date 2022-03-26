@@ -744,5 +744,11 @@
     <ClCompile Include="0227.基本计算器2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0229.求众数2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0460.LFU缓存.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
