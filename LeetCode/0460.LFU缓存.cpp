@@ -134,6 +134,7 @@ private:
 		Node *node = freqMap[minFreq].getLastNode();
 		keyMap.erase(node->key);
 		deleteFromLinkedList(node);
+		delete node;
 	}
 
 public:
@@ -160,6 +161,13 @@ public:
 		}
 	}
 };
+
+/**
+* Your LFUCache object will be instantiated and called as such:
+* LFUCache* obj = new LFUCache(capacity);
+* int param_1 = obj->get(key);
+* obj->put(key,value);
+*/
 
 /**
 * Your LFUCache object will be instantiated and called as such:
