@@ -170,13 +170,6 @@ public:
 */
 
 /**
-* Your LFUCache object will be instantiated and called as such:
-* LFUCache* obj = new LFUCache(capacity);
-* int param_1 = obj->get(key);
-* obj->put(key,value);
-*/
-
-/**
  * https://leetcode-cn.com/u/wang_ni_ma/
  * https://leetcode-cn.com/problems/lfu-cache/solution/chao-xiang-xi-tu-jie-dong-tu-yan-shi-460-lfuhuan-c/
  */
