@@ -47,7 +47,7 @@ p = "a*c?b"
 
 */
 
-//递归
+// 递归
 class Solution1 {
 public:
 	bool isMatch(string s, string p) 
@@ -76,11 +76,35 @@ public:
 		return 1;
 	}
 };
-//https://www.cnblogs.com/grandyang/p/4401196.html#4176378
+// https://www.cnblogs.com/grandyang/p/4401196.html#4176378
 
-
-//动态规划
+// 备忘录
 class Solution2 {
+public:
+	bool isMatch(string s, string p) {
+		int sLen = s.size(), pLen = p.size();
+		vector<vector<char>> mem(sLen + 1, vector<char>(pLen + 1, -1));
+		return helper(0, 0, s, p, mem);
+	}
+
+	bool helper(int i, int j, const string &s, const string &p, vector<vector<char>> &mem) {
+		int sLen = s.size(), pLen = p.size();
+		if (j == pLen) return i == sLen;
+		if (mem[i][j] != -1) return mem[i][j];
+		if (i < sLen && (p[j] == '?' || s[i] == p[j])) mem[i][j] = helper(i + 1, j + 1, s, p, mem);
+		else if (p[j] == '*') mem[i][j] = helper(i, j + 1, s, p, mem) || (i < sLen&&helper(i + 1, j, s, p, mem));
+		else mem[i][j] = false;
+		return mem[i][j];
+	}
+};
+// 1. https://leetcode.com/problems/wildcard-matching/discuss/17859/Evolve-from-brute-force-to-optimal
+/**
+ * 2. https://leetcode-cn.com/problems/wildcard-matching/solution/liang-chong-shi-xian-xiang-xi-tu-jie-44-i7p61/
+ * @author https://leetcode-cn.com/u/wang_ni_ma/
+*/
+
+// 动态规划
+class Solution3 {
 public:
 	bool isMatch(string s, string p) 
 	{
@@ -110,8 +134,8 @@ public:
 };
 
 
-//迭代方法
-class Solution3 {
+// 迭代方法
+class Solution4 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -141,4 +165,4 @@ public:
 		return pi == pLen;
 	}
 };
-//https://leetcode.com/problems/wildcard-matching/discuss/17810/Linear-runtime-and-constant-space-solution
+// https://leetcode.com/problems/wildcard-matching/discuss/17810/Linear-runtime-and-constant-space-solution
