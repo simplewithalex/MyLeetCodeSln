@@ -750,5 +750,8 @@
     <ClCompile Include="0460.LFU缓存.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0228.汇总区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -215,6 +215,7 @@
     <ClCompile Include="0224.基本计算器1.cpp" />
     <ClCompile Include="0225.用队列实现栈.cpp" />
     <ClCompile Include="0227.基本计算器2.cpp" />
+    <ClCompile Include="0228.汇总区间.cpp" />
     <ClCompile Include="0229.求众数2.cpp" />
     <ClCompile Include="0234.回文链表.cpp" />
     <ClCompile Include="0235.二叉搜索树的最近公共祖先.cpp" />
