@@ -37,4 +37,37 @@ public:
  * @author https://leetcode-cn.com/u/windliang/
 */
 
-// TODO 数位DP
+// 数位DP
+class Solution2 {
+public:
+	int countDigitOne(int n) {
+		string s = to_string(n);
+		int len = s.size();
+		if (len == 1) return n == 0 ? 0 : 1;
+
+		vector<int> dp1(len - 1);
+		vector<int> dp2(len);
+		// 求整块中1的个数
+		dp1[0] = 1;
+		for (int i = 1; i < len - 1; ++i) {
+			dp1[i] = 10 * dp1[i - 1] + pow(10, i);
+		}
+
+		if (s[len - 1] == '0') dp2[0] = 0;
+		else dp2[0] = 1;
+
+		/*
+		 * 以165为例子，这里存在三种情况
+		 *（1）百位是1，百位上1的总个数，{1}00 - {1}65
+		 *（2）百位是1，其他位上1的总个数，1{00} - 1{65}
+		 *（3）百位是0，其他位上1的总个数，0 - 99
+		 */
+		for (int i = 1; i < len; ++i) {
+			char c = s[len - 1 - i];
+			if (c == '0') dp2[i] = dp2[i - 1];
+			else if (c == '1') dp2[i] = (stoi(s.substr(len - i)) + 1) + dp2[i - 1] + dp1[i - 1];
+			else dp2[i] = pow(10, i) + dp2[i - 1] + (c - '0')*dp1[i - 1];
+		}
+		return dp2[len - 1];
+	}
+};
