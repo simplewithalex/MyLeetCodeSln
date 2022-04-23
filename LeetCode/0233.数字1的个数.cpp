@@ -71,3 +71,7 @@ public:
 		return dp2[len - 1];
 	}
 };
+/*
+ * https://leetcode-cn.com/problems/number-of-digit-one/solution/shu-wei-dpjava-by-liweiwei1419-awxv/
+ * @author https://leetcode-cn.com/u/liweiwei1419/
+ */
