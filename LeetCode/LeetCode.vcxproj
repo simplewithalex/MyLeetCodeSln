@@ -230,7 +230,9 @@
     <ClCompile Include="0239.滑动窗口最大值.cpp" />
     <ClCompile Include="0240.搜索二维矩阵2.cpp" />
     <ClCompile Include="0241.为运算表达式设计优先级.cpp" />
+    <ClCompile Include="0242.有效的字母异位词.cpp" />
     <ClCompile Include="0253.会议室2.cpp" />
+    <ClCompile Include="0257.二叉树的所有路径.cpp" />
     <ClCompile Include="0260.只出现一次的数字3.cpp" />
     <ClCompile Include="0279.完全平方数.cpp" />
     <ClCompile Include="0283.移动零.cpp" />
