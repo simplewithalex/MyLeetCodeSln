@@ -780,5 +780,11 @@
     <ClCompile Include="0257.二叉树的所有路径.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0264.丑数2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0313.超级丑数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

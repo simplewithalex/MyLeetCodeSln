@@ -234,6 +234,7 @@
     <ClCompile Include="0253.会议室2.cpp" />
     <ClCompile Include="0257.二叉树的所有路径.cpp" />
     <ClCompile Include="0260.只出现一次的数字3.cpp" />
+    <ClCompile Include="0264.丑数2.cpp" />
     <ClCompile Include="0279.完全平方数.cpp" />
     <ClCompile Include="0283.移动零.cpp" />
     <ClCompile Include="0287.寻找重复数.cpp" />
@@ -243,6 +244,7 @@
     <ClCompile Include="0301.删除无效的括号.cpp" />
     <ClCompile Include="0309.最佳买卖股票时机含冷冻期.cpp" />
     <ClCompile Include="0312.戳气球.cpp" />
+    <ClCompile Include="0313.超级丑数.cpp" />
     <ClCompile Include="0322.零钱兑换.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />
