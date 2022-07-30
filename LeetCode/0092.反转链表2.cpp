@@ -14,7 +14,8 @@
 
 */
 
-class Solution {
+// 头插法
+class Solution1 {
 public:
 	ListNode * reverseBetween(ListNode *head, int m, int n)
 	{
@@ -36,5 +37,30 @@ public:
 		head = preHead->next;
 		delete preHead;
 		return head;
+	}
+};
+
+// 双指针迭代
+class Solution2 {
+public:
+	ListNode * reverseBetween(ListNode *head, int left, int right) {
+		if (!head) return nullptr;
+		ListNode *dummy = new ListNode(-1);
+		dummy->next = head;
+		ListNode *preHead = dummy;
+		right -= left;
+		while (--left) preHead = preHead->next;
+
+		ListNode *pre = preHead->next;
+		ListNode *cur = pre->next;
+		while (right--) {
+			ListNode *post = cur->next;
+			cur->next = pre;
+			pre = cur;
+			cur = post;
+		}
+		preHead->next->next = cur;
+		preHead->next = pre;
+		return dummy->next;
 	}
 };
