@@ -42,21 +42,27 @@ public:
 		return false;
 	}
 };
+/*
+ * 题目的实际含义为：两个不同元素的下标距离不大于k，元素值大小之差不大于t
+ * 题目转换为：我们设元素下标 j 为标识点，查找 j 之前距离为k之内的元素下标 i，大小是否在[Vj - t, Vj + t]区间 
+ * 实际上，当我们考虑 i 在 j 之后这种情况时，如果 Vi 在[Vj - t, Vj + t]区间，那么 Vj 也在[Vi - t, Vi + t]区间，此时可以互换 i、j， 
+ * 因此只考虑一个方向即可，遍历完成后，也就包括了所有情况了。
+ */
 
 // 桶排序
 class Solution2 {
 public:
 	bool containsNearbyAlmostDuplicate(vector<int> &nums, int k, int t) {
-		unordered_map<int, int> bucket;
+		unordered_map<int, int> mp;
 		int len = nums.size();
 		for (int i = 0; i < len; ++i) {
 			long long n = nums[i];
 			int id = getID(n, t + 1LL);
-			if (bucket.count(id)) return true;
-			if (bucket.count(id - 1) && abs(n - bucket[id - 1]) <= t) return true;
-			if (bucket.count(id + 1) && abs(n - bucket[id + 1]) <= t) return true;
-			bucket[id] = n;
-			if (bucket.size() == k + 1) bucket.erase(getID(nums[i - k], t + 1LL));
+			if (mp.count(id)) return true;
+			if (mp.count(id - 1) && abs(n - mp[id - 1]) <= t) return true;
+			if (mp.count(id + 1) && abs(n - mp[id + 1]) <= t) return true;
+			mp[id] = n;
+			if (mp.size() == k + 1) mp.erase(getID(nums[i - k], t + 1LL));
 		}
 		return false;
 	}
