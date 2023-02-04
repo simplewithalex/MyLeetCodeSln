@@ -81,6 +81,10 @@ public:
 		return minNum;
 	}
 };
+// 根据状态转移方程递推方向应该相反，参考：剑指 Offer II 094 Solution1 备忘录方法
+// https://leetcode.cn/problems/palindrome-partitioning-ii/solutions/641529/fen-ge-hui-wen-chuan-ii-by-leetcode-solu-norx/
+// @author 力扣官方题解
+
 
 //自底而上的动态规划
 class Solution3 {
