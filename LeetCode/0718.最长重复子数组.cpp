@@ -22,42 +22,45 @@ B: [3,2,1,4,7]
 
 */
 
+
 // 备忘录
 class Solution1 {
 public:
-	int findLength(vector<int> &nums1, vector<int> &nums2)
-	{
+	int findLength(vector<int> &nums1, vector<int> &nums2) {
 		int len1 = nums1.size(), len2 = nums2.size();
-		vector<vector<int>> memo(len1, vector<int>(len2, -1));
+		vector<vector<int>> memo(len1 + 1, vector<int>(len2 + 2, -1));
 		int maxLen = 0;
-		helper(nums1, nums2, 0, 0, maxLen, memo);
+		// memo记录当前长度的子字符串的最长公共后缀，同时有记录已访问下标的作用，可避免重复
+		helper(nums1, nums2, len1, len2, maxLen, memo);
 		return maxLen;
 	}
-	// memo记录当前下标两字符串的最长公共前缀，同时也标记了该下标对已被访问，避免重复计算
-	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j, int &maxLen, vector<vector<int>> &memo)
-	{
-		if (i == nums1.size() || j == nums2.size()) return 0;
+
+private:
+	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j,
+		int &maxLen, vector<vector<int>> &memo) {
+		if (i == 0 || j == 0) return 0;
 		if (memo[i][j] != -1) return memo[i][j];
 		int len = 0;
-		if (nums1[i] == nums2[j])
-		{
-			len = helper(nums1, nums2, i + 1, j + 1, maxLen, memo) + 1;
-			maxLen = max(len, maxLen);
+		if (nums1[i - 1] == nums2[j - 1]) {
+			len = helper(nums1, nums2, i - 1, j - 1, maxLen, memo) + 1;
+			maxLen = max(maxLen, len);
 		}
-		helper(nums1, nums2, i + 1, j, maxLen, memo);
-		helper(nums1, nums2, i, j + 1, maxLen, memo);
+		// 与最长公共子序列问题区分，这里即使nums1[i - 1] == nums2[j - 1]，也需要继续递归这两种情况
+		helper(nums1, nums2, i - 1, j, maxLen, memo);
+		helper(nums1, nums2, i, j - 1, maxLen, memo);
 		return memo[i][j] = len;
 	}
 };
 /*
 
-该方法将f(i,j)定义为两个字符串的最长公共前缀，所以结果为 max{f(i,j)} (0 < i < len1, 0 < j < len2)
-          
-		           (1) f(i-1,j-1) + 1 (A(i) == B(j))
-状态方程：f(i,j) = 
-		           (2) 0 (A(i) != B(j))
+该方法将 f(i,j) 定义为两个字符串的最长公共后缀，所以结果为 max{ f(i,j) } (0 < i <= len1, 0 < j <= len2)
+
+                  (1) f(i-1,j-1) + 1 (A(i) == B(j))
+状态方程：f(i,j) =
+                  (2) 0 (A(i) != B(j))
 
 */
+
 
 // 自底而上的动态规划
 class Solution2 {
