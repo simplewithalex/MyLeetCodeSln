@@ -17,23 +17,27 @@
 //备忘录算法
 class Solution1 {
 public:
-	bool isInterleave(string s1, string s2, string s3)
-	{
-		int len1 = s1.size(), len2 = s2.size();
-		vector<vector<char>> memo(len1, vector<char>(len2, -1));
-		return helper(s1, 0, s2, 0, s3, 0, memo);
+	bool isInterleave(string s1, string s2, string s3) {
+		int len1 = s1.size(), len2 = s2.size(), len3 = s3.size();
+		if (len1 + len2 != len3) return false;
+		vector<vector<char>> memo(len1 + 1, vector<char>(len2 + 1, -1));
+		return helper(s1, len1, s2, len2, s3, len3, memo);
 	}
-	bool helper(string &s1, int i, string &s2, int j, string &s3, int k, vector<vector<char>> &memo)
-	{
-		int len1 = s1.size(), len2 = s2.size();
-		if (i == len1) return s2.substr(j) == s3.substr(k);
-		if (j == len2) return s1.substr(i) == s3.substr(k);
+
+private:
+	bool helper(string &s1, int i, string &s2, int j, string &s3, int k,
+		        vector<vector<char>> &memo) {
+		if (i == 0) return s2.substr(0, j) == s3.substr(0, k);
+		if (j == 0) return s1.substr(0, i) == s3.substr(0, k);
 		if (memo[i][j] != -1) return memo[i][j];
-		memo[i][j] = (s1[i] == s3[k] && helper(s1, i + 1, s2, j, s3, k + 1, memo)) ||
-			         (s2[j] == s3[k] && helper(s1, i, s2, j + 1, s3, k + 1, memo));
+		memo[i][j] = (s1[i - 1] == s3[k - 1] && helper(s1, i - 1, s2, j, s3, k - 1, memo)) ||
+				     (s2[j - 1] == s3[k - 1] && helper(s1, i, s2, j - 1, s3, k - 1, memo));
 		return memo[i][j];
 	}
 };
+
+// https://leetcode.cn/problems/interleaving-string/solutions/335373/jiao-cuo-zi-fu-chuan-by-leetcode-solution/
+// @author 力扣官方题解
 
 //动态规划
 class Solution2 {
