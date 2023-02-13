@@ -42,61 +42,57 @@ babgbag
 
 */
 
-//备忘录算法
+// 备忘录算法
 class Solution1 {
 public:
-	int numDistinct(string S, string T)
-	{
-		int sLen = S.size(), tLen = T.size();
+	int numDistinct(string s, string t) {
+		int sLen = s.size(), tLen = t.size();
 		vector<vector<int>> memo(sLen + 1, vector<int>(tLen + 1, -1));
-		return helper(S, 0, T, 0, memo);
+		return helper(s, sLen, t, tLen, memo);
 	}
-	int helper(string &S,int si,string &T,int ti,vector<vector<int>> &memo)
-	{
-		if (ti == T.size()) return 1;
-		if (si == S.size()) return 0;
-		if (memo[si][ti] > -1) return memo[si][ti];
+
+private:
+	int helper(string &s, int i, string &t, int j, vector<vector<int>> &memo) {
+		if (j == 0) return 1;
+		if (i == 0) return 0;
+		if (memo[i][j] != -1) return memo[i][j];
 		int count = 0;
-		if (S[si] == T[ti])
-		{
-			count = helper(S, si + 1, T, ti + 1, memo) + helper(S, si + 1, T, ti, memo);
+		if (s[i - 1] == t[j - 1]) {
+			count = helper(s, i - 1, t, j, memo) + helper(s, i - 1, t, j - 1, memo);
+		} else {
+			count = helper(s, i - 1, t, j, memo);
 		}
-		else
-		{
-			count = helper(S, si + 1, T, ti, memo);
-		}
-		return memo[si][ti] = count;
+		return memo[i][j] = count;
 	}
 };
 
-//动态规划
+// 自底而上的动态规划
 class Solution2 {
 public:
-	int numDistinct(string S, string T)
-	{
-		int slen = S.size();
-		int tlen = T.size();
-		vector<vector<unsigned>> dp(tlen + 1, vector<unsigned>(slen + 1));
-		for (int i = 0; i < slen + 1; ++i)
-		{
-			dp[0][i] = 1;
-		}
-		for (int i = 0; i < tlen; ++i)
-		{
-			for (int j = 0; j < slen; ++j)
-			{
-				if (S[j] == T[i])
-				{
-					dp[i + 1][j + 1] = dp[i][j] + dp[i + 1][j];
-				}
-				else
-				{
-					dp[i + 1][j + 1] = dp[i + 1][j];
+	int numDistinct(string s, string t) {
+		int sLen = s.size(), tLen = t.size();
+		vector<vector<unsigned int>> dp(sLen + 1, vector<unsigned int>(tLen + 1));
+		for (int i = 0; i <= sLen; ++i) {
+			for (int j = 0; j <= tLen; ++j) {
+				if (j == 0) {
+					dp[i][j] = 1;
+				} else if (i == 0) {
+					dp[i][j] = 0;
+				} else {
+					// 这里计算的中间结果可能超过int大小
+					// 自底而上计算，子字符串中存在这种情况
+					if (s[i - 1] == t[j - 1]) dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1];
+					else dp[i][j] = dp[i - 1][j];
 				}
 			}
 		}
-		return dp[tlen][slen];
+		return dp[sLen][tLen];
 	}
 };
-//DP Solution. Thanks for this link.
-//https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
+
+
+// https://leetcode.cn/problems/distinct-subsequences/solutions/661537/shou-hua-tu-jie-xiang-jie-liang-chong-ji-4r2y/
+// @author https://leetcode.cn/u/xiao_ben_zhu/
+
+// And DP Solution. Thanks for this link.
+// https://leetcode.com/problems/distinct-subsequences/discuss/37327/Easy-to-understand-DP-in-Java
