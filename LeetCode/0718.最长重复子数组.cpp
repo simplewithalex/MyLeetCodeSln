@@ -28,7 +28,7 @@ class Solution1 {
 public:
 	int findLength(vector<int> &nums1, vector<int> &nums2) {
 		int len1 = nums1.size(), len2 = nums2.size();
-		vector<vector<int>> memo(len1 + 1, vector<int>(len2 + 2, -1));
+		vector<vector<int>> memo(len1 + 1, vector<int>(len2 + 1, -1));
 		int maxLen = 0;
 		// memo记录当前长度的子字符串的最长公共后缀，同时有记录已访问下标的作用，可避免重复
 		helper(nums1, nums2, len1, len2, maxLen, memo);
@@ -37,7 +37,7 @@ public:
 
 private:
 	int helper(vector<int> &nums1, vector<int> &nums2, int i, int j,
-		int &maxLen, vector<vector<int>> &memo) {
+		       int &maxLen, vector<vector<int>> &memo) {
 		if (i == 0 || j == 0) return 0;
 		if (memo[i][j] != -1) return memo[i][j];
 		int len = 0;
@@ -61,6 +61,8 @@ private:
 
 */
 
+// https://leetcode.cn/problems/maximum-length-of-repeated-subarray/solutions/310509/zhe-yao-jie-shi-ken-ding-jiu-dong-liao-by-hyj8/
+// @author https://leetcode.cn/u/xiao_ben_zhu/
 
 // 自底而上的动态规划
 class Solution2 {
