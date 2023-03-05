@@ -786,5 +786,8 @@
     <ClCompile Include="0313.超级丑数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0695.岛屿的最大面积.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
