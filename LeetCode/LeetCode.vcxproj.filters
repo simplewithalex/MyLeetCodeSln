@@ -789,5 +789,8 @@
     <ClCompile Include="0695.岛屿的最大面积.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0282.给表达式添加运算符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

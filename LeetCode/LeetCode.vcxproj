@@ -236,6 +236,7 @@
     <ClCompile Include="0260.只出现一次的数字3.cpp" />
     <ClCompile Include="0264.丑数2.cpp" />
     <ClCompile Include="0279.完全平方数.cpp" />
+    <ClCompile Include="0282.给表达式添加运算符.cpp" />
     <ClCompile Include="0283.移动零.cpp" />
     <ClCompile Include="0287.寻找重复数.cpp" />
     <ClCompile Include="0295.数据流的中位数.cpp" />
