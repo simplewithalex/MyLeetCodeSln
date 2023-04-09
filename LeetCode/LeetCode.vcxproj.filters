@@ -792,5 +792,8 @@
     <ClCompile Include="0282.给表达式添加运算符.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0273.整数转换英文表示.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
