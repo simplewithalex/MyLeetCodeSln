@@ -795,5 +795,8 @@
     <ClCompile Include="0273.整数转换英文表示.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0274.H指数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
