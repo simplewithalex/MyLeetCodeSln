@@ -29,8 +29,42 @@
 
 */
 
-//状态机解法
+// 状态机解法 + 备忘录
 class Solution1 {
+public:
+	int maxProfit(vector<int> &prices) {
+		int len = prices.size();
+		int maxK = 2;
+		vector<vector<vector<int>>> memo(
+			len, vector<vector<int>>(maxK + 1, vector<int>(2, -1E6)));
+		return helper(prices, len - 1, maxK, 0, memo);
+	}
+
+private:
+	int helper(vector<int> &prices, int i, int k, int s,
+		vector<vector<vector<int>>> &memo) {
+		if (i == -1 || k == 0) {
+			if (s == 0) return 0;
+			else return INT_MIN;
+		}
+		if (memo[i][k][s] != -1E6) return memo[i][k][s];
+		int v1 = 0, v2 = 0, v3 = 0;
+		// 第i天选择的保持
+		v1 = helper(prices, i - 1, k, s, memo);
+		if (s == 1) { // 第i天选择的买入
+			v2 = helper(prices, i - 1, k - 1, 0, memo) - prices[i];
+		} else { // 第i天选择的卖出
+			v3 = helper(prices, i - 1, k, 1, memo) + prices[i];
+		}
+		return memo[i][k][s] = s == 1 ? max(v1, v2) : max(v1, v3);
+	}
+};
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/solutions/371752/wu-chong-shi-xian-xiang-xi-tu-jie-123mai-mai-gu-pi/
+// @author https://leetcode.cn/u/wang_ni_ma/
+// 题解中的递归思路仅供参考，注意题解递归法实现时，取a, b, c中最大值返回的写法有误，应该只在当前状态下的两个结果中取最大
+
+// 状态机解法 + 自底而上动态规划
+class Solution2 {
 public:
 	int maxProfit(vector<int> &prices)
 	{
@@ -39,7 +73,7 @@ public:
 		int maxK = 2;
 		vector<vector<vector<int>>> dp(len, vector<vector<int>>(maxK + 1, vector<int>(2, 0)));
 		for (int i = 0; i < len; ++i)
-		{
+		{    // 这里k从最大值开始遍历是取自于背包问题中空间优化的方法，这里实际上用不到，两个方向遍历都可以
 			for (int k = maxK; k >= 1; --k)
 			{
 				if (i - 1 == -1)
@@ -55,11 +89,11 @@ public:
 		return dp[len - 1][maxK][0];
 	}
 };
-//https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/
+// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-l-3/
 
 
-//动态规划
-class Solution2
+// 动态规划
+class Solution3
 {
 public:
 	int maxProfit(vector<int> &prices)
@@ -80,8 +114,8 @@ public:
 	}
 };
 
-//有限状态机
-class Solution3
+// 有限状态机
+class Solution4
 {
 public:
 	int maxProfit(vector<int> &prices)
@@ -98,4 +132,4 @@ public:
 		return max(0, s4);
 	}
 };
-//https://leetcode.wang/leetcode-123-Best-Time-to-Buy-and-Sell-StockIII.html
+// https://leetcode.wang/leetcode-123-Best-Time-to-Buy-and-Sell-StockIII.html
