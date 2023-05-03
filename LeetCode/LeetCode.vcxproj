@@ -237,6 +237,7 @@
     <ClCompile Include="0264.丑数2.cpp" />
     <ClCompile Include="0273.整数转换英文表示.cpp" />
     <ClCompile Include="0274.H指数.cpp" />
+    <ClCompile Include="0275.H指数2.cpp" />
     <ClCompile Include="0279.完全平方数.cpp" />
     <ClCompile Include="0282.给表达式添加运算符.cpp" />
     <ClCompile Include="0283.移动零.cpp" />

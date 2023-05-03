@@ -17,8 +17,34 @@
 
 */
 
-//状态机通用解法
-class Solution {
+
+// 状态机解法 + 备忘录
+class Solution1 {
+public:
+	int maxProfit(vector<int> &prices) {
+		int len = prices.size();
+		vector<vector<int>> memo(len, vector<int>(2, -1E4));
+		return helper(prices, len - 1, 0, memo);
+	}
+
+private:
+	int helper(vector<int> &prices, int i, int s, vector<vector<int>> &memo) {
+		if (i == -1 || i == -2) return s == 0 ? 0 : INT_MIN;
+		if (memo[i][s] != -1E4) return memo[i][s];
+		int v1 = 0, v2 = 0, v3 = 0;
+		// 第i天选择的保持
+		v1 = helper(prices, i - 1, s, memo);
+		if (s == 1) { // 第i天选择的买入
+			v2 = helper(prices, i - 2, 0, memo) - prices[i];
+		} else { // 第i天选择的卖出
+			v3 = helper(prices, i - 1, 1, memo) + prices[i];
+		}
+		return memo[i][s] = s == 0 ? max(v1, v3) : max(v1, v2);
+	}
+};
+
+// 状态机通用解法 + 自底而上动态规划
+class Solution2 {
 public:
 	int maxProfit(vector<int> &prices)
 	{
