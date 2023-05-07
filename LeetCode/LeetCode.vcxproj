@@ -249,6 +249,7 @@
     <ClCompile Include="0309.最佳买卖股票时机含冷冻期.cpp" />
     <ClCompile Include="0312.戳气球.cpp" />
     <ClCompile Include="0313.超级丑数.cpp" />
+    <ClCompile Include="0315.计算右侧小于当前元素的个数.cpp" />
     <ClCompile Include="0322.零钱兑换.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />

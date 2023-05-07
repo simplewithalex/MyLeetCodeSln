@@ -801,5 +801,8 @@
     <ClCompile Include="0275.H指数2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0315.计算右侧小于当前元素的个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
