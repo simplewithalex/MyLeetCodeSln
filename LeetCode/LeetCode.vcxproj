@@ -242,6 +242,7 @@
     <ClCompile Include="0282.给表达式添加运算符.cpp" />
     <ClCompile Include="0283.移动零.cpp" />
     <ClCompile Include="0287.寻找重复数.cpp" />
+    <ClCompile Include="0289.生命游戏.cpp" />
     <ClCompile Include="0295.数据流的中位数.cpp" />
     <ClCompile Include="0297.二叉树的序列化与反序列化.cpp" />
     <ClCompile Include="0300.最长上升子序列.cpp" />
