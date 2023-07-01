@@ -246,13 +246,23 @@
     <ClCompile Include="0289.生命游戏.cpp" />
     <ClCompile Include="0295.数据流的中位数.cpp" />
     <ClCompile Include="0297.二叉树的序列化与反序列化.cpp" />
+    <ClCompile Include="0299.猜数字游戏.cpp" />
     <ClCompile Include="0300.最长上升子序列.cpp" />
     <ClCompile Include="0301.删除无效的括号.cpp" />
+    <ClCompile Include="0304.二维区域和检索-矩阵不可变.cpp" />
+    <ClCompile Include="0306.累加数.cpp" />
+    <ClCompile Include="0307.区域和检索 - 数组可修改.cpp" />
     <ClCompile Include="0309.最佳买卖股票时机含冷冻期.cpp" />
+    <ClCompile Include="0310.最小高度树.cpp" />
     <ClCompile Include="0312.戳气球.cpp" />
     <ClCompile Include="0313.超级丑数.cpp" />
     <ClCompile Include="0315.计算右侧小于当前元素的个数.cpp" />
+    <ClCompile Include="0316.去除重复字母.cpp" />
+    <ClCompile Include="0321.拼接最大数.cpp" />
     <ClCompile Include="0322.零钱兑换.cpp" />
+    <ClCompile Include="0327.区间和的个数.cpp" />
+    <ClCompile Include="0329.矩阵中的最长递增路径.cpp" />
+    <ClCompile Include="0336.回文对.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />
     <ClCompile Include="0347.前K个高频元素.cpp" />
@@ -277,6 +287,7 @@
     <ClCompile Include="0743.网络延迟时间(迪杰斯特拉最小路径).cpp" />
     <ClCompile Include="0052.N皇后2.cpp" />
     <ClCompile Include="1044.最长重复子串.cpp" />
+    <ClCompile Include="1206.设计跳表.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

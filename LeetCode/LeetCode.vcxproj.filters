@@ -810,5 +810,38 @@
     <ClCompile Include="0284.顶端迭代器.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0299.猜数字游戏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0304.二维区域和检索-矩阵不可变.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0306.累加数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0307.区域和检索 - 数组可修改.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0310.最小高度树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0336.回文对.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0321.拼接最大数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0316.去除重复字母.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1206.设计跳表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0327.区间和的个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0329.矩阵中的最长递增路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
