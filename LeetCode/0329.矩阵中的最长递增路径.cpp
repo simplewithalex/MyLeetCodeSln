@@ -105,3 +105,61 @@ public:
 		return ans;
 	}
 };
+
+
+// BFS + Õÿ∆À≈≈–Ú
+class Solution3 {
+private:
+	static constexpr int dirs[4][2] = { { -1, 0 },{ 1, 0 },{ 0, -1 },{ 0, 1 } };
+	int rows;
+	int cols;
+
+public:
+	int longestIncreasingPath(vector<vector<int>> &matrix) {
+		if (matrix.empty() || matrix[0].empty()) return 0;
+		int rows = matrix.size(), cols = matrix[0].size();
+		vector<vector<int>> outDegree(rows, vector<int>(cols, 0));
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < cols; ++j) {
+				for (auto dir : dirs) {
+					int newRow = i + dir[0], newCol = j + dir[1];
+					if (newRow >= 0 && newRow < rows && newCol >= 0 &&
+						newCol < cols &&
+						matrix[newRow][newCol] > matrix[i][j]) {
+						++outDegree[i][j];
+					}
+				}
+			}
+		}
+
+		queue<vector<int>> q;
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < cols; ++j) {
+				if (outDegree[i][j] == 0)
+					q.push({ i, j });
+			}
+		}
+
+		int ans = 0;
+		while (!q.empty()) {
+			++ans;
+			int len = q.size();
+			for (int i = 0; i < len; ++i) {
+				vector<int> pos = q.front();
+				q.pop();
+				int row = pos[0], col = pos[1];
+				for (auto dir : dirs) {
+					int newRow = row + dir[0], newCol = col + dir[1];
+					if (newRow >= 0 && newRow < rows && newCol >= 0 &&
+						newCol < cols &&
+						matrix[newRow][newCol] < matrix[row][col]) {
+						if (--outDegree[newRow][newCol] == 0)
+							q.push({ newRow, newCol });
+					}
+				}
+			}
+		}
+		return ans;
+	}
+};
+
