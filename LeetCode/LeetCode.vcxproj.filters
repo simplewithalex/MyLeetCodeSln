@@ -843,5 +843,8 @@
     <ClCompile Include="0329.矩阵中的最长递增路径.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0330.按要求补齐数组.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

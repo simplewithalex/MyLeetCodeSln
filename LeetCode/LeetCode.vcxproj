@@ -262,6 +262,7 @@
     <ClCompile Include="0322.零钱兑换.cpp" />
     <ClCompile Include="0327.区间和的个数.cpp" />
     <ClCompile Include="0329.矩阵中的最长递增路径.cpp" />
+    <ClCompile Include="0330.按要求补齐数组.cpp" />
     <ClCompile Include="0336.回文对.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />

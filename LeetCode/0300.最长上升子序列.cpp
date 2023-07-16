@@ -17,14 +17,15 @@
 */
 
 
-//记忆化回溯
+// 类似DFS思想 + 剪枝
+// 也可以写出递归方程转为一种分治思想，但不是很典型
 class Solution1 {
 public:
 	int lengthOfLIS(vector<int> &nums)
 	{
 		if (nums.empty()) return 0;
 		int len = nums.size();
-		//这里如果用哈希表，使用string作为词典关键码会导致内存超限
+		// 这里如果用哈希表，使用string作为词典关键码会导致内存超限
 		vector<vector<int>> m(len + 1, vector<int>(len, -1));
 		return backTrack(nums, -1, 0, m);
 	}
@@ -39,15 +40,50 @@ public:
 			increNum = 1 + backTrack(nums, curIdx, curIdx + 1, m);
 		}
 		int noIncreNum = backTrack(nums, preIdx, curIdx + 1, m);
-		//使用词典记录前一个元素与当前元素作组合时升序序列的长度(它们不一定在升序的序列中)
-		//因为preIdx是从-1开始的，所以将preIdx+1看作是preIdx
+		// 使用词典记录前一个元素与当前元素作组合时升序序列的长度(它们不一定在升序的序列中)
+		// 因为preIdx是从-1开始的，所以将preIdx+1看作是preIdx
 		m[preIdx + 1][curIdx] = max(increNum, noIncreNum);
 		return m[preIdx + 1][curIdx];
 	}
 };
 
-//动态规划
+// 备忘录
 class Solution2 {
+private:
+	int res = 0;
+public:
+	int lengthOfLIS(vector<int> &nums) {
+		int len = nums.size();
+		vector<int> memo(len);
+		for (int i = 0; i < len; ++i) {
+			helper(nums, i, memo);
+		}
+		return res;
+	}
+private:
+	int helper(vector<int> &nums, int idx, vector<int> &memo) {
+		if (memo[idx]) return memo[idx];
+		int cnt = 1;
+		for (int j = 0; j < idx; ++j) {
+			if (nums[j] < nums[idx]) {
+				int subCnt = helper(nums, j, memo);
+				cnt = max(cnt, subCnt + 1);
+			}
+		}
+		res = max(res, cnt);
+		return memo[idx] = cnt;
+	}
+};
+/*
+
+f(idx) 表示: 以 nums[i] 结尾的上升子序列的长度。注意: 这个定义中 nums[i] 必须被选取，且必须是这个子序列的最后一个元素
+
+f(idx) = max {f(j) + 1}, 0 <= j < i, nums[j] < nums[i]
+
+*/
+
+// 自底而上的动态规划
+class Solution3 {
 public:
 	int lengthOfLIS(vector<int> &nums) 
 	{
@@ -68,12 +104,12 @@ public:
 };
 
 
-//动态规划+二分查找
+// 动态规划+二分查找
 
-//1、用dp数组保存最长上升子序列，该数组元素是递增的，将原序列的元素二分插入dp中
-//2、如果dp中元素都比它小，将它插到最后，否则，用它覆盖掉比它大的元素中最小的那个
-//3、总之，思想就是让dp中存储比较小的元素(值小的元素遇到比它大的元素的概率更大)。这样，dp中未必是真实的最长上升子序列，但长度是对的
-class Solution3 {
+// 1. 用dp数组保存最长上升子序列，该数组元素是递增的，将原序列的元素二分插入dp中
+// 2. 如果dp中元素都比它小，将它插到最后，否则，用它覆盖掉比它大的元素中最小的那个
+// 3. 总之，思想就是让dp中存储比较小的元素(值小的元素遇到比它大的元素的概率更大)。这样，dp中未必是真实的最长上升子序列，但长度是对的
+class Solution4 {
 public:
 	int lengthOfLIS(vector<int> &nums)
 	{
