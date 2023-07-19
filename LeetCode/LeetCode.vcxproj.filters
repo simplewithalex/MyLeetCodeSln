@@ -846,5 +846,14 @@
     <ClCompile Include="0330.按要求补齐数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0332.重新安排行程.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0354.俄罗斯套娃信封问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0335.路径交叉.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

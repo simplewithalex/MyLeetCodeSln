@@ -263,10 +263,13 @@
     <ClCompile Include="0327.区间和的个数.cpp" />
     <ClCompile Include="0329.矩阵中的最长递增路径.cpp" />
     <ClCompile Include="0330.按要求补齐数组.cpp" />
+    <ClCompile Include="0332.重新安排行程.cpp" />
     <ClCompile Include="0336.回文对.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />
     <ClCompile Include="0347.前K个高频元素.cpp" />
+    <ClCompile Include="0354.俄罗斯套娃信封问题.cpp" />
+    <ClCompile Include="0335.路径交叉.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
     <ClCompile Include="0406.根据身高重建队列.cpp" />
     <ClCompile Include="0416.分割等和子集.cpp" />
