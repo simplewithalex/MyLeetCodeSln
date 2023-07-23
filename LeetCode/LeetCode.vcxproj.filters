@@ -855,5 +855,8 @@
     <ClCompile Include="0335.路径交叉.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
