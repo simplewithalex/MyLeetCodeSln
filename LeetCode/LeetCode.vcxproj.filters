@@ -858,5 +858,11 @@
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0352.将数据流变为多个不相交区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0407.接雨水2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
