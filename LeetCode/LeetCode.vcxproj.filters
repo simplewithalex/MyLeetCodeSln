@@ -864,5 +864,8 @@
     <ClCompile Include="0407.接雨水2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0363.矩形区域不超过K的最大数值和.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

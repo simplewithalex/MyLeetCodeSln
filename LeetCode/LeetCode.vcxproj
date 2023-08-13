@@ -271,6 +271,7 @@
     <ClCompile Include="0352.将数据流变为多个不相交区间.cpp" />
     <ClCompile Include="0354.俄罗斯套娃信封问题.cpp" />
     <ClCompile Include="0335.路径交叉.cpp" />
+    <ClCompile Include="0363.矩形区域不超过K的最大数值和.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
     <ClCompile Include="0406.根据身高重建队列.cpp" />
