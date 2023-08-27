@@ -273,6 +273,7 @@
     <ClCompile Include="0335.路径交叉.cpp" />
     <ClCompile Include="0363.矩形区域不超过K的最大数值和.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
+    <ClCompile Include="0391.完美矩形.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
     <ClCompile Include="0403.青蛙过河.cpp" />
     <ClCompile Include="0406.根据身高重建队列.cpp" />
