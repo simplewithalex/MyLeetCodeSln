@@ -873,5 +873,8 @@
     <ClCompile Include="0391.完美矩形.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0410.分割数组的最大值.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

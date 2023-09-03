@@ -278,6 +278,7 @@
     <ClCompile Include="0403.青蛙过河.cpp" />
     <ClCompile Include="0406.根据身高重建队列.cpp" />
     <ClCompile Include="0407.接雨水2.cpp" />
+    <ClCompile Include="0410.分割数组的最大值.cpp" />
     <ClCompile Include="0416.分割等和子集.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />
     <ClCompile Include="0438.找到字符串中所有字母异位词.cpp" />
