@@ -299,6 +299,7 @@
     <ClCompile Include="0052.N皇后2.cpp" />
     <ClCompile Include="1044.最长重复子串.cpp" />
     <ClCompile Include="1206.设计跳表.cpp" />
+    <ClCompile Include="2558.从数量最多的堆取走礼物.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

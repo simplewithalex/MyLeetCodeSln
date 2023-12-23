@@ -876,5 +876,8 @@
     <ClCompile Include="0410.分割数组的最大值.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2558.从数量最多的堆取走礼物.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
