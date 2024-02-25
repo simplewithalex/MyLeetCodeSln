@@ -879,5 +879,8 @@
     <ClCompile Include="2558.从数量最多的堆取走礼物.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0943.最短超级串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
