@@ -280,6 +280,7 @@
     <ClCompile Include="0407.接雨水2.cpp" />
     <ClCompile Include="0410.分割数组的最大值.cpp" />
     <ClCompile Include="0416.分割等和子集.cpp" />
+    <ClCompile Include="0420.强密码检验器.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />
     <ClCompile Include="0438.找到字符串中所有字母异位词.cpp" />
     <ClCompile Include="0448.找到所有数组中消失的数字.cpp" />
@@ -300,6 +301,7 @@
     <ClCompile Include="0943.最短超级串.cpp" />
     <ClCompile Include="1044.最长重复子串.cpp" />
     <ClCompile Include="1206.设计跳表.cpp" />
+    <ClCompile Include="1388.3n块披萨.cpp" />
     <ClCompile Include="2558.从数量最多的堆取走礼物.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

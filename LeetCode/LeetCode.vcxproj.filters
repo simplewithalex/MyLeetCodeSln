@@ -882,5 +882,11 @@
     <ClCompile Include="0943.最短超级串.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1388.3n块披萨.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0420.强密码检验器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
