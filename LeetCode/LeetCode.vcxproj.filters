@@ -888,5 +888,23 @@
     <ClCompile Include="0420.强密码检验器.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0440.字典序的第K小数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0365.水壶问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0357.统计各位数字都不同的数字个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0355.设计推特.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0341.扁平化嵌套列表迭代器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0324.摆动排序2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

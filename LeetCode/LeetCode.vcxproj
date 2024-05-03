@@ -260,6 +260,7 @@
     <ClCompile Include="0316.去除重复字母.cpp" />
     <ClCompile Include="0321.拼接最大数.cpp" />
     <ClCompile Include="0322.零钱兑换.cpp" />
+    <ClCompile Include="0324.摆动排序2.cpp" />
     <ClCompile Include="0327.区间和的个数.cpp" />
     <ClCompile Include="0329.矩阵中的最长递增路径.cpp" />
     <ClCompile Include="0330.按要求补齐数组.cpp" />
@@ -267,11 +268,15 @@
     <ClCompile Include="0336.回文对.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
     <ClCompile Include="0338.比特位计数.cpp" />
+    <ClCompile Include="0341.扁平化嵌套列表迭代器.cpp" />
     <ClCompile Include="0347.前K个高频元素.cpp" />
     <ClCompile Include="0352.将数据流变为多个不相交区间.cpp" />
     <ClCompile Include="0354.俄罗斯套娃信封问题.cpp" />
     <ClCompile Include="0335.路径交叉.cpp" />
+    <ClCompile Include="0355.设计推特.cpp" />
+    <ClCompile Include="0357.统计各位数字都不同的数字个数.cpp" />
     <ClCompile Include="0363.矩形区域不超过K的最大数值和.cpp" />
+    <ClCompile Include="0365.水壶问题.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
     <ClCompile Include="0391.完美矩形.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
@@ -283,6 +288,7 @@
     <ClCompile Include="0420.强密码检验器.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />
     <ClCompile Include="0438.找到字符串中所有字母异位词.cpp" />
+    <ClCompile Include="0440.字典序的第K小数字.cpp" />
     <ClCompile Include="0448.找到所有数组中消失的数字.cpp" />
     <ClCompile Include="0460.LFU缓存.cpp" />
     <ClCompile Include="0494.目标和.cpp" />
