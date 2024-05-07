@@ -906,5 +906,8 @@
     <ClCompile Include="0324.摆动排序2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0368.最大整除子集.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

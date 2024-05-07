@@ -44,9 +44,9 @@ struct Node {
 	Node() : left(nullptr), right(nullptr), val(0), add(0) {}
 };
 
-class NumArray {
+class NumArray1 {
 public:
-	NumArray(vector<int> &nums) {
+	NumArray1(vector<int> &nums) {
 		len = nums.size();
 		for (int i = 0; i < len; ++i) update(root, 0, len - 1, i, i, nums[i]);
 	}
@@ -98,6 +98,56 @@ private:
 
 	void pushUp(Node *node) { node->val = node->left->val + node->right->val; }
 };
+
+
+
+// 单点更新
+class NumArray2 {
+public:
+	NumArray2(vector<int> &nums) {
+		len = nums.size();
+		for (int i = 0; i < len; ++i) update(root, 0, len - 1, i, nums[i]);
+	}
+
+	void update(int index, int val) { update(root, 0, len - 1, index, val); }
+
+	int sumRange(int left, int right) {
+		return query(root, 0, len - 1, left, right);
+	}
+
+private:
+	Node *root = new Node();
+	int len = 0;
+	// start与end表示node节点代表的区间, idx代表更新的点
+	void update(Node *node, int start, int end, int idx, int val) {
+		if (start == end) {
+			node->val = (end - start + 1) * val;
+			return;
+		}
+		int mi = start + (end - start) / 2;
+		if (idx <= mi) {
+			if (!node->left) node->left = new Node();
+			update(node->left, start, mi, idx, val);
+		} else {
+			if (!node->right) node->right = new Node();
+			update(node->right, mi + 1, end, idx, val);
+		}
+		node->val = 0;
+		if (node->left) node->val += node->left->val;
+		if (node->right) node->val += node->right->val;
+	}
+	int query(Node *node, int start, int end, int l, int r) {
+		if (l <= start && r >= end) return node->val;
+		int mi = start + (end - start) / 2, ans = 0;
+		if (l <= mi) ans += query(node->left, start, mi, l, r);
+		if (r > mi) ans += query(node->right, mi + 1, end, l, r);
+		return ans;
+	}
+};
+// 某些题目在其特殊条件下，可以优化单点更新操作
+// 参考 LeetCode 327 的提交，优化了pushUp操作
+
+
 
 /**
 * Your NumArray object will be instantiated and called as such:

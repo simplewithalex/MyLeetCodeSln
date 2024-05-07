@@ -277,6 +277,7 @@
     <ClCompile Include="0357.统计各位数字都不同的数字个数.cpp" />
     <ClCompile Include="0363.矩形区域不超过K的最大数值和.cpp" />
     <ClCompile Include="0365.水壶问题.cpp" />
+    <ClCompile Include="0368.最大整除子集.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
     <ClCompile Include="0391.完美矩形.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
