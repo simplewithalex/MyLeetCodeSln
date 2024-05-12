@@ -909,5 +909,17 @@
     <ClCompile Include="0368.最大整除子集.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0567.字符串的排列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0458.可怜的小猪.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0372.超级次方.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0319.灯泡开关.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
