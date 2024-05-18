@@ -921,5 +921,8 @@
     <ClCompile Include="0319.灯泡开关.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0887.鸡蛋掉落.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
