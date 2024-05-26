@@ -924,5 +924,11 @@
     <ClCompile Include="0887.鸡蛋掉落.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0446.等差数列划分2 - 子序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0413.等差数列划分.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
