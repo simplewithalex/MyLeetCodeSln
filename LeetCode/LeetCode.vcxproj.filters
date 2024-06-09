@@ -939,5 +939,8 @@
     <ClCompile Include="0374.猜数字大小.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0472.连接词.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

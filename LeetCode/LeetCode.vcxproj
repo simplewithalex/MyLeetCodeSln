@@ -300,6 +300,7 @@
     <ClCompile Include="0448.找到所有数组中消失的数字.cpp" />
     <ClCompile Include="0458.可怜的小猪.cpp" />
     <ClCompile Include="0460.LFU缓存.cpp" />
+    <ClCompile Include="0472.连接词.cpp" />
     <ClCompile Include="0494.目标和.cpp" />
     <ClCompile Include="0543.二叉树的直径.cpp" />
     <ClCompile Include="0560.和为K的子数组.cpp" />
