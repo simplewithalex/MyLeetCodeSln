@@ -942,5 +942,14 @@
     <ClCompile Include="0472.连接词.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0480.滑动窗口中位数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0488.祖玛游戏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0331.验证二叉树的前序序列化.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

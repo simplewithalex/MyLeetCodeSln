@@ -265,6 +265,7 @@
     <ClCompile Include="0327.区间和的个数.cpp" />
     <ClCompile Include="0329.矩阵中的最长递增路径.cpp" />
     <ClCompile Include="0330.按要求补齐数组.cpp" />
+    <ClCompile Include="0331.验证二叉树的前序序列化.cpp" />
     <ClCompile Include="0332.重新安排行程.cpp" />
     <ClCompile Include="0336.回文对.cpp" />
     <ClCompile Include="0337.打家劫舍3.cpp" />
@@ -301,6 +302,8 @@
     <ClCompile Include="0458.可怜的小猪.cpp" />
     <ClCompile Include="0460.LFU缓存.cpp" />
     <ClCompile Include="0472.连接词.cpp" />
+    <ClCompile Include="0480.滑动窗口中位数.cpp" />
+    <ClCompile Include="0488.祖玛游戏.cpp" />
     <ClCompile Include="0494.目标和.cpp" />
     <ClCompile Include="0543.二叉树的直径.cpp" />
     <ClCompile Include="0560.和为K的子数组.cpp" />
