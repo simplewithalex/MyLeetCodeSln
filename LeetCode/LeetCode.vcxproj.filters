@@ -951,5 +951,14 @@
     <ClCompile Include="0331.验证二叉树的前序序列化.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0502.IPO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0514.自由之路.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0546.移除盒子.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

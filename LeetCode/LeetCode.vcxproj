@@ -305,7 +305,10 @@
     <ClCompile Include="0480.滑动窗口中位数.cpp" />
     <ClCompile Include="0488.祖玛游戏.cpp" />
     <ClCompile Include="0494.目标和.cpp" />
+    <ClCompile Include="0502.IPO.cpp" />
+    <ClCompile Include="0514.自由之路.cpp" />
     <ClCompile Include="0543.二叉树的直径.cpp" />
+    <ClCompile Include="0546.移除盒子.cpp" />
     <ClCompile Include="0560.和为K的子数组.cpp" />
     <ClCompile Include="0567.字符串的排列.cpp" />
     <ClCompile Include="0581.最短无序连续子数组.cpp" />
