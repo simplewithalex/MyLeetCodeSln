@@ -302,6 +302,7 @@
     <ClCompile Include="0458.可怜的小猪.cpp" />
     <ClCompile Include="0460.LFU缓存.cpp" />
     <ClCompile Include="0472.连接词.cpp" />
+    <ClCompile Include="0479.最大回文数乘积.cpp" />
     <ClCompile Include="0480.滑动窗口中位数.cpp" />
     <ClCompile Include="0488.祖玛游戏.cpp" />
     <ClCompile Include="0494.目标和.cpp" />

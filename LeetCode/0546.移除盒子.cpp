@@ -34,7 +34,8 @@
 
 */
 
-class Solution {
+// 记忆化搜索
+class Solution1 {
 private:
 	vector<vector<vector<int>>> memo;
 
@@ -67,3 +68,31 @@ private:
 };
 
 
+// 动态规划
+class Solution2 {
+public:
+	int removeBoxes(vector<int> &boxes) {
+		int len = boxes.size();
+		vector<vector<vector<int>>> dp(
+			len, vector<vector<int>>(len, vector<int>(len, 0)));
+		for (int subLen = 1; subLen <= len; ++subLen) {
+			for (int l = 0; l + subLen - 1 < len; ++l) {
+				int r = l + subLen - 1;
+				for (int k = 0; k < len - r; ++k) {
+					dp[l][r][k] =
+						max(dp[l][r][k], (l > r - 1 ? 0 : dp[l][r - 1][0]) +
+						(k + 1) * (k + 1));
+					for (int i = l; i < r; ++i) {
+						if (boxes[i] == boxes[r]) {
+							dp[l][r][k] =
+								max(dp[l][r][k],
+								(i + 1 > r - 1 ? 0 : dp[i + 1][r - 1][0]) +
+									dp[l][i][k + 1]);
+						}
+					}
+				}
+			}
+		}
+		return dp[0][len - 1][0];
+	}
+};
