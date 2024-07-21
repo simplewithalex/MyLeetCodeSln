@@ -963,5 +963,11 @@
     <ClCompile Include="0479.最大回文数乘积.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0551.学生出勤记录1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0552.学生出勤记录2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

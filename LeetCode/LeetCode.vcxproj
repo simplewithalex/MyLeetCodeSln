@@ -310,6 +310,8 @@
     <ClCompile Include="0514.自由之路.cpp" />
     <ClCompile Include="0543.二叉树的直径.cpp" />
     <ClCompile Include="0546.移除盒子.cpp" />
+    <ClCompile Include="0551.学生出勤记录1.cpp" />
+    <ClCompile Include="0552.学生出勤记录2.cpp" />
     <ClCompile Include="0560.和为K的子数组.cpp" />
     <ClCompile Include="0567.字符串的排列.cpp" />
     <ClCompile Include="0581.最短无序连续子数组.cpp" />
