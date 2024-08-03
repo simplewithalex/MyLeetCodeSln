@@ -969,5 +969,11 @@
     <ClCompile Include="0552.学生出勤记录2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0600.不含连续1的非负整数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0483.最小好进制.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

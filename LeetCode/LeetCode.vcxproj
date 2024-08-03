@@ -304,6 +304,7 @@
     <ClCompile Include="0472.连接词.cpp" />
     <ClCompile Include="0479.最大回文数乘积.cpp" />
     <ClCompile Include="0480.滑动窗口中位数.cpp" />
+    <ClCompile Include="0483.最小好进制.cpp" />
     <ClCompile Include="0488.祖玛游戏.cpp" />
     <ClCompile Include="0494.目标和.cpp" />
     <ClCompile Include="0502.IPO.cpp" />
@@ -316,6 +317,7 @@
     <ClCompile Include="0567.字符串的排列.cpp" />
     <ClCompile Include="0581.最短无序连续子数组.cpp" />
     <ClCompile Include="0583.两个字符串的删除操作.cpp" />
+    <ClCompile Include="0600.不含连续1的非负整数.cpp" />
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
     <ClCompile Include="0647.回文子串.cpp" />
