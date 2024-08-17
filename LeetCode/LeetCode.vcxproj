@@ -284,6 +284,7 @@
     <ClCompile Include="0373.查找和最小的K对数字.cpp" />
     <ClCompile Include="0374.猜数字大小.cpp" />
     <ClCompile Include="0375.猜数字大小2.cpp" />
+    <ClCompile Include="0376.摆动序列.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
     <ClCompile Include="0391.完美矩形.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
@@ -320,6 +321,7 @@
     <ClCompile Include="0600.不含连续1的非负整数.cpp" />
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
+    <ClCompile Include="0630.课程表3.cpp" />
     <ClCompile Include="0647.回文子串.cpp" />
     <ClCompile Include="0695.岛屿的最大面积.cpp" />
     <ClCompile Include="0718.最长重复子数组.cpp" />

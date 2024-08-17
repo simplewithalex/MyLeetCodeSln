@@ -975,5 +975,11 @@
     <ClCompile Include="0483.最小好进制.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0630.课程表3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0376.摆动序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
