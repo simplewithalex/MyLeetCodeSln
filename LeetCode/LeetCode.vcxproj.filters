@@ -981,5 +981,8 @@
     <ClCompile Include="0376.摆动序列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0377.组合总和4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

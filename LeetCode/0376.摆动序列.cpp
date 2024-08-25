@@ -39,7 +39,7 @@
 */
 
 // 记忆化回溯
-class Solution {
+class Solution1 {
 private:
 	vector<int> memo_up;
 	vector<int> memo_down;
@@ -47,30 +47,66 @@ private:
 public:
 	int wiggleMaxLength(vector<int> &nums) {
 		int len = nums.size();
-		memo_up.resize(len, -1);
-		memo_down.resize(len, -1);
+		memo_up.resize(len);
+		memo_down.resize(len);
 		return max(helper(nums, len - 1, true), helper(nums, len - 1, false));
 	}
 
 private:
 	int helper(vector<int> &nums, int idx, bool up) {
 		if (idx == 0) return 1;
-		if (up && memo_up[idx] != -1) return memo_up[idx];
-		if (!up && memo_down[idx] != -1) return memo_down[idx];
-		int cur = -1;
+		if (up && memo_up[idx]) return memo_up[idx];
+		if (!up && memo_down[idx]) return memo_down[idx];
+		int cur = 0;
 		if (nums[idx] > nums[idx - 1]) {
-			cur = up ? max(helper(nums, idx - 1, true),
-						   helper(nums, idx - 1, false) + 1)
-					 : helper(nums, idx - 1, false);
+			cur = up ? helper(nums, idx - 1, false) + 1
+				: helper(nums, idx - 1, false);
 		} else if (nums[idx] < nums[idx - 1]) {
 			cur = up ? helper(nums, idx - 1, true)
-					 : max(helper(nums, idx - 1, true) + 1,
-						   helper(nums, idx - 1, false));
+				: helper(nums, idx - 1, true) + 1;
 		} else {
 			cur = up ? helper(nums, idx - 1, true)
-					 : helper(nums, idx - 1, false);
+				: helper(nums, idx - 1, false);
 		}
 		return up ? memo_up[idx] = cur : memo_down[idx] = cur;
+	}
+};
+
+// 动态规划
+class Solution2 {
+public:
+	int wiggleMaxLength(vector<int> &nums) {
+		int len = nums.size();
+		vector<int> up(len);
+		vector<int> down(len);
+		up[0] = down[0] = 1;
+		for (int i = 1; i < len; ++i) {
+			if (nums[i] > nums[i - 1]) {
+				up[i] = down[i - 1] + 1;
+				down[i] = down[i - 1];
+			} else if (nums[i] < nums[i - 1]) {
+				up[i] = up[i - 1];
+				down[i] = up[i - 1] + 1;
+			} else {
+				up[i] = up[i - 1];
+				down[i] = down[i - 1];
+			}
+		}
+		return max(up[len - 1], down[len - 1]);
+	}
+};
+
+// 空间优化
+class Solution3 {
+public:
+	int wiggleMaxLength(vector<int> &nums) {
+		int len = nums.size();
+		int up = 1, down = 1;
+		for (int i = 1; i < len; ++i) {
+			if (nums[i] > nums[i - 1]) up = down + 1;
+			else if (nums[i] < nums[i - 1]) down = up + 1;
+		}
+		return max(up, down);
 	}
 };
 
