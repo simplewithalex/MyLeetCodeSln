@@ -286,6 +286,7 @@
     <ClCompile Include="0375.猜数字大小2.cpp" />
     <ClCompile Include="0376.摆动序列.cpp" />
     <ClCompile Include="0377.组合总和4.cpp" />
+    <ClCompile Include="0378.有序矩阵中第K小的元素.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
     <ClCompile Include="0391.完美矩形.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
@@ -335,6 +336,7 @@
     <ClCompile Include="1206.设计跳表.cpp" />
     <ClCompile Include="1388.3n块披萨.cpp" />
     <ClCompile Include="2558.从数量最多的堆取走礼物.cpp" />
+    <ClCompile Include="0382.链表随机节点.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

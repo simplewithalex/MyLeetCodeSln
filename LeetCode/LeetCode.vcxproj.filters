@@ -984,5 +984,11 @@
     <ClCompile Include="0377.组合总和4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0378.有序矩阵中第K小的元素.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0382.链表随机节点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
