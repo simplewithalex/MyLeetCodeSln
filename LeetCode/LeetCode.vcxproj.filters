@@ -990,5 +990,14 @@
     <ClCompile Include="0382.链表随机节点.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0386.字典序排数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0388.文件的最长绝对路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0395.至少有 K 个重复字符的最长子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
