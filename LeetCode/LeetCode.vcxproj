@@ -291,6 +291,7 @@
     <ClCompile Include="0386.字典序排数.cpp" />
     <ClCompile Include="0388.文件的最长绝对路径.cpp" />
     <ClCompile Include="0391.完美矩形.cpp" />
+    <ClCompile Include="0393.UTF-8编码验证.cpp" />
     <ClCompile Include="0394.字符串解码.cpp" />
     <ClCompile Include="0395.至少有 K 个重复字符的最长子串.cpp" />
     <ClCompile Include="0403.青蛙过河.cpp" />
@@ -323,6 +324,7 @@
     <ClCompile Include="0567.字符串的排列.cpp" />
     <ClCompile Include="0581.最短无序连续子数组.cpp" />
     <ClCompile Include="0583.两个字符串的删除操作.cpp" />
+    <ClCompile Include="0587.安装栅栏.cpp" />
     <ClCompile Include="0600.不含连续1的非负整数.cpp" />
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
