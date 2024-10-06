@@ -1005,5 +1005,17 @@
     <ClCompile Include="0587.安装栅栏.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0396.旋转函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0397.整数替换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0390.消除游戏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0432.全O(1)的数据结构.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
