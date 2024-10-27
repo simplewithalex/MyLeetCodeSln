@@ -303,6 +303,7 @@
     <ClCompile Include="0410.分割数组的最大值.cpp" />
     <ClCompile Include="0413.等差数列划分.cpp" />
     <ClCompile Include="0416.分割等和子集.cpp" />
+    <ClCompile Include="0417.太平洋大西洋水流问题.cpp" />
     <ClCompile Include="0420.强密码检验器.cpp" />
     <ClCompile Include="0432.全O(1)的数据结构.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />

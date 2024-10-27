@@ -1017,5 +1017,8 @@
     <ClCompile Include="0432.全O(1)的数据结构.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0417.太平洋大西洋水流问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
