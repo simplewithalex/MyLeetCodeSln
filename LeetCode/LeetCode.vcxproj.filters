@@ -1020,5 +1020,23 @@
     <ClCompile Include="0417.太平洋大西洋水流问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0402.移掉 K 位数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0400.第 N 位数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0424.替换后的最长重复字符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0430.扁平化多级双向链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0435.无重叠区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0741.摘樱桃.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

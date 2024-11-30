@@ -297,6 +297,8 @@
     <ClCompile Include="0395.至少有 K 个重复字符的最长子串.cpp" />
     <ClCompile Include="0396.旋转函数.cpp" />
     <ClCompile Include="0397.整数替换.cpp" />
+    <ClCompile Include="0400.第 N 位数字.cpp" />
+    <ClCompile Include="0402.移掉 K 位数字.cpp" />
     <ClCompile Include="0403.青蛙过河.cpp" />
     <ClCompile Include="0406.根据身高重建队列.cpp" />
     <ClCompile Include="0407.接雨水2.cpp" />
@@ -305,7 +307,10 @@
     <ClCompile Include="0416.分割等和子集.cpp" />
     <ClCompile Include="0417.太平洋大西洋水流问题.cpp" />
     <ClCompile Include="0420.强密码检验器.cpp" />
+    <ClCompile Include="0424.替换后的最长重复字符.cpp" />
+    <ClCompile Include="0430.扁平化多级双向链表.cpp" />
     <ClCompile Include="0432.全O(1)的数据结构.cpp" />
+    <ClCompile Include="0435.无重叠区间.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />
     <ClCompile Include="0438.找到字符串中所有字母异位词.cpp" />
     <ClCompile Include="0440.字典序的第K小数字.cpp" />
@@ -338,6 +343,7 @@
     <ClCompile Include="0695.岛屿的最大面积.cpp" />
     <ClCompile Include="0718.最长重复子数组.cpp" />
     <ClCompile Include="0739.每日温度.cpp" />
+    <ClCompile Include="0741.摘樱桃.cpp" />
     <ClCompile Include="0743.网络延迟时间(迪杰斯特拉最小路径).cpp" />
     <ClCompile Include="0052.N皇后2.cpp" />
     <ClCompile Include="0887.鸡蛋掉落.cpp" />
