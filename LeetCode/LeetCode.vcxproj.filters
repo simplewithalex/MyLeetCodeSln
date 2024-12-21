@@ -1038,5 +1038,17 @@
     <ClCompile Include="0741.摘樱桃.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1463.摘樱桃2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0765.情侣牵手.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0664.奇怪的打印机.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0517.超级洗衣机.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
