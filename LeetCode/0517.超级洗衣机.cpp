@@ -45,19 +45,17 @@ class Solution {
 public:
 	int findMinMoves(vector<int> &machines) {
 		int len = machines.size();
-		int sum = accumulate(machines.begin(), machines.end(), 0);
-		if (sum % len) return -1;
-		int t = sum / len;
-		int ls = 0, rs = sum;
-		int ans = 0;
-		for (int i = 0; i < len; ++i) {
-			rs -= machines[i];
-			int a = max(0, t * i - ls);
-			int b = max(0, t * (len - 1 - i) - rs);
-			ans = max(ans, a + b);
-			ls += machines[i];
+		int total = accumulate(machines.begin(), machines.end(), 0);
+		if (total % len) return -1;
+		int avg = total / len;
+		int ans = 0, sum = 0;
+		for (int num : machines) {
+			num -= avg;
+			sum += num;
+			ans = max({ ans, abs(sum), num });
 		}
 		return ans;
 	}
 };
+
 

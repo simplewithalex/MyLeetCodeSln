@@ -1050,5 +1050,11 @@
     <ClCompile Include="0517.超级洗衣机.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0632.最小区间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0639.解码方法2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

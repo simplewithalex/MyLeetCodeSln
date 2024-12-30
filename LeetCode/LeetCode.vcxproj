@@ -340,6 +340,8 @@
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
     <ClCompile Include="0630.课程表3.cpp" />
+    <ClCompile Include="0632.最小区间.cpp" />
+    <ClCompile Include="0639.解码方法2.cpp" />
     <ClCompile Include="0647.回文子串.cpp" />
     <ClCompile Include="0664.奇怪的打印机.cpp" />
     <ClCompile Include="0695.岛屿的最大面积.cpp" />
