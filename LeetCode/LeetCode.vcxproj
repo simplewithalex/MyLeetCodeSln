@@ -310,6 +310,7 @@
     <ClCompile Include="0424.替换后的最长重复字符.cpp" />
     <ClCompile Include="0430.扁平化多级双向链表.cpp" />
     <ClCompile Include="0432.全O(1)的数据结构.cpp" />
+    <ClCompile Include="0433.最小基因变化.cpp" />
     <ClCompile Include="0435.无重叠区间.cpp" />
     <ClCompile Include="0437.路径总和3.cpp" />
     <ClCompile Include="0438.找到字符串中所有字母异位词.cpp" />
@@ -351,6 +352,7 @@
     <ClCompile Include="0743.网络延迟时间(迪杰斯特拉最小路径).cpp" />
     <ClCompile Include="0052.N皇后2.cpp" />
     <ClCompile Include="0765.情侣牵手.cpp" />
+    <ClCompile Include="0828.统计子串中的唯一字符.cpp" />
     <ClCompile Include="0887.鸡蛋掉落.cpp" />
     <ClCompile Include="0943.最短超级串.cpp" />
     <ClCompile Include="1044.最长重复子串.cpp" />

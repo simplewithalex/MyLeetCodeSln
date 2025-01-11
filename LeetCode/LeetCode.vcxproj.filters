@@ -1056,5 +1056,11 @@
     <ClCompile Include="0639.解码方法2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0828.统计子串中的唯一字符.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0433.最小基因变化.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
