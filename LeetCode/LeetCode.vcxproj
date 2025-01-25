@@ -333,13 +333,16 @@
     <ClCompile Include="0551.学生出勤记录1.cpp" />
     <ClCompile Include="0552.学生出勤记录2.cpp" />
     <ClCompile Include="0560.和为K的子数组.cpp" />
+    <ClCompile Include="0564.寻找最近的回文数.cpp" />
     <ClCompile Include="0567.字符串的排列.cpp" />
     <ClCompile Include="0581.最短无序连续子数组.cpp" />
     <ClCompile Include="0583.两个字符串的删除操作.cpp" />
     <ClCompile Include="0587.安装栅栏.cpp" />
+    <ClCompile Include="0591.标签验证器.cpp" />
     <ClCompile Include="0600.不含连续1的非负整数.cpp" />
     <ClCompile Include="0617.合并二叉树.cpp" />
     <ClCompile Include="0621.任务调度器.cpp" />
+    <ClCompile Include="0629.K个逆序对数组.cpp" />
     <ClCompile Include="0630.课程表3.cpp" />
     <ClCompile Include="0632.最小区间.cpp" />
     <ClCompile Include="0639.解码方法2.cpp" />
