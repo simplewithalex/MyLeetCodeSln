@@ -2,7 +2,6 @@
 
 /*
 
-
 591. 标签验证器
 
 给定一个表示代码片段的字符串，你需要实现一个验证器来解析这段代码，并返回它是否合法
@@ -91,10 +90,6 @@ cdata 不是 "<![CDATA[<div>]>]]>]]>" 的原因参照规则 7
 */
 
 
-
-
-
-
 class Solution {
 public:
 	const string CDATA1 = "<![CDATA[";
@@ -130,8 +125,7 @@ public:
 				i = j + 1;
 				if (!isEnd) {
 					s.push(tag);
-				}
-				else {
+				} else {
 					if (s.empty() || !(s.top() == tag)) return false;
 					s.pop();
 					if (s.empty() && i < len) return false;
