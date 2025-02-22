@@ -288,6 +288,7 @@
     <ClCompile Include="0377.组合总和4.cpp" />
     <ClCompile Include="0378.有序矩阵中第K小的元素.cpp" />
     <ClCompile Include="0381.O(1)时间插入, 删除和获取随机元素(允许重复).cpp" />
+    <ClCompile Include="0385.迷你语法分析器.cpp" />
     <ClCompile Include="0386.字典序排数.cpp" />
     <ClCompile Include="0388.文件的最长绝对路径.cpp" />
     <ClCompile Include="0390.消除游戏.cpp" />
@@ -297,6 +298,7 @@
     <ClCompile Include="0395.至少有 K 个重复字符的最长子串.cpp" />
     <ClCompile Include="0396.旋转函数.cpp" />
     <ClCompile Include="0397.整数替换.cpp" />
+    <ClCompile Include="0398.随机数索引.cpp" />
     <ClCompile Include="0400.第 N 位数字.cpp" />
     <ClCompile Include="0402.移掉 K 位数字.cpp" />
     <ClCompile Include="0403.青蛙过河.cpp" />
@@ -327,6 +329,7 @@
     <ClCompile Include="0494.目标和.cpp" />
     <ClCompile Include="0502.IPO.cpp" />
     <ClCompile Include="0514.自由之路.cpp" />
+    <ClCompile Include="0516.最长回文子序列.cpp" />
     <ClCompile Include="0517.超级洗衣机.cpp" />
     <ClCompile Include="0543.二叉树的直径.cpp" />
     <ClCompile Include="0546.移除盒子.cpp" />

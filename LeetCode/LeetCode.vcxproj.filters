@@ -1071,5 +1071,14 @@
     <ClCompile Include="0629.K个逆序对数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0516.最长回文子序列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0385.迷你语法分析器.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0398.随机数索引.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
