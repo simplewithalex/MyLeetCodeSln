@@ -67,3 +67,4 @@ private:
 		return n / m;
 	}
 };
+
