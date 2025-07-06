@@ -156,3 +156,46 @@ private:
 // @author https://leetcode.cn/u/lfool/
 // https://leetcode.cn/problems/count-of-smaller-numbers-after-self/solutions/127636/c-xian-duan-shu-jie-fa-by-dufre/
 // @author https://leetcode.cn/u/dufre/
+
+
+// 构造线段树，单点更新
+class Solution3 {
+public:
+	void update(Node *node, int start, int end, int idx, int val) {
+		if (start == end) {
+			node->val += val;
+			return;
+		}
+		int mi = start + (end - start) / 2;
+		if (!node->left) node->left = new Node();
+		if (!node->right) node->right = new Node();
+		if (idx <= mi) update(node->left, start, mi, idx, val);
+		else update(node->right, mi + 1, end, idx, val);
+		node->val = node->left->val + node->right->val;
+	}
+	int query(Node *node, int start, int end, int l, int r) {
+		if (!node) return 0;
+		if (l <= start && r >= end) return node->val;
+		int mi = start + (end - start) / 2, ans = 0;
+		if (l <= mi) ans += query(node->left, start, mi, l, r);
+		if (r > mi) ans += query(node->right, mi + 1, end, l, r);
+		return ans;
+	}
+	vector<int> countSmaller(vector<int> &nums) {
+		int len = nums.size();
+		vector<int> count(len);
+		int minNum = nums[0], maxNum = nums[0];
+		for (int i = 1; i < len; ++i) {
+			minNum = min(minNum, nums[i]);
+			maxNum = max(maxNum, nums[i]);
+		}
+		Node *root = new Node();
+		for (int i = len - 1; i >= 0; --i) {
+			int cur = nums[i] - 1;
+			count[i] = cur >= minNum ? query(root, minNum, maxNum, minNum, cur) : 0;
+			update(root, minNum, maxNum, nums[i], 1);
+		}
+		return count;
+	}
+};
+
