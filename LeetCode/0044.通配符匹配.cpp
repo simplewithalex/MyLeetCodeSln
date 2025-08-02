@@ -103,8 +103,32 @@ public:
  * @author https://leetcode-cn.com/u/wang_ni_ma/
  */
 
-// 动态规划
+// 备忘录
 class Solution3 {
+public:
+	vector<vector<char>> mem;
+	bool isMatch(string s, string p) {
+		int sLen = s.size(), pLen = p.size();
+		mem.resize(sLen + 1, vector<char>(pLen + 1, -1));
+		return helper(sLen, pLen, s, p);
+	}
+	bool helper(int i, int j, const string &s, const string &p) {
+		if (j == 0) return i == 0;
+		if (mem[i][j] != -1) return mem[i][j];
+		if (i > 0 && (p[j - 1] == '?' || s[i - 1] == p[j - 1])) {
+			mem[i][j] = helper(i - 1, j - 1, s, p);
+		} else if (p[j - 1] == '*') {
+			mem[i][j] =
+				helper(i, j - 1, s, p) || (i > 0 && helper(i - 1, j, s, p));
+		} else {
+			mem[i][j] = false;
+		};
+		return mem[i][j];
+	}
+};
+
+// 动态规划
+class Solution4 {
 public:
 	bool isMatch(string s, string p) 
 	{
@@ -135,7 +159,7 @@ public:
 
 
 // 迭代方法
-class Solution4 {
+class Solution5 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -166,3 +190,4 @@ public:
 	}
 };
 // https://leetcode.com/problems/wildcard-matching/discuss/17810/Linear-runtime-and-constant-space-solution
+
