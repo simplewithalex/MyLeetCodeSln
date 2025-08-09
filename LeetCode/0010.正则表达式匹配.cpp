@@ -47,10 +47,10 @@ p = "mis*is*p*."
 
 */
 
-//从备忘录到动态规划
-//https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode/
+// 从备忘录到动态规划
+// https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode/
 
-//备忘录
+// 备忘录
 class Solution1 {
 public:
 	bool isMatch(string s, string p)
@@ -76,8 +76,34 @@ public:
 	}
 };
 
-//动态规划
+// 备忘录
 class Solution2 {
+public:
+	vector<vector<char>> memo;
+	bool isMatch(string s, string p) {
+		int sLen = s.size(), pLen = p.size();
+		memo.resize(sLen + 1, vector<char>(pLen + 1, -1));
+		return helper(sLen, pLen, s, p);
+	}
+	bool helper(int i, int j, const string &s, const string &p) {
+		if (j == 0) return i == 0;
+		if (memo[i][j] != -1) return memo[i][j];
+		if (p[j - 1] == '*') {
+			return memo[i][j] =
+				helper(i, j - 2, s, p) ||
+				(i > 0 && (p[j - 2] == '.' || s[i - 1] == p[j - 2]) &&
+					helper(i - 1, j, s, p));
+		} else {
+			return memo[i][j] = i > 0 &&
+				(p[j - 1] == '.' || s[i - 1] == p[j - 1]) &&
+				helper(i - 1, j - 1, s, p);
+		}
+		return memo[i][j] = false;
+	}
+};
+
+//动态规划
+class Solution3 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -101,7 +127,7 @@ public:
 
 //其他方法
 //动态规划
-class Solution3 {
+class Solution4 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -131,7 +157,7 @@ public:
 };
 
 //递归
-class Solution4 {
+class Solution5 {
 public:
 	bool isMatch(string s, string p)
 	{
@@ -166,3 +192,4 @@ public:
 		}
 	}
 };
+
