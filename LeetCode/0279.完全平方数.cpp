@@ -105,3 +105,41 @@ public:
 	}
 };
 //https://leetcode-cn.com/problems/perfect-squares/solution/java-jie-fa-jiang-wen-ti-zhuan-hua-wei-tu-lun-by-b/
+
+
+// 完全背包 + 记忆化
+vector<vector<int>> memo1(101, vector<int>(10001, -1));
+class Solution4 {
+public:
+	int numSquares(int n) { return helper(sqrt(n), n); }
+	int helper(int i, int j) {
+		if (i == 0) return j == 0 ? 0 : INT_MAX;
+		if (memo1[i][j] != -1) return memo1[i][j];
+		return memo1[i][j] =
+			j < i * i ? helper(i - 1, j)
+			          : min(helper(i - 1, j), helper(i, j - i * i) + 1);
+	}
+};
+
+// 完全背包 + 动归
+class Helper {
+public:
+	const int N = 10000;
+	vector<int> dp;
+	Helper() {
+		dp.resize(N + 1, INT_MAX);
+		dp[0] = 0;
+		for (int i = 1; i * i <= N; ++i) {
+			for (int j = i * i; j <= N; ++j) {
+				dp[j] = min(dp[j], dp[j - i * i] + 1);
+			}
+		}
+	}
+};
+Helper helper;
+
+class Solution5 {
+public:
+	int numSquares(int n) { return helper.dp[n]; }
+};
+
