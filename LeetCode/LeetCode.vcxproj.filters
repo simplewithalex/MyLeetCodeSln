@@ -1113,5 +1113,11 @@
     <ClCompile Include="0456.132模式.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1011.在D天内送达包裹的能力.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2426.满足不等式的数对数目.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

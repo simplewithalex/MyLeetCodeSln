@@ -372,12 +372,14 @@
     <ClCompile Include="0828.统计子串中的唯一字符.cpp" />
     <ClCompile Include="0887.鸡蛋掉落.cpp" />
     <ClCompile Include="0943.最短超级串.cpp" />
+    <ClCompile Include="1011.在D天内送达包裹的能力.cpp" />
     <ClCompile Include="1044.最长重复子串.cpp" />
     <ClCompile Include="1206.设计跳表.cpp" />
     <ClCompile Include="1388.3n块披萨.cpp" />
     <ClCompile Include="1463.摘樱桃2.cpp" />
     <ClCompile Include="2558.从数量最多的堆取走礼物.cpp" />
     <ClCompile Include="0382.链表随机节点.cpp" />
+    <ClCompile Include="2426.满足不等式的数对数目.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
